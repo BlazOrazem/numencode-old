@@ -1,0 +1,25 @@
+{
+    "name": "NumenCodeCMS",
+    "description": "The NumenCode CMS.",
+    "keywords": ["numencode", "cms"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "filp/whoops": "~1.1",
+        "klein/klein": "dev-master",
+        "smarty/smarty": "3.1.*@dev",
+        "gabordemooij/redbean": "4.2.0"
+    },
+    "require-dev": {
+
+    },
+    "autoload": {
+        "files": [
+            "bootstrap/config.php",
+            "bootstrap/functions.php"
+        ],
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}

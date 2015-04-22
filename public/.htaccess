@@ -1,0 +1,13 @@
+Options -MultiViews
+Options -Indexes
+
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+
+#RewriteCond %{HTTP_HOST} !^(www\.|localhost$) [NC]
+RewriteRule ^(.+)$ index.php/$1 [L,QSA]
