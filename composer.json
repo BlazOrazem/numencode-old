@@ -8,10 +8,8 @@
         "filp/whoops": "~1.1",
         "klein/klein": "dev-master",
         "smarty/smarty": "3.1.*@dev",
-        "gabordemooij/redbean": "4.2.0"
-    },
-    "require-dev": {
-
+        "gabordemooij/redbean": "4.2.0",
+        "illuminate/database": "5.0.*@dev"
     },
     "autoload": {
         "files": [
