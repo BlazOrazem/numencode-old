@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from www.redbeanphp.com/api/class-RedBeanPHP.BeanCollection.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Apr 2015 06:57:05 GMT -->
+<head>
+	<meta charset="utf-8">
+
+	<title>Class RedBeanPHP\BeanCollection | RedBeanPHP 4.2</title>
+
+	<link rel="stylesheet" href="resources/style76b1.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+	<script>
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', "UA-2317956-4"]);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index-2.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li>
+					<a href="namespace-None.html">
+						None					</a>
+
+						</li>
+				<li class="active">
+					<a href="namespace-RedBeanPHP.html">
+						RedBeanPHP<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-RedBeanPHP.Adapter.html">
+						Adapter					</a>
+
+						</li>
+				<li>
+					<a href="namespace-RedBeanPHP.BeanHelper.html">
+						BeanHelper					</a>
+
+						</li>
+				<li>
+					<a href="namespace-RedBeanPHP.Cursor.html">
+						Cursor					</a>
+
+						</li>
+				<li>
+					<a href="namespace-RedBeanPHP.Driver.html">
+						Driver					</a>
+
+						</li>
+				<li>
+					<a href="namespace-RedBeanPHP.Logger.html">
+						Logger<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-RedBeanPHP.Logger.RDefault.html">
+						RDefault					</a>
+
+						</li>
+							</ul></li>
+				<li>
+					<a href="namespace-RedBeanPHP.QueryWriter.html">
+						QueryWriter					</a>
+
+						</li>
+				<li>
+					<a href="namespace-RedBeanPHP.RedException.html">
+						RedException					</a>
+
+						</li>
+				<li>
+					<a href="namespace-RedBeanPHP.Repository.html">
+						Repository					</a>
+
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-RedBeanPHP.AssociationManager.html">AssociationManager</a></li>
+				<li class="active"><a href="class-RedBeanPHP.BeanCollection.html">BeanCollection</a></li>
+				<li><a href="class-RedBeanPHP.DuplicationManager.html">DuplicationManager</a></li>
+				<li><a href="class-RedBeanPHP.Facade.html">Facade</a></li>
+				<li><a href="class-RedBeanPHP.Finder.html">Finder</a></li>
+				<li><a href="class-RedBeanPHP.LabelMaker.html">LabelMaker</a></li>
+				<li><a href="class-RedBeanPHP.Observable.html">Observable</a></li>
+				<li><a href="class-RedBeanPHP.OODB.html">OODB</a></li>
+				<li><a href="class-RedBeanPHP.OODBBean.html">OODBBean</a></li>
+				<li><a href="class-RedBeanPHP.R.html">R</a></li>
+				<li><a href="class-RedBeanPHP.Repository.html">Repository</a></li>
+				<li><a href="class-RedBeanPHP.SimpleModel.html">SimpleModel</a></li>
+				<li><a href="class-RedBeanPHP.SimpleModelHelper.html">SimpleModelHelper</a></li>
+				<li><a href="class-RedBeanPHP.TagManager.html">TagManager</a></li>
+				<li><a href="class-RedBeanPHP.ToolBox.html">ToolBox</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-RedBeanPHP.Adapter.html">Adapter</a></li>
+				<li><a href="class-RedBeanPHP.BeanHelper.html">BeanHelper</a></li>
+				<li><a href="class-RedBeanPHP.Cursor.html">Cursor</a></li>
+				<li><a href="class-RedBeanPHP.Driver.html">Driver</a></li>
+				<li><a href="class-RedBeanPHP.Logger.html">Logger</a></li>
+				<li><a href="class-RedBeanPHP.Observer.html">Observer</a></li>
+				<li><a href="class-RedBeanPHP.Plugin.html">Plugin</a></li>
+				<li><a href="class-RedBeanPHP.QueryWriter.html">QueryWriter</a></li>
+				<li><a href="class-RedBeanPHP.RedException.html">RedException</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index-2.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-RedBeanPHP.html" title="Summary of RedBeanPHP"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class BeanCollection</h1>
+
+
+	<div class="description">
+	<p>BeanCollection.</p>
+
+<p>The BeanCollection represents a collection of beans and
+makes it possible to use database cursors. The BeanCollection
+has a method next() to obtain the first, next and last bean
+in the collection. The BeanCollection does not implement the array
+interface nor does it try to act like an array because it cannot go
+backward or rewind itself.</p>
+
+<p>Use the BeanCollection for large datasets where skip/limit is not an
+option. Keep in mind that ID-marking (querying a start ID) is a decent
+alternative though.</p>
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-RedBeanPHP.html">RedBeanPHP</a><br>
+		
+
+				<b>Copyright:</b>
+				<p>copyright (c) G.J.G.T. (Gabor) de Mooij and the RedBeanPHP Community
+This source file is subject to the BSD/GPLv2 License that is bundled
+with this source code in the file license.txt.</p><br>
+				<b>License:</b>
+				<a href="BSD/GPLv2.html">BSD/GPLv2</a><br>
+				<b>Author:</b>
+				Gabor de Mooij and the RedBeanPHP community<br>
+				<b>File:</b>
+				RedBeanPHP/BeanCollection.php<br>
+			<b>Located at</b> <a href="source-class-RedBeanPHP.BeanCollection.html#8-92" title="Go to source code">BeanCollection.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-RedBeanPHP.BeanCollection.html#48-62" title="Go to source code">__construct</a>( <span>string <var>$type</var></span>, <span><code><a href="class-RedBeanPHP.Repository.html">RedBeanPHP\Repository</a></code> <var>$repository</var></span>, <span><code><a href="class-RedBeanPHP.Cursor.html">RedBeanPHP\Cursor</a></code> <var>$cursor</var></span> )</code>
+
+		<div class="description short">
+			<p>Constructor, creates a new instance of the BeanCollection.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Constructor, creates a new instance of the BeanCollection.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$type</var></dt>
+					<dd>type of beans in this collection</dd>
+					<dt><var>$repository</var></dt>
+					<dd>repository to use to generate bean objects</dd>
+					<dt><var>$cursor</var></dt>
+					<dd>cursor object to use</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="next" id="_next">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-RedBeanPHP.OODBBean.html">RedBeanPHP\OODBBean</a></code>|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_next">#</a>
+		<code><a href="source-class-RedBeanPHP.BeanCollection.html#64-81" title="Go to source code">next</a>( )</code>
+
+		<div class="description short">
+			<p>Returns the next bean in the collection.
+If called the first time, this will return the first bean in the collection.
+If there are no more beans left in the collection, this method
+will return NULL.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns the next bean in the collection.
+If called the first time, this will return the first bean in the collection.
+If there are no more beans left in the collection, this method
+will return NULL.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-RedBeanPHP.OODBBean.html">RedBeanPHP\OODBBean</a></code>|null
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="close" id="_close">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_close">#</a>
+		<code><a href="source-class-RedBeanPHP.BeanCollection.html#83-91" title="Go to source code">close</a>( )</code>
+
+		<div class="description short">
+			<p>Closes the underlying cursor (needed for some databases).</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Closes the underlying cursor (needed for some databases).</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="cursor" id="$cursor">
+		<td class="attributes"><code>
+			protected  
+			<code><a href="class-RedBeanPHP.Cursor.html">RedBeanPHP\Cursor</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-RedBeanPHP.BeanCollection.html#33-36" title="Go to source code"><var>$cursor</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$cursor" class="anchor">#</a>
+				<code><span class="php-keyword1">NULL</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="repository" id="$repository">
+		<td class="attributes"><code>
+			protected  
+			<code><a href="class-RedBeanPHP.Repository.html">RedBeanPHP\Repository</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-RedBeanPHP.BeanCollection.html#38-41" title="Go to source code"><var>$repository</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$repository" class="anchor">#</a>
+				<code><span class="php-keyword1">NULL</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="type" id="$type">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-RedBeanPHP.BeanCollection.html#43-46" title="Go to source code"><var>$type</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$type" class="anchor">#</a>
+				<code><span class="php-keyword1">NULL</span></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		RedBeanPHP 4.2 API documentation generated by <a href="http://apigen.org/">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+
+<!-- Mirrored from www.redbeanphp.com/api/class-RedBeanPHP.BeanCollection.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Apr 2015 06:57:05 GMT -->
+</html>

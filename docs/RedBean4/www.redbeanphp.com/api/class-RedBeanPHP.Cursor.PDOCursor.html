@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from www.redbeanphp.com/api/class-RedBeanPHP.Cursor.PDOCursor.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Apr 2015 06:57:14 GMT -->
+<head>
+	<meta charset="utf-8">
+
+	<title>Class RedBeanPHP\Cursor\PDOCursor | RedBeanPHP 4.2</title>
+
+	<link rel="stylesheet" href="resources/style76b1.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+	<script>
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', "UA-2317956-4"]);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index-2.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li>
+					<a href="namespace-None.html">
+						None					</a>
+
+						</li>
+				<li class="active">
+					<a href="namespace-RedBeanPHP.html">
+						RedBeanPHP<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-RedBeanPHP.Adapter.html">
+						Adapter					</a>
+
+						</li>
+				<li>
+					<a href="namespace-RedBeanPHP.BeanHelper.html">
+						BeanHelper					</a>
+
+						</li>
+				<li class="active">
+					<a href="namespace-RedBeanPHP.Cursor.html">
+						Cursor					</a>
+
+						</li>
+				<li>
+					<a href="namespace-RedBeanPHP.Driver.html">
+						Driver					</a>
+
+						</li>
+				<li>
+					<a href="namespace-RedBeanPHP.Logger.html">
+						Logger<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-RedBeanPHP.Logger.RDefault.html">
+						RDefault					</a>
+
+						</li>
+							</ul></li>
+				<li>
+					<a href="namespace-RedBeanPHP.QueryWriter.html">
+						QueryWriter					</a>
+
+						</li>
+				<li>
+					<a href="namespace-RedBeanPHP.RedException.html">
+						RedException					</a>
+
+						</li>
+				<li>
+					<a href="namespace-RedBeanPHP.Repository.html">
+						Repository					</a>
+
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-RedBeanPHP.Cursor.NullCursor.html">NullCursor</a></li>
+				<li class="active"><a href="class-RedBeanPHP.Cursor.PDOCursor.html">PDOCursor</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index-2.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-RedBeanPHP.Cursor.html" title="Summary of RedBeanPHP\Cursor"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class PDOCursor</h1>
+
+
+	<div class="description">
+	<p>PDO Database Cursor
+Implementation of PDO Database Cursor.
+Used by the BeanCollection to fetch one bean at a time.</p>
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>RedBeanPHP\Cursor\PDOCursor</span></b>			
+			 implements 
+				<a href="class-RedBeanPHP.Cursor.html"><span>RedBeanPHP\Cursor</span></a>
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-RedBeanPHP.html">RedBeanPHP</a>\<a href="namespace-RedBeanPHP.Cursor.html">Cursor</a><br>
+		
+
+				<b>Copyright:</b>
+				<p>(c) G.J.G.T. (Gabor) de Mooij and the RedBeanPHP Community.
+This source file is subject to the BSD/GPLv2 License that is bundled
+with this source code in the file license.txt.</p><br>
+				<b>License:</b>
+				<a href="BSD/GPLv2.html">BSD/GPLv2</a><br>
+				<b>Author:</b>
+				Gabor de Mooij and the RedBeanPHP Community<br>
+				<b>File:</b>
+				RedBeanPHP/Cursor/PDOCursor.php<br>
+			<b>Located at</b> <a href="source-class-RedBeanPHP.Cursor.PDOCursor.html#7-62" title="Go to source code">Cursor/PDOCursor.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-RedBeanPHP.Cursor.PDOCursor.html#33-45" title="Go to source code">__construct</a>( <span>PDOStatement <var>$res</var></span>, <span>string <var>$fetchStyle</var></span> )</code>
+
+		<div class="description short">
+			<p>Constructor, creates a new instance of a PDO Database Cursor.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Constructor, creates a new instance of a PDO Database Cursor.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$res</var></dt>
+					<dd>the PDO statement</dd>
+					<dt><var>$fetchStyle</var></dt>
+					<dd>fetch style constant to use</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getNextItem" id="_getNextItem">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getNextItem">#</a>
+		<code><a href="source-class-RedBeanPHP.Cursor.PDOCursor.html#47-53" title="Go to source code">getNextItem</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						Cursor::getNextItem<br>
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-RedBeanPHP.Cursor.html#_getNextItem">RedBeanPHP\Cursor::getNextItem()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="close" id="_close">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_close">#</a>
+		<code><a href="source-class-RedBeanPHP.Cursor.PDOCursor.html#55-61" title="Go to source code">close</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+				<h4>See</h4>
+				<div class="list">
+						Cursor::close<br>
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-RedBeanPHP.Cursor.html#_close">RedBeanPHP\Cursor::close()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="res" id="$res">
+		<td class="attributes"><code>
+			protected  
+			PDOStatement
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-RedBeanPHP.Cursor.PDOCursor.html#23-26" title="Go to source code"><var>$res</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$res" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="fetchStyle" id="$fetchStyle">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-RedBeanPHP.Cursor.PDOCursor.html#28-31" title="Go to source code"><var>$fetchStyle</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$fetchStyle" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		RedBeanPHP 4.2 API documentation generated by <a href="http://apigen.org/">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+
+<!-- Mirrored from www.redbeanphp.com/api/class-RedBeanPHP.Cursor.PDOCursor.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Apr 2015 06:57:15 GMT -->
+</html>

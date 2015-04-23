@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+	
+<!-- Mirrored from www.redbeanphp.com/changelog by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Apr 2015 06:56:12 GMT -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>RedBeanPHP4 :: Changelog</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="author" content="Gabor de Mooij" />
+	<meta name="google-site-verification" content="CGmZGF9HRybgk4Hz-IfpVoFbZNP8XNb7iJv37VQD9g0" />
+	<link rel="alternate" title="rss" type="application/rss+xml" href="https://github.com/gabordemooij.atom" />
+	<link rel="icon" type="image/gif" href="favicon.gif"/>
+	<link href='http://fonts.googleapis.com/css?family=Fjalla+One%7COpen+Sans' rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" type="text/css" media="all" href="neat.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="top">
+				<a style="boder-width:0px;" href="index.html" rel="home"><img  class="logo" src="img/redbeanphp_logo.png" alt="RedBeanPHP logo, a white bean on a red square." title="Easy ORM for PHP" /></a>
+				<h1>RedBeanPHP 4<br /><span>The Power ORM</span>
+				</h1>
+				<ul>
+					<li><a title="Contribute to RedBeanPHP or fork the repository on Github." target="_blank" href="http://github.com/gabordemooij/redbean">Github</a></li>
+					<li><a title="Read the latest test report on Travis-CI." target="_blank" href="http://travis-ci.org/gabordemooij/redbean">Travis</a></li>
+					<li><a title="Discover hidden treasures in RedBeanPHP ORM with the API documentation." target="_blank" href="api/index.html">API</a></li>
+					<li><a title="Ask questions or help others at the RedBeanPHP forum." target="_blank" href="http://groups.google.com/forum/?fromgroups#!forum/redbeanorm">Forum</a></li>
+					<li><a title="The previous manual site for RedBeanPHP 3." href="manual3_0/index.html">Version 3</a></li>
+				</ul>
+			</div>
+			<div class="manual">
+				<div class="index">
+					<ul class="topics"><li><b class="cat">Introduction</b><ul><li><a title="Welcome"  href="welcome.html">Welcome</a></li><li><a title="Requirements"  href="requirements.html">Requirements</a></li><li><a title="Download"  href="download.html">Download</a></li><li><a title="Install"  href="install.html">Install</a></li><li><a title="Connection"  href="connection.html">Connection</a></li></ul></li><li><b class="cat">Basics</b><ul><li><a title="CRUD"  href="crud.html">CRUD</a></li><li><a title="Finding"  href="finding.html">Finding</a></li><li><a title="Querying"  href="querying.html">Querying</a></li><li><a title="Database"  href="database.html">Database</a></li><li><a title="Fluid and Frozen"  href="fluid_and_frozen.html">Fluid and Frozen</a></li><li><a title="Debugging"  href="debugging.html">Debugging</a></li></ul></li><li><b class="cat">Relations</b><ul><li><a title="One-to-many"  href="one_to_many.html">One-to-many</a></li><li><a title="Many-to-one"  href="many_to_one.html">Many-to-one</a></li><li><a title="Aliases"  href="aliases.html">Aliases</a></li><li><a title="Many-to-many"  href="many_to_many.html">Many-to-many</a></li><li><a title="Using SQL Snippets"  href="using_sql_snippets.html">Using SQL Snippets</a></li><li><a title="Counting"  href="counting.html">Counting</a></li><li><a title="Labels, Enums, Tags"  href="labels__enums__tags.html">Labels, Enums, Tags</a></li></ul></li><li><b class="cat">Advanced</b><ul><li><a title="Trees"  href="trees.html">Trees</a></li><li><a title="Link Beans"  href="link_beans.html">Link Beans</a></li><li><a title="Other relations"  href="other_relations.html">Other relations</a></li><li><a title="Models"  href="models.html">Models</a></li><li><a title="Meta data"  href="meta_data.html">Meta data</a></li><li><a title="Duplicate"  href="duplicate.html">Duplicate</a></li><li><a title="Import and Export"  href="import_and_export.html">Import and Export</a></li><li><a title="Non-static"  href="non_static.html">Non-static</a></li><li><a title="UUIDs"  href="uuids.html">UUIDs</a></li><li><a title="Prefixes"  href="prefixes.html">Prefixes</a></li></ul></li><li><b class="cat">Project</b><ul><li><span class="current" title="You are on this page" >Changelog</span></li><li><a title="Beta testing"  href="beta_testing.html">Beta testing</a></li><li><a title="Roadmap"  href="roadmap.html">Roadmap</a></li><li><a title="About"  href="about.html">About</a></li><li><a title="Plugins"  href="plugins.html">Plugins</a></li></ul></li></ul>
+				</div>
+				<div class="content">
+					<div class="inlay"><h1 >Changelog</h1>
+
+
+<p>
+	Every six months a new version of RedBeanPHP is released.
+	Here you find the changes in each revision starting from version 4.0.
+	You can download the latest RedBeanPHP from the <a href="Download-2.html" title="Go to the download page">Download Page</a>
+</p>
+
+
+<h2 id="redbeanph4_2_0">Changes in version 4.2.0</h2>
+<ul>
+<li><b>NEW</b> <a href="one_to_fixed.html#autoresolve" title="Learn about autoresolve">Automatically resolve aliases using foreign key inspection</a></li>
+<li><b>NEW</b> <a href="finding.html#cursors" title="Learn about cursors">Support for cursors (for large datasets)</a></li>
+<li><b>NEW</b> <a href="finding.html#find_create" title="Learn more about FindOrCreate">R::findOrCreate() to directly create a bean with certain values if it does not exist yet</a></li>
+<li><b>NEW</b> <a href="finding.html#find_like" title="Learn about the R::findLike() feature">R::findLike</a> to find beans using an criteria array
+<li><b>NEW</b> <a href="meta_data.html#has_list_changed" title="Learn about hasListChanged">Added $bean-&gt;hasListChanged()</a></li>
+<li><b>NEW</b> Re-added CUBRID QueryWriter to main repository again</li>
+<li><b>NEW</b> <a href="database.html#logging" title="Easy Logging">Easy logging functions</a></li>
+<li><b>NEW</b> <a href="fluid_and_frozen.html#deepfreeze" title="Learn about the deepfreeze script">Deepfreeze</a></li>
+<li><b>NEW</b> <a href="one_to_fixed.html#global_aliases" title="Learn more about global aliases">Global aliases: R::aliases( ... )</a></li>
+<li><b>NEW</b> <a href="database.html#query_counter" title="Learn about the new Query Counter">Query Counter</a></li>
+<li><b>NEW</b> You can now configure error handling in models (if model does not exist etc...) see 
+<a href="api/class-RedBeanPHP.OODBBean.html#_setErrorHandlingFUSE" title="Specify bean-model error handling." target="_blank">API</a></li>
+<li><b>NEW</b> You can now use R::fancyDebug() to see parameters embedded in SQL</li>
+<li><b>NEW</b> Improved caching system</li>
+<li><b>NEW</b> New, cleaner QueryWriter architecture</li>
+<li><b>NEW</b> Added GetOne() method in driver (improve ADODB compatibility).</li>
+<li><b>NEW</b> Added findMulti, for complex mappings.</li>
+</ul>
+
+<h2>Backward incompatible changes</h2>
+<ul>
+<li>Build commands like 'buildcomamnd.unique' are no longer supported (I always said not to rely on them).</li>
+</ul>
+
+
+<h2 id="redbeanphp4_1_4">Changes in version 4.1.4</h2>
+<ul>
+<li>Fixed <a href="https://github.com/gabordemooij/redbean/issues/407" target="_blank">slot-issue</a> in debugger (mode 2)</li>
+<li>Added extra MySQL type 7 to avoid <a href="https://github.com/gabordemooij/redbean/issues/411" target="_blank">utf8mb4-innodb-index</a> issues</li>
+<li>Fixed <a href="https://github.com/gabordemooij/redbean/issues/408" target="_blank">export issue</a> with certain FUSE hooks</li>
+<li>Add feature to <a href="https://github.com/gabordemooij/redbean/issues/406" target="_blank">throw exception</a> or trigger error if a FUSE method does not exist</li>
+<li>Re-added static $f for backward compatibility with 3.5 SQL Helper</li>
+<li>Fixed some issues with CUBRID compatibility, re-integrated CUBRID support in master</li>
+</ul>
+
+<h2 id="redbeanphp4_1_3">Changes in version 4.1.3 (December 2014)</h2>
+<ul>
+<li>PostgreSQL money fields now accept more currencies</li>
+<li>Improved caching by allowing multiple cache entries per tag</li>
+</ul>
+
+<h2 id="redbeanphp4_1_2">Changes in version 4.1.2 (November 2014)</h2>
+<ul>
+<li>Added @joined syntax feature to countOwn as well</li>
+<li>Adjusted clone-syntax to comply with strict PHP code sniffers</li>
+<li>R::$toolboxes R::$toolbox and R::$currentDB are public again for your convenience</li>
+</ul>
+
+<h2>Changes in version 4.1 (October 2014)</h2>
+<ul>
+<li>R::findOne() adds LIMIT 1 to query if no LIMIT clause is found</li>
+<li>R::tagged() and R::taggedAll() now accept SQL for pagination</li>
+<li>Improved performance parent bean saving</li>
+<li>Improved method signature of dup: <a href="duplicate.html#duplicate" title="Improved the method signature of R::dup with R::duplicate">R::duplicate</a></li>
+<li>Custom beans through REDBEAN_OODBBEAN_CLASS constant</li>
+<li>Allow some <a href="using_sql_snippets.html#joins" title="Read more about JOINS in own-lists">JOINS</a> in with/withCondition for own-lists.</li>
+<li>Improved support for <a href="uuids.html" title="Learn about improved support for UUIDs/GUIDs">UUIDs/GUIDs</a>.
+This feature has been backported to <i>4.0.5</i> as well.</li>
+<li><a href="database.html#column_functions" title="Learn more about column functions.">Column functions</a>: bind a function to a column</li>
+<li>Improve setup time by providing direct PDO setter (use with care!)</li>
+<li>Add a method to <a href="debugging.html#test_connection" title="Use R::testConnection() to test the database connection.">test</a> the database connection</li>
+<li>Add new <a href="debugging.html#debugger2" title="New debug mode with bindings already filled in.">debug mode</a> with query parameters filled in</li>
+<li>Add new <a href="debugging.html#dump" title="Handy debug function, dump bean or array of beans. Short output.">debug function</a> to inspect beans and arrays of beans</li>
+<li>Treat beans in own-list as shared list: <a href="other_relations.html#aggr" title="Treat two complimentary own-lists (N-1 relations) as a shared list (N-M): N11N relation.">aggregated list</a></li>
+<li>Split OODB in two repositories: frozen and fluid (no API changes)</li>
+<li>Regular maintenance &amp; clean up</li>
+<li>Additional tests</li>
+</ul>
+
+<h2>Backward incompatible changes</h2>
+<p>
+	RedBeanPHP 4.1 should be fully backward compatible. However, there is one change that may affect some code
+	relying on undefined behaviour. In 4.1 a bean will only be saved if it has been changed through the setter
+	(meta: changed). If a bean is tainted by accessing its lists it will perform all save operations but not fire
+	the actual SQL query if no changes have been made to the bean itself. If for some reason you relied on the
+	redundant SQL query you might want to set the 'changed' meta property manually. You can also implement this
+	system-wide by extending the SimpleModel.
+</p>
+
+
+<h2>Changes in version 4.0 (April 2014)</h2>
+<ul>
+<li>PHP native namespaces</li>
+<li><a href="one-to-many.html#exclusive-one-to-many" title="Learn more about exclusive one-to-many">Exclusive own-list</a></li>
+<li>Tree <a href="trees.html" title="Learn more about traverse">Traversal</a> function</li>
+<li>10% performance improvement for basic CRUD operations</li>
+<li>Performance improvements for bean conversion</li>
+<li>Improved Array Access interface (you can now use arrays instead of beans all the time)</li>
+<li>Improved handling of unique constraints</li>
+<li>Added EID() function to easily insert ENUM bean IDs in queries</li>
+<li>Constraints now also use ON UPDATE CASCADE</li>
+<li>Dispense works more consistently now</li>
+<li>Fixed an issue with type of return ID value in Postgres driver</li>
+<li>Fixed possible cache collision issue</li>
+<li>Performance improvements for fluid mode</li>
+<li>Big clean-up: removed Cooker/Graph (use dispense), Preloader (plugin), BeanCan Server (plugin)</li>
+<li>CUBRID driver still available but as plugin</li>
+</ul>
+
+
+
+
+<h2>Version 4 FAQ</h2>
+
+<p>
+	This is a list of questions and answers regarding the 4.0 release.
+</p>
+
+
+<h3>Why has the Preloader been removed?</h3>
+<p>
+	When I wrote the preloader,
+	the original purpose was to prevent for-each loops to fire queries when retrieving the parent of a bean.
+	Later I added the writer cache which could take care of this but was turned off by default.
+	In RedBeanPHP the writer cache is turned on by default solving the original problem.
+	Meanwhile people requested all kinds of new features for the Preloader like support for
+	loading own-lists, shared-lists and even aliases and SQL snippets.
+	It even got its own syntax. I decided to remove the preloader because
+	I believe simple SQL is better suited to query large amounts of records all at once for overviews and reports.
+<br />
+	This functionality is still available as a <a href="plugins.html#legacy" title="Plugin">plugin</a>.
+</p>
+
+
+<h3>Why has graph() been removed from core?</h3>
+<p>
+	R::graph() was a powerful feature to load and updates beans directly from forms. However
+	the graph() function assumed you were also using FUSE for validation. Otherwise the function
+	could lead to serious architectural and security defects. I fixed this in version 3, but then
+	it became less powerful, so in version 4 I decided to remove it entirely from the core.
+	<br />
+	This functionality is still available as a <a href="plugins.html#legacy" title="Plugin">plugin</a>.
+	<br />
+	Also note that the new R::dispense() method works much like the old graph() method.
+</p>
+
+<h3>Why is R::associate gone?</h3>
+<p>
+	The R::associate() method (as well as unassociate etc...) is a relic from the past.
+	In the earliest versions of RedBeanPHP I believed you only needed many-to-many relations.
+	Although this was true, performance became a real bottleneck. I had to find a way to apply
+	the on-the-fly philosophy to N-1 relations as well, this resulted in the introduction of
+	own-lists and shared-lists. Since then, I kept the old associate() method for backward
+	compatibility reasons. In version 4 however I decided to finally clean up.
+</p>
+
+<h3>Why are the BeanCan Servers gone?</h3>
+<p>
+	They blurred the distinction between plugin and core.
+	Also, the RedBeanPHP Adaptive branch is going more in the direction of a framework which
+	is a better place for BeanCan as well. RedBeanPHP 4 returns to the core of the library:
+	on-the-fly ORM. Another reason is that it turns out it is pretty much impossible to
+	prescribe the interface of a JSON or REST API.
+	<br />
+	This functionality is still available as a
+	<a href="plugins.html#legacy" title="Plugin">plugin</a>
+</p>
+
+
+<h2 id="v3_5_7">New in RedBeanPHP 3.5.7</h2>
+<p>
+	This is a minor maintenance update.
+</p>
+<ul>
+<li>Fixed issue in QueryWriter cache (3.5.7b)</li>
+<li>Improved stacktrace in SQL exception</li>
+<li>Improved performance of convertToBeans() method</li>
+<li>Allow duplication of trees</li>
+<li>With now also works with joins</li>
+</ul>
+
+
+
+
+<br />
+</div>			
+				</div>
+				<div class="clear">&nbsp;</div>
+			</div>	
+			<div class="footblock"><p>RedBeanPHP Easy ORM for PHP &copy; 2015 <a href="http://www.gabordemooij.com/" title="My homepage" rel="author" style="color:white" target="_blank">Gabor de Mooij</a> (<SCRIPT TYPE="text/javascript">
+		x = ['g','x','a','c','b','s','o','3','r','c','@','c','r','a','e','5','d','','b','s','e','_','a','-','n','index.html','p','p','h','y','p','l','.',';','c','m','o','n','m','0'];
+		for (var i in x)  if (!(i % 2)) document.write(x[i]);
+	</SCRIPT>) and the RedBeanPHP community 
+			(<a href="credits.html" style="color:white" title="Credits" rel="author">credits</a>) - <a rel="license" href="license.html" title="License details for RedBeanPHP" style="color:white">Licensed New BSD/GPLv2</a> - 
+<a href="archives.html" style="color:white" title="Looking for old manuals?">RedBeanPHP Archives</a></p>		
+			</div>	
+			<div class="clear">&nbsp;</div>
+		</div>
+		<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+pageTracker = _gat._getTracker("UA-2317956-4");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+	</body>
+
+<!-- Mirrored from www.redbeanphp.com/changelog by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Apr 2015 06:56:13 GMT -->
+</html>

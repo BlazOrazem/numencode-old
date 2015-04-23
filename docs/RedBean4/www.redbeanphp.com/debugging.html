@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+	
+<!-- Mirrored from www.redbeanphp.com/debugging by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Apr 2015 06:56:10 GMT -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>RedBeanPHP4 :: Debugging</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="author" content="Gabor de Mooij" />
+	<meta name="google-site-verification" content="CGmZGF9HRybgk4Hz-IfpVoFbZNP8XNb7iJv37VQD9g0" />
+	<link rel="alternate" title="rss" type="application/rss+xml" href="https://github.com/gabordemooij.atom" />
+	<link rel="icon" type="image/gif" href="favicon.gif"/>
+	<link href='http://fonts.googleapis.com/css?family=Fjalla+One%7COpen+Sans' rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" type="text/css" media="all" href="neat.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="top">
+				<a style="boder-width:0px;" href="index.html" rel="home"><img  class="logo" src="img/redbeanphp_logo.png" alt="RedBeanPHP logo, a white bean on a red square." title="Easy ORM for PHP" /></a>
+				<h1>RedBeanPHP 4<br /><span>The Power ORM</span>
+				</h1>
+				<ul>
+					<li><a title="Contribute to RedBeanPHP or fork the repository on Github." target="_blank" href="http://github.com/gabordemooij/redbean">Github</a></li>
+					<li><a title="Read the latest test report on Travis-CI." target="_blank" href="http://travis-ci.org/gabordemooij/redbean">Travis</a></li>
+					<li><a title="Discover hidden treasures in RedBeanPHP ORM with the API documentation." target="_blank" href="api/index.html">API</a></li>
+					<li><a title="Ask questions or help others at the RedBeanPHP forum." target="_blank" href="http://groups.google.com/forum/?fromgroups#!forum/redbeanorm">Forum</a></li>
+					<li><a title="The previous manual site for RedBeanPHP 3." href="manual3_0/index.html">Version 3</a></li>
+				</ul>
+			</div>
+			<div class="manual">
+				<div class="index">
+					<ul class="topics"><li><b class="cat">Introduction</b><ul><li><a title="Welcome"  href="welcome.html">Welcome</a></li><li><a title="Requirements"  href="requirements.html">Requirements</a></li><li><a title="Download"  href="download.html">Download</a></li><li><a title="Install"  href="install.html">Install</a></li><li><a title="Connection"  href="connection.html">Connection</a></li></ul></li><li><b class="cat">Basics</b><ul><li><a title="CRUD"  href="crud.html">CRUD</a></li><li><a title="Finding"  href="finding.html">Finding</a></li><li><a title="Querying"  href="querying.html">Querying</a></li><li><a title="Database"  href="database.html">Database</a></li><li><a title="Fluid and Frozen"  href="fluid_and_frozen.html">Fluid and Frozen</a></li><li><span class="current" title="You are on this page" >Debugging</span></li></ul></li><li><b class="cat">Relations</b><ul><li><a title="One-to-many"  href="one_to_many.html">One-to-many</a></li><li><a title="Many-to-one"  href="many_to_one.html">Many-to-one</a></li><li><a title="Aliases"  href="aliases.html">Aliases</a></li><li><a title="Many-to-many"  href="many_to_many.html">Many-to-many</a></li><li><a title="Using SQL Snippets"  href="using_sql_snippets.html">Using SQL Snippets</a></li><li><a title="Counting"  href="counting.html">Counting</a></li><li><a title="Labels, Enums, Tags"  href="labels__enums__tags.html">Labels, Enums, Tags</a></li></ul></li><li><b class="cat">Advanced</b><ul><li><a title="Trees"  href="trees.html">Trees</a></li><li><a title="Link Beans"  href="link_beans.html">Link Beans</a></li><li><a title="Other relations"  href="other_relations.html">Other relations</a></li><li><a title="Models"  href="models.html">Models</a></li><li><a title="Meta data"  href="meta_data.html">Meta data</a></li><li><a title="Duplicate"  href="duplicate.html">Duplicate</a></li><li><a title="Import and Export"  href="import_and_export.html">Import and Export</a></li><li><a title="Non-static"  href="non_static.html">Non-static</a></li><li><a title="UUIDs"  href="uuids.html">UUIDs</a></li><li><a title="Prefixes"  href="prefixes.html">Prefixes</a></li></ul></li><li><b class="cat">Project</b><ul><li><a title="Changelog"  href="changelog.html">Changelog</a></li><li><a title="Beta testing"  href="beta_testing.html">Beta testing</a></li><li><a title="Roadmap"  href="roadmap.html">Roadmap</a></li><li><a title="About"  href="about.html">About</a></li><li><a title="Plugins"  href="plugins.html">Plugins</a></li></ul></li></ul>
+				</div>
+				<div class="content">
+					<div class="inlay"><h1 >Debugging</h1>
+
+<p>
+	The debug() method will reveal all queries being executed by RedBeanPHP:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//turns&nbsp;debugging&nbsp;ON<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">R</span><span style="color: #007700">::</span><span style="color: #0000BB">debug</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">TRUE&nbsp;</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//turns&nbsp;debugging&nbsp;OFF<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">R</span><span style="color: #007700">::</span><span style="color: #0000BB">debug</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">FALSE&nbsp;</span><span style="color: #007700">);<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	The queries will be printed on the screen.
+	The output of the debugging function looks like this:
+</p>
+<kbd>
+
+INSERT INTO &quot;event&quot; ( id, &quot;name&quot; ) VALUES<br />
+			( NULL,  ?  )<br />
+Array<br /><br />
+(<br />
+    [0] =&gt; party<br />
+)<br />
+<br/>
+</kbd>
+
+
+<p>
+	You can also log the queries:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;R</span><span style="color: #007700">::</span><span style="color: #0000BB">debug</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">TRUE</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1&nbsp;</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//select&nbsp;mode&nbsp;1&nbsp;to&nbsp;suppress&nbsp;screen&nbsp;output<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	To access the logs:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;$logs&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">R</span><span style="color: #007700">::</span><span style="color: #0000BB">getDatabaseAdapter</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">getDatabase</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">getLogger</span><span style="color: #007700">();<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">print_r</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$logs</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">grep</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'SELECT'&nbsp;</span><span style="color: #007700">)&nbsp;);<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	Use the grep() method to search the logs.
+</p>
+
+<h2 id="debugger2">Query parameters</h2>
+<p>
+	By default, the debugger prints the queries
+	and parameters in separate sections. Sometimes you might
+	prefer to see what the actual query would look like if the
+	parameters had been filled in.
+	RedBeanPHP 4.1+ offers two new debugger modes to facilitate
+	this:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;R</span><span style="color: #007700">::</span><span style="color: #0000BB">debug</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">TRUE</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2&nbsp;</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//select&nbsp;MODE&nbsp;2&nbsp;to&nbsp;see&nbsp;parameters&nbsp;filled&nbsp;in<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">R</span><span style="color: #007700">::</span><span style="color: #0000BB">fancyDebug</span><span style="color: #007700">();&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//since&nbsp;4.2<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>Outputs the query above like this:</p>
+<kbd>
+
+INSERT INTO &quot;event&quot; ( id, &quot;name&quot; ) VALUES<br />
+			( NULL,  &quot;party&quot;  )<br />
+</kbd>
+<p>
+	Mode 2 also writes to the logs, if you want to suppress
+	screen output, select mode 3.
+</p>
+
+<h2>Under the hood</h2>
+<p>
+	Under the hood, all debugging functionality makes use of the logger
+	classes. There are two logger classes available in RedBeanPHP:
+	the Default Logger and the Debugger Logger (4.1+). Besides using the
+	convenience methods listed here you can create your own logger
+	instance and attach it to some object:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;$myLogger&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;\</span><span style="color: #0000BB">RedBeanPHP</span><span style="color: #007700">\</span><span style="color: #0000BB">Logger</span><span style="color: #007700">\</span><span style="color: #0000BB">RDefault</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$database</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setLogger</span><span style="color: #007700">(</span><span style="color: #0000BB">$myLogger</span><span style="color: #007700">);<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div>
+<h2 id="dump">Inspecting Beans</h2>
+<p>
+	The easiest way to inspect a bean is to just echo it.
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$bean</span><span style="color: #007700">;<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	If you have a list of beans, an array, you can use good old
+	print_r of course, but print_r will also print useless details.
+	To get a shorter and more descriptive summary of a bean or an
+	array of beans you can use the dump() function:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;print_r</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">R</span><span style="color: #007700">::</span><span style="color: #0000BB">dump</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$myBeans&nbsp;</span><span style="color: #007700">)&nbsp;);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">print_r</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">R</span><span style="color: #007700">::</span><span style="color: #0000BB">dump</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$singleBean&nbsp;</span><span style="color: #007700">)&nbsp;);<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	The output looks like this:
+</p>
+<kbd>
+[1] =&gt; {&quot;id&quot;:&quot;1&quot;,&quot;name&quot;:&quot;party&quot;}
+</kbd>
+<p>
+	An even shorter syntax:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;dmp</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$myBean&nbsp;</span><span style="color: #007700">);<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	The dmp() function is a global function for your convenience.
+</p>
+
+
+<h2 id="error_handling">Error handling</h2>
+<p>
+	Error handling is different in fluid and frozen mode. In fluid mode
+	SQL errors caused by missing columns or tables will be suppressed but
+	other errors (syntax) will throw <b>RedException\SQL</b> exceptions.
+</p>
+<p class="note">
+	SQLite and some plugin drivers do not provide meaningful <b>SQLSTATE</b> codes, therefore
+	under these drivers fluid mode will suppress all errors.
+</p>
+
+<h2 id="test_connection">Testing the connection</h2>
+<p>
+	In RedBeanPHP 4.1+ you can test the connection using a special test
+	function. This function will refrain from throwing exceptions and
+	simply return TRUE if the connection has been established and
+	FALSE otherwise:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;$isConnected&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">R</span><span style="color: #007700">::</span><span style="color: #0000BB">testConnection</span><span style="color: #007700">();<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	Besides debugging, this function is handy for installers and setup scripts
+	of web applications to determine whether database credentials have been
+	entered correctly.
+</p>
+
+<p class="note">
+	Learn about
+	<a href="one-to-many.html" title="Learn about relations in RedBeanPHP.">relations</a> in RedBeanPHP.
+</p>
+
+
+
+
+<br />
+</div>			
+				</div>
+				<div class="clear">&nbsp;</div>
+			</div>	
+			<div class="footblock"><p>RedBeanPHP Easy ORM for PHP &copy; 2015 <a href="http://www.gabordemooij.com/" title="My homepage" rel="author" style="color:white" target="_blank">Gabor de Mooij</a> (<SCRIPT TYPE="text/javascript">
+		x = ['g','x','a','c','b','s','o','3','r','c','@','c','r','a','e','5','d','','b','s','e','_','a','-','n','index.html','p','p','h','y','p','l','.',';','c','m','o','n','m','0'];
+		for (var i in x)  if (!(i % 2)) document.write(x[i]);
+	</SCRIPT>) and the RedBeanPHP community 
+			(<a href="credits.html" style="color:white" title="Credits" rel="author">credits</a>) - <a rel="license" href="license.html" title="License details for RedBeanPHP" style="color:white">Licensed New BSD/GPLv2</a> - 
+<a href="archives.html" style="color:white" title="Looking for old manuals?">RedBeanPHP Archives</a></p>		
+			</div>	
+			<div class="clear">&nbsp;</div>
+		</div>
+		<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+pageTracker = _gat._getTracker("UA-2317956-4");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+	</body>
+
+<!-- Mirrored from www.redbeanphp.com/debugging by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Apr 2015 06:56:10 GMT -->
+</html>

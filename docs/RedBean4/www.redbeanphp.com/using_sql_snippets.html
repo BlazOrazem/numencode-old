@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	
+<!-- Mirrored from www.redbeanphp.com/using_sql_snippets by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Apr 2015 06:56:10 GMT -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>RedBeanPHP4 :: Using SQL Snippets</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="author" content="Gabor de Mooij" />
+	<meta name="google-site-verification" content="CGmZGF9HRybgk4Hz-IfpVoFbZNP8XNb7iJv37VQD9g0" />
+	<link rel="alternate" title="rss" type="application/rss+xml" href="https://github.com/gabordemooij.atom" />
+	<link rel="icon" type="image/gif" href="favicon.gif"/>
+	<link href='http://fonts.googleapis.com/css?family=Fjalla+One%7COpen+Sans' rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" type="text/css" media="all" href="neat.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="top">
+				<a style="boder-width:0px;" href="index.html" rel="home"><img  class="logo" src="img/redbeanphp_logo.png" alt="RedBeanPHP logo, a white bean on a red square." title="Easy ORM for PHP" /></a>
+				<h1>RedBeanPHP 4<br /><span>The Power ORM</span>
+				</h1>
+				<ul>
+					<li><a title="Contribute to RedBeanPHP or fork the repository on Github." target="_blank" href="http://github.com/gabordemooij/redbean">Github</a></li>
+					<li><a title="Read the latest test report on Travis-CI." target="_blank" href="http://travis-ci.org/gabordemooij/redbean">Travis</a></li>
+					<li><a title="Discover hidden treasures in RedBeanPHP ORM with the API documentation." target="_blank" href="api/index.html">API</a></li>
+					<li><a title="Ask questions or help others at the RedBeanPHP forum." target="_blank" href="http://groups.google.com/forum/?fromgroups#!forum/redbeanorm">Forum</a></li>
+					<li><a title="The previous manual site for RedBeanPHP 3." href="manual3_0/index.html">Version 3</a></li>
+				</ul>
+			</div>
+			<div class="manual">
+				<div class="index">
+					<ul class="topics"><li><b class="cat">Introduction</b><ul><li><a title="Welcome"  href="welcome.html">Welcome</a></li><li><a title="Requirements"  href="requirements.html">Requirements</a></li><li><a title="Download"  href="download.html">Download</a></li><li><a title="Install"  href="install.html">Install</a></li><li><a title="Connection"  href="connection.html">Connection</a></li></ul></li><li><b class="cat">Basics</b><ul><li><a title="CRUD"  href="crud.html">CRUD</a></li><li><a title="Finding"  href="finding.html">Finding</a></li><li><a title="Querying"  href="querying.html">Querying</a></li><li><a title="Database"  href="database.html">Database</a></li><li><a title="Fluid and Frozen"  href="fluid_and_frozen.html">Fluid and Frozen</a></li><li><a title="Debugging"  href="debugging.html">Debugging</a></li></ul></li><li><b class="cat">Relations</b><ul><li><a title="One-to-many"  href="one_to_many.html">One-to-many</a></li><li><a title="Many-to-one"  href="many_to_one.html">Many-to-one</a></li><li><a title="Aliases"  href="aliases.html">Aliases</a></li><li><a title="Many-to-many"  href="many_to_many.html">Many-to-many</a></li><li><span class="current" title="You are on this page" >Using SQL Snippets</span></li><li><a title="Counting"  href="counting.html">Counting</a></li><li><a title="Labels, Enums, Tags"  href="labels__enums__tags.html">Labels, Enums, Tags</a></li></ul></li><li><b class="cat">Advanced</b><ul><li><a title="Trees"  href="trees.html">Trees</a></li><li><a title="Link Beans"  href="link_beans.html">Link Beans</a></li><li><a title="Other relations"  href="other_relations.html">Other relations</a></li><li><a title="Models"  href="models.html">Models</a></li><li><a title="Meta data"  href="meta_data.html">Meta data</a></li><li><a title="Duplicate"  href="duplicate.html">Duplicate</a></li><li><a title="Import and Export"  href="import_and_export.html">Import and Export</a></li><li><a title="Non-static"  href="non_static.html">Non-static</a></li><li><a title="UUIDs"  href="uuids.html">UUIDs</a></li><li><a title="Prefixes"  href="prefixes.html">Prefixes</a></li></ul></li><li><b class="cat">Project</b><ul><li><a title="Changelog"  href="changelog.html">Changelog</a></li><li><a title="Beta testing"  href="beta_testing.html">Beta testing</a></li><li><a title="Roadmap"  href="roadmap.html">Roadmap</a></li><li><a title="About"  href="about.html">About</a></li><li><a title="Plugins"  href="plugins.html">Plugins</a></li></ul></li></ul>
+				</div>
+				<div class="content">
+					<div class="inlay"><h1 >Using SQL Snippets</h1>
+
+<p>
+	You can modify the contents of an own-list and a shared-list using additional
+	<b>SQL snippets</b>. Use <b>with()</b> to order or limit the list and
+	<b>withCondition</b> to add additional filtering.
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;$pages&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$book<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">with</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'&nbsp;ORDER&nbsp;BY&nbsp;pagenum&nbsp;ASC&nbsp;'&nbsp;</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">ownPageList</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$vases&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$shop<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">withCondition</span><span style="color: #007700">(</span><span style="color: #DD0000">'&nbsp;category&nbsp;=&nbsp;?&nbsp;'</span><span style="color: #007700">,&nbsp;[</span><span style="color: #DD0000">'vase'</span><span style="color: #007700">]&nbsp;)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">ownProductList</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//combine&nbsp;condition&nbsp;and&nbsp;order<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$vases&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$shop<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">withCondition</span><span style="color: #007700">(</span><span style="color: #DD0000">'&nbsp;category&nbsp;=&nbsp;?&nbsp;ORDER&nbsp;BY&nbsp;price&nbsp;ASC&nbsp;'</span><span style="color: #007700">,&nbsp;[</span><span style="color: #DD0000">'vase'</span><span style="color: #007700">]&nbsp;)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">ownProductList</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$employees&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$project<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">withCondition</span><span style="color: #007700">(</span><span style="color: #DD0000">'&nbsp;priority&nbsp;&gt;&nbsp;40&nbsp;'</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">sharedEmployeeList</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//Special&nbsp;case,&nbsp;filter&nbsp;on&nbsp;linking&nbsp;records...<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$employees&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$project<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">withCondition</span><span style="color: #007700">(</span><span style="color: #DD0000">'&nbsp;employee_project.assigned&nbsp;&lt;&nbsp;?&nbsp;'</span><span style="color: #007700">,&nbsp;[&nbsp;</span><span style="color: #0000BB">$date&nbsp;</span><span style="color: #007700">])<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">sharedEmployeeList</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	Note the last case in this example. Here we use a column from the link table
+	to filter the rows. This technique allows you to filter on relational qualifications like
+	the duration of the assignment to the project.
+</p>
+<p class="note">
+	You cannot combine <b>with()</b> and <b>withCondition()</b>. Instead, you
+	can append additional clauses like in the third example.
+</p>
+
+<p class="note">
+	<b>Important note about AND/OR statements in snippets</b>. If you plan to use AND/OR
+	statements in your conditions, please remember your snippet is <i>integrated</i>
+	into a larger query. For the best results, it is recommended that you put your
+	AND/OR snippets between parenthesis like this:
+	<br />
+	<br />
+	...-&gt;withCondition(' <b>(</b> deleted IS NULL OR deleted = 0 <b>)</b> ')...
+</p>
+
+
+<h2 id="via-and-sql">Via and SQL</h2>
+<p>
+	Via can be used with SQL snippets as well:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;$designers&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$project<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">withCondition</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'&nbsp;participant.role&nbsp;=&nbsp;?&nbsp;'</span><span style="color: #007700">,&nbsp;[</span><span style="color: #DD0000">'designer'</span><span style="color: #007700">]&nbsp;)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">via</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'participant'&nbsp;</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">sharedEmployeeList</span><span style="color: #007700">;<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div>
+
+
+
+<p class="note">
+	Both with() and
+	withCondition() cause the list to reload, however if the SQL snippet hasn't changed
+	and the writer cache is active (default) then no query will be send
+	to the database.
+</p>
+
+<h2>Reloading a list</h2>
+<p>
+	To reload a list without an SQL snippet use the <b>all()</b> method or unset it:
+</p>
+
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;$shop</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">all</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">xownProductList</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;unset(&nbsp;</span><span style="color: #0000BB">$shop</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">xownProductList&nbsp;</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//will&nbsp;be&nbsp;reloaded&nbsp;next&nbsp;time.<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div>
+<h2 id="joins">Joins (version 4.1+)</h2>
+<p>
+	Sometimes you want to sort or filter an own-list based on some
+	other property in <b>another bean</b>. You can use the <b>@joined</b>
+	keyword to select such a property and RedBeanPHP will automatically
+	join-in this field:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;$books&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$author<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">withCondition</span><span style="color: #007700">(</span><span style="color: #DD0000">'&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@joined.info.title&nbsp;LIKE&nbsp;?&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AND&nbsp;@joined.category.title&nbsp;=&nbsp;?&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ORDER&nbsp;BY&nbsp;@joined.info.title&nbsp;ASC&nbsp;'</span><span style="color: #007700">,&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&nbsp;</span><span style="color: #DD0000">'%ing%'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'computers'&nbsp;</span><span style="color: #007700">]&nbsp;)-&gt;</span><span style="color: #0000BB">xownBookList</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	In the example above, each book has an information bean
+	called 'info' that contains the title of the book
+	and a category bean called 'category'.
+	We like to filter on category and book title - so we use the 
+	<b>@joined.info.title</b> and <b>@joined.category.title</b> for the filtering.
+	We also like to order the resulting records, so we add an <b>ORDER BY</b>
+	clause with <b>@joined.info.title</b> (orders on the book title).
+</p>
+
+
+<h2>The noLoad modifier</h2>
+<p>
+	Sometimes, when you only want to add something to a list, there is no need to
+	load the entire list. To keep RedBeanPHP from loading a list use the noLoad
+	modifier as depicted in the following example:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;$book</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">noLoad</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">xownPageList</span><span style="color: #007700">[]&nbsp;=&nbsp;</span><span style="color: #0000BB">$newPage</span><span style="color: #007700">;<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	This will add a new page to the list, but the initial loading
+	of the list will not take place.
+</p>
+
+<br />
+</div>			
+				</div>
+				<div class="clear">&nbsp;</div>
+			</div>	
+			<div class="footblock"><p>RedBeanPHP Easy ORM for PHP &copy; 2015 <a href="http://www.gabordemooij.com/" title="My homepage" rel="author" style="color:white" target="_blank">Gabor de Mooij</a> (<SCRIPT TYPE="text/javascript">
+		x = ['g','x','a','c','b','s','o','3','r','c','@','c','r','a','e','5','d','','b','s','e','_','a','-','n','index.html','p','p','h','y','p','l','.',';','c','m','o','n','m','0'];
+		for (var i in x)  if (!(i % 2)) document.write(x[i]);
+	</SCRIPT>) and the RedBeanPHP community 
+			(<a href="credits.html" style="color:white" title="Credits" rel="author">credits</a>) - <a rel="license" href="license.html" title="License details for RedBeanPHP" style="color:white">Licensed New BSD/GPLv2</a> - 
+<a href="archives.html" style="color:white" title="Looking for old manuals?">RedBeanPHP Archives</a></p>		
+			</div>	
+			<div class="clear">&nbsp;</div>
+		</div>
+		<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+pageTracker = _gat._getTracker("UA-2317956-4");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+	</body>
+
+<!-- Mirrored from www.redbeanphp.com/using_sql_snippets by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Apr 2015 06:56:10 GMT -->
+</html>

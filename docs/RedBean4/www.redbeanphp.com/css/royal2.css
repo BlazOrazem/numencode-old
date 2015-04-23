@@ -1,0 +1,57 @@
+
+@media screen and (max-width: 400px) {
+	.manual { background-image:none;background-color:#fff; }
+}
+
+ 
+body{font-family:"FreeSans", "Helvetica","Jamrul", "Arial";font-size:16px;background-color:#F5E5C5;background-image:url(../img/grad.png);background-repeat:repeat-x;}
+a{text-decoration:none;color:#111;}
+*{margin:0;padding:0;}
+ul{list-style:none;}
+abbr{color:#311;cursor:help;border-width:0;}
+.clear{clear:both;}
+.center{margin-left:auto;margin-right:auto;}
+.red{color:#B00;}
+#container{width:100%;overflow:hidden;background-image:url(../img/pt.png);box-shadow:0 -1px 4px #211 inset;text-align:center;padding-top:20px;}
+#subt{font-family:"FreeSans", "Helvetica", "Jamrul", "Arial";color:#ffe;font-size:25px;letter-spacing:-1px;}
+.nav{position:relative;left:3px;top:-60px;width:215px;float:left;color:#ffe;background-color:#1c1c1c;font-size:14px;padding:20px 10px 20px 30px;}
+.nav ul li{margin-bottom:20px;}
+.nav ul li b{border-bottom:4px #ffe double;line-height:60px;font-size:16px;}
+.nav ul li ul li{margin-bottom:3px;} .nav a{color:#999;}
+.paper{float:right;width:600px;min-height:300px;padding-top:60px;position:relative;top:-20px;overflow:hidden;}
+.paper h1,.paper h2,.paper h3{font-family:Helvetica;font-size:30px;color:#635D50;margin-bottom:.5em;letter-spacing:-1px;}
+.paper h2,.paper h3{margin-top:40px;}
+.paper p{line-height:22px;padding-top:10px;padding-bottom:10px;color:#35322B;}
+.codeblock{font-size:14px;line-height:24px;font-weight:400;border:1px solid rgba(0,0,0,.2);background:rgba(255,255,255,.4);padding-bottom:20px;margin:1em 0;}
+kbd{background-color:#000;color:#090;font-family:'courier new';display:block;margin-bottom:20px;padding:20px;}
+.note,.alsosee,.warning,.version{background-color:#875;margin-bottom:20px;background:#DCCDB0;padding:20px;}
+.paper a,.note a,.alsosee a,.warning a{text-decoration:underline;}
+.active{color:#ffe;font-weight:700;}
+.footblock{text-align:center;color:#875;border-top:1px #875 solid;margin-bottom:40px;font-size:12px;padding:1em 0;}
+.quick{float:right;position:relative;top:0;padding:20px 0;}
+.quick a{color:#ffe;font-weight:700;text-shadow:0 1px rgba(0,0,0,.4);}
+.quick li{display:inline;margin-left:10px;margin-right:0;}
+time{font-weight:700;}
+table.matrix{border-spacing:0;border-collapse:collapse;margin-bottom:40px;}
+table.matrix td{font-size:11px;padding:2px;}
+table.matrix thead th{border-bottom:1px #000 solid;}
+table.matrix tbody tr:nth-child(odd){background-color:#DCCDB0;}
+table.matrix tbody tr:last-child td{padding-bottom:20px;}
+.nav h2{font-size:24px; margin-bottom: 5px;}
+.nav a:hover{color:#ddd;}
+.paper h1{font-size:40px;margin-bottom:1em;}
+code{font-family:'Ubuntu Mono', Consolas, monospace;}
+.wrap,.menucontainer{width:900px;}
+
+
+.paper h1, .paper h2, .paper h3, kbd { margin-top:0; margin-bottom:0; }
+.paper p+h2, .paper p+h3, .codeblock+h2, .codeblock+h3, .paper table+h2, .paper table+h3, .paper kbd+h2, .paper kbd+h3 { margin-top:2em;}
+.paper .note,.paper .alsosee,.paper .warning,.paper .version{margin-top:20px;padding:20px;}
+.paper .codeblock+.version,.paper .codeblock+.alsosee,.paper .codeblock+.warning,.paper .codeblock+.note { margin-top:30px;}
+.paper h2+.version, .paper h2+.note, .paper h2+.warning, .paper h2+.alsosee { margin-top:0px;}
+.paper h3+.version, .paper h3+.note, .paper h3+.warning, .paper h3+.alsosee { margin-top:0px;}
+.paper h1 {font-size: 34px;}
+.paper h2 {font-size: 26px;}
+.paper h3 {font-size: 22px;}
+.paper h1+h2 {margin-top:40px;}
+.paper ol, .paper ul{margin-bottom:20px;}

@@ -1,0 +1,1849 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from www.redbeanphp.com/api/class-RedBeanPHP.Driver.RPDO.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Apr 2015 06:57:15 GMT -->
+<head>
+	<meta charset="utf-8">
+
+	<title>Class RedBeanPHP\Driver\RPDO | RedBeanPHP 4.2</title>
+
+	<link rel="stylesheet" href="resources/style76b1.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+	<script>
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', "UA-2317956-4"]);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index-2.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li>
+					<a href="namespace-None.html">
+						None					</a>
+
+						</li>
+				<li class="active">
+					<a href="namespace-RedBeanPHP.html">
+						RedBeanPHP<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-RedBeanPHP.Adapter.html">
+						Adapter					</a>
+
+						</li>
+				<li>
+					<a href="namespace-RedBeanPHP.BeanHelper.html">
+						BeanHelper					</a>
+
+						</li>
+				<li>
+					<a href="namespace-RedBeanPHP.Cursor.html">
+						Cursor					</a>
+
+						</li>
+				<li class="active">
+					<a href="namespace-RedBeanPHP.Driver.html">
+						Driver					</a>
+
+						</li>
+				<li>
+					<a href="namespace-RedBeanPHP.Logger.html">
+						Logger<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-RedBeanPHP.Logger.RDefault.html">
+						RDefault					</a>
+
+						</li>
+							</ul></li>
+				<li>
+					<a href="namespace-RedBeanPHP.QueryWriter.html">
+						QueryWriter					</a>
+
+						</li>
+				<li>
+					<a href="namespace-RedBeanPHP.RedException.html">
+						RedException					</a>
+
+						</li>
+				<li>
+					<a href="namespace-RedBeanPHP.Repository.html">
+						Repository					</a>
+
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-RedBeanPHP.Driver.RPDO.html">RPDO</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index-2.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-RedBeanPHP.Driver.html" title="Summary of RedBeanPHP\Driver"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class RPDO</h1>
+
+
+	<div class="description">
+	<p>PDO Driver
+This Driver implements the RedBean Driver API.
+for RedBeanPHP. This is the standard / default database driver
+for RedBeanPHP.</p>
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>RedBeanPHP\Driver\RPDO</span></b>			
+			 implements 
+				<a href="class-RedBeanPHP.Driver.html"><span>RedBeanPHP\Driver</span></a>
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-RedBeanPHP.html">RedBeanPHP</a>\<a href="namespace-RedBeanPHP.Driver.html">Driver</a><br>
+		
+
+				<b>Copyright:</b>
+				<p>copyright (c) Desfrenes &amp; Gabor de Mooij and the RedBeanPHP community
+This source file is subject to the BSD/GPLv2 License that is bundled
+with this source code in the file license.txt.</p><br>
+				<b>License:</b>
+				<a href="BSD/GPLv2.html">BSD/GPLv2</a><br>
+				<b>Author:</b>
+				Gabor de Mooij and the RedBeanPHP Community, Desfrenes<br>
+				<b>File:</b>
+				RedBeanPHP/PDO.php<br>
+			<b>Located at</b> <a href="source-class-RedBeanPHP.Driver.RPDO.html#13-630" title="Go to source code">Driver/RPDO.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="bindParams" id="_bindParams">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_bindParams">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#90-121" title="Go to source code">bindParams</a>( <span>PDOStatement <var>$statement</var></span>, <span>array <var>$bindings</var></span> )</code>
+
+		<div class="description short">
+			<p>Binds parameters. This method binds parameters to a PDOStatement for
+Query Execution. This method binds parameters as NULL, INTEGER or STRING
+and supports both named keys and question mark keys.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Binds parameters. This method binds parameters to a PDOStatement for
+Query Execution. This method binds parameters as NULL, INTEGER or STRING
+and supports both named keys and question mark keys.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$statement</var></dt>
+					<dd>PDO Statement instance</dd>
+					<dt><var>$bindings</var></dt>
+					<dd>values that need to get bound to the statement</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="runQuery" id="_runQuery">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_runQuery">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#123-188" title="Go to source code">runQuery</a>( <span>string <var>$sql</var></span>, <span>array <var>$bindings</var></span>, <span> <var>$options</var> = <span class="php-keyword1">array</span>() </span> )</code>
+
+		<div class="description short">
+			<p>This method runs the actual SQL query and binds a list of parameters to the query.
+slots. The result of the query will be stored in the protected property
+$rs (always array). The number of rows affected (result of rowcount, if supported by database)
+is stored in protected property $affectedRows. If the debug flag is set
+this function will send debugging output to screen buffer.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>This method runs the actual SQL query and binds a list of parameters to the query.
+slots. The result of the query will be stored in the protected property
+$rs (always array). The number of rows affected (result of rowcount, if supported by database)
+is stored in protected property $affectedRows. If the debug flag is set
+this function will send debugging output to screen buffer.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sql</var></dt>
+					<dd>the SQL string to be send to database server</dd>
+					<dt><var>$bindings</var></dt>
+					<dd>the values that need to get bound to the query slots</dd>
+					<dt><var>$options</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><a href="class-RedBeanPHP.RedException.SQL.html">RedBeanPHP\RedException\SQL</a></code>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setEncoding" id="_setEncoding">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setEncoding">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#190-207" title="Go to source code">setEncoding</a>( )</code>
+
+		<div class="description short">
+			<p>Try to fix MySQL character encoding problems.
+MySQL &lt; 5.5 does not support proper 4 byte unicode but they
+seem to have added it with version 5.5 under a different label: utf8mb4.
+We try to select the best possible charset based on your version data.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Try to fix MySQL character encoding problems.
+MySQL &lt; 5.5 does not support proper 4 byte unicode but they
+seem to have added it with version 5.5 under a different label: utf8mb4.
+We try to select the best possible charset based on your version data.</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#209-249" title="Go to source code">__construct</a>( <span>string|object <var>$dsn</var></span>, <span>string <var>$user</var> = <span class="php-keyword1">NULL</span></span>, <span>string <var>$pass</var> = <span class="php-keyword1">NULL</span> </span> )</code>
+
+		<div class="description short">
+			<p>Constructor. You may either specify dsn, user and password or
+just give an existing PDO connection.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Constructor. You may either specify dsn, user and password or
+just give an existing PDO connection.</p>
+
+<p>Examples: $driver = new RPDO($dsn, $user, $password); $driver = new RPDO($existingConnection);</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$dsn</var></dt>
+					<dd>database connection string</dd>
+					<dt><var>$user</var></dt>
+					<dd>optional, usename to sign in</dd>
+					<dt><var>$pass</var></dt>
+					<dd>optional, password for connection login</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getMysqlEncoding" id="_getMysqlEncoding">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getMysqlEncoding">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#251-259" title="Go to source code">getMysqlEncoding</a>( )</code>
+
+		<div class="description short">
+			<p>Returns the best possible encoding for MySQL based on version data.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns the best possible encoding for MySQL based on version data.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setUseStringOnlyBinding" id="_setUseStringOnlyBinding">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setUseStringOnlyBinding">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#261-271" title="Go to source code">setUseStringOnlyBinding</a>( <span>boolean <var>$yesNo</var></span> )</code>
+
+		<div class="description short">
+			<p>Whether to bind all parameters as strings.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Whether to bind all parameters as strings.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$yesNo</var></dt>
+					<dd>pass TRUE to bind all parameters as strings.</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="connect" id="_connect">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_connect">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#273-311" title="Go to source code">connect</a>( )</code>
+
+		<div class="description short">
+			<p>Establishes a connection to the database using PHP\PDO
+functionality. If a connection has already been established this
+method will simply return directly. This method also turns on
+UTF8 for the database and PDO-ERRMODE-EXCEPTION as well as
+PDO-FETCH-ASSOC.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Establishes a connection to the database using PHP\PDO
+functionality. If a connection has already been established this
+method will simply return directly. This method also turns on
+UTF8 for the database and PDO-ERRMODE-EXCEPTION as well as
+PDO-FETCH-ASSOC.</p>
+
+
+
+
+
+				<h4>Throws\pdoexception</h4>
+				<div class="list">
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setPDO" id="_setPDO">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setPDO">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#313-326" title="Go to source code">setPDO</a>( <span>PDO <var>$pdo</var></span> )</code>
+
+		<div class="description short">
+			<p>Directly sets PDO instance into driver.
+This method might improve performance, however since the driver does
+not configure this instance terrible things may happen... only use
+this method if you are an expert on RedBeanPHP, PDO and UTF8 connections and
+you know your database server VERY WELL.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Directly sets PDO instance into driver.
+This method might improve performance, however since the driver does
+not configure this instance terrible things may happen... only use
+this method if you are an expert on RedBeanPHP, PDO and UTF8 connections and
+you know your database server VERY WELL.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$pdo</var></dt>
+					<dd>PDO instance</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="GetAll" id="_GetAll">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_GetAll">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#328-336" title="Go to source code">GetAll</a>( <span>string <var>$sql</var></span>, <span>array <var>$bindings</var> = <span class="php-keyword1">array</span>() </span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sql</var></dt>
+					<dd>SQL to be executed</dd>
+					<dt><var>$bindings</var></dt>
+					<dd>list of values to bind to SQL snippet</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						Driver::GetAll<br>
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-RedBeanPHP.Driver.html#_GetAll">RedBeanPHP\Driver::GetAll()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="GetAssocRow" id="_GetAssocRow">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_GetAssocRow">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#338-349" title="Go to source code">GetAssocRow</a>( <span>string <var>$sql</var></span>, <span>array <var>$bindings</var> = <span class="php-keyword1">array</span>() </span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sql</var></dt>
+					<dd>SQL to execute</dd>
+					<dt><var>$bindings</var></dt>
+					<dd>list of values to bind to SQL snippet</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						Driver::GetAssocRow<br>
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-RedBeanPHP.Driver.html#_GetAssocRow">RedBeanPHP\Driver::GetAssocRow()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="GetCol" id="_GetCol">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_GetCol">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#351-366" title="Go to source code">GetCol</a>( <span>string <var>$sql</var></span>, <span>array <var>$bindings</var> = <span class="php-keyword1">array</span>() </span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sql</var></dt>
+					<dd>SQL Code to execute</dd>
+					<dt><var>$bindings</var></dt>
+					<dd>list of values to bind to SQL snippet</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						Driver::GetCol<br>
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-RedBeanPHP.Driver.html#_GetCol">RedBeanPHP\Driver::GetCol()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="GetOne" id="_GetOne">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_GetOne">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#368-382" title="Go to source code">GetOne</a>( <span>string <var>$sql</var></span>, <span>array <var>$bindings</var> = <span class="php-keyword1">array</span>() </span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sql</var></dt>
+					<dd>SQL to execute</dd>
+					<dt><var>$bindings</var></dt>
+					<dd>list of values to bind to SQL snippet</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						Driver::GetOne<br>
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-RedBeanPHP.Driver.html#_GetOne">RedBeanPHP\Driver::GetOne()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="GetCell" id="_GetCell">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_GetCell">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#384-396" title="Go to source code">GetCell</a>( <span>string <var>$sql</var></span>, <span>array <var>$bindings</var> = <span class="php-keyword1">array</span>() </span> )</code>
+
+		<div class="description short">
+			<p>Alias for getOne().
+Backward compatibility.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Alias for getOne().
+Backward compatibility.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sql</var></dt>
+					<dd>SQL</dd>
+					<dt><var>$bindings</var></dt>
+					<dd>bindings</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="GetRow" id="_GetRow">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_GetRow">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#398-406" title="Go to source code">GetRow</a>( <span>string <var>$sql</var></span>, <span>array <var>$bindings</var> = <span class="php-keyword1">array</span>() </span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sql</var></dt>
+					<dd>SQL to execute</dd>
+					<dt><var>$bindings</var></dt>
+					<dd>list of values to bind to SQL snippet</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						Driver::GetRow<br>
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-RedBeanPHP.Driver.html#_GetRow">RedBeanPHP\Driver::GetRow()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="Execute" id="_Execute">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_Execute">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#408-416" title="Go to source code">Execute</a>( <span>string <var>$sql</var></span>, <span>array <var>$bindings</var> = <span class="php-keyword1">array</span>() </span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sql</var></dt>
+					<dd>SQL Code to execute</dd>
+					<dt><var>$bindings</var></dt>
+					<dd>list of values to bind to SQL snippet</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>Affected Rows
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						Driver::Excecute<br>
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-RedBeanPHP.Driver.html#_Execute">RedBeanPHP\Driver::Execute()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="GetInsertID" id="_GetInsertID">
+
+		<td class="attributes"><code>
+			 public 
+
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_GetInsertID">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#418-426" title="Go to source code">GetInsertID</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					integer
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						Driver::GetInsertID<br>
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-RedBeanPHP.Driver.html#_GetInsertID">RedBeanPHP\Driver::GetInsertID()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="GetCursor" id="_GetCursor">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_GetCursor">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#428-436" title="Go to source code">GetCursor</a>( <span>string <var>$sql</var></span>, <span>array <var>$bindings</var> = <span class="php-keyword1">array</span>() </span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sql</var></dt>
+					<dd>SQL code to execute</dd>
+					<dt><var>$bindings</var></dt>
+					<dd>Bindings</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						Driver::GetCursor<br>
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-RedBeanPHP.Driver.html#_GetCursor">RedBeanPHP\Driver::GetCursor()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="Affected_Rows" id="_Affected_Rows">
+
+		<td class="attributes"><code>
+			 public 
+
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_Affected_Rows">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#438-446" title="Go to source code">Affected_Rows</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					integer
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						Driver::Affected_Rows<br>
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-RedBeanPHP.Driver.html#_Affected_Rows">RedBeanPHP\Driver::Affected_Rows()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setDebugMode" id="_setDebugMode">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setDebugMode">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#448-469" title="Go to source code">setDebugMode</a>( <span>boolean <var>$tf</var></span>, <span><code><a href="class-RedBeanPHP.Logger.html">RedBeanPHP\Logger</a></code> <var>$logger</var> = <span class="php-keyword1">NULL</span> </span> )</code>
+
+		<div class="description short">
+			<p>Toggles debug mode. In debug mode the driver will print all
+SQL to the screen together with some information about the
+results.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Toggles debug mode. In debug mode the driver will print all
+SQL to the screen together with some information about the
+results.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$tf</var></dt>
+					<dd>$trueFalse turn on/off</dd>
+					<dt><var>$logger</var></dt>
+					<dd>logger instance</dd>
+				</dl></div>
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-RedBeanPHP.Driver.html#_setDebugMode">RedBeanPHP\Driver::setDebugMode()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setLogger" id="_setLogger">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setLogger">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#471-482" title="Go to source code">setLogger</a>( <span><code><a href="class-RedBeanPHP.Logger.html">RedBeanPHP\Logger</a></code> <var>$logger</var></span> )</code>
+
+		<div class="description short">
+			<p>Injects Logger object.
+Sets the logger instance you wish to use.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Injects Logger object.
+Sets the logger instance you wish to use.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$logger</var></dt>
+					<dd>the logger instance to be used for logging</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getLogger" id="_getLogger">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-RedBeanPHP.Logger.html">RedBeanPHP\Logger</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getLogger">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#484-493" title="Go to source code">getLogger</a>( )</code>
+
+		<div class="description short">
+			<p>Gets Logger object.
+Returns the currently active Logger instance.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Gets Logger object.
+Returns the currently active Logger instance.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-RedBeanPHP.Logger.html">RedBeanPHP\Logger</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="StartTrans" id="_StartTrans">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_StartTrans">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#495-503" title="Go to source code">StartTrans</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+				<h4>See</h4>
+				<div class="list">
+						Driver::StartTrans<br>
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-RedBeanPHP.Driver.html#_StartTrans">RedBeanPHP\Driver::StartTrans()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="CommitTrans" id="_CommitTrans">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_CommitTrans">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#505-513" title="Go to source code">CommitTrans</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+				<h4>See</h4>
+				<div class="list">
+						Driver::CommitTrans<br>
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-RedBeanPHP.Driver.html#_CommitTrans">RedBeanPHP\Driver::CommitTrans()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="FailTrans" id="_FailTrans">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_FailTrans">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#515-523" title="Go to source code">FailTrans</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+				<h4>See</h4>
+				<div class="list">
+						Driver::FailTrans<br>
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-RedBeanPHP.Driver.html#_FailTrans">RedBeanPHP\Driver::FailTrans()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getDatabaseType" id="_getDatabaseType">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getDatabaseType">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#525-537" title="Go to source code">getDatabaseType</a>( )</code>
+
+		<div class="description short">
+			<p>Returns the name of database driver for PDO.
+Uses the PDO attribute DRIVER NAME to obtain the name of the
+PDO driver.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns the name of database driver for PDO.
+Uses the PDO attribute DRIVER NAME to obtain the name of the
+PDO driver.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getDatabaseVersion" id="_getDatabaseVersion">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getDatabaseVersion">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#539-549" title="Go to source code">getDatabaseVersion</a>( )</code>
+
+		<div class="description short">
+			<p>Returns the version number of the database.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns the version number of the database.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed<br>$version version number of the database
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getPDO" id="_getPDO">
+
+		<td class="attributes"><code>
+			 public 
+
+			PDO
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getPDO">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#551-561" title="Go to source code">getPDO</a>( )</code>
+
+		<div class="description short">
+			<p>Returns the underlying PHP PDO instance.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns the underlying PHP PDO instance.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					PDO
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="close" id="_close">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_close">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#563-572" title="Go to source code">close</a>( )</code>
+
+		<div class="description short">
+			<p>Closes database connection by destructing\PDO.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Closes database connection by destructing\PDO.</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isConnected" id="_isConnected">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isConnected">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#574-582" title="Go to source code">isConnected</a>( )</code>
+
+		<div class="description short">
+			<p>Returns TRUE if the current\PDO instance is connected.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns TRUE if the current\PDO instance is connected.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setEnableLogging" id="_setEnableLogging">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-RedBeanPHP.Driver.RPDO.html">RedBeanPHP\Driver\RPDO</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setEnableLogging">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#584-594" title="Go to source code">setEnableLogging</a>( <span>boolean <var>$enable</var></span> )</code>
+
+		<div class="description short">
+			<p>Toggles logging, enables or disables logging.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Toggles logging, enables or disables logging.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$enable</var></dt>
+					<dd>TRUE to enable logging</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-RedBeanPHP.Driver.RPDO.html">RedBeanPHP\Driver\RPDO</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="resetCounter" id="_resetCounter">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-RedBeanPHP.Driver.RPDO.html">RedBeanPHP\Driver\RPDO</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_resetCounter">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#596-605" title="Go to source code">resetCounter</a>( )</code>
+
+		<div class="description short">
+			<p>Resets the internal Query Counter.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Resets the internal Query Counter.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-RedBeanPHP.Driver.RPDO.html">RedBeanPHP\Driver\RPDO</a></code>
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-RedBeanPHP.Driver.html#_resetCounter">RedBeanPHP\Driver::resetCounter()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getQueryCount" id="_getQueryCount">
+
+		<td class="attributes"><code>
+			 public 
+
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getQueryCount">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#607-615" title="Go to source code">getQueryCount</a>( )</code>
+
+		<div class="description short">
+			<p>Returns the number of SQL queries processed.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns the number of SQL queries processed.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					integer
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-RedBeanPHP.Driver.html#_getQueryCount">RedBeanPHP\Driver::getQueryCount()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getIntegerBindingMax" id="_getIntegerBindingMax">
+
+		<td class="attributes"><code>
+			 public 
+
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getIntegerBindingMax">#</a>
+		<code><a href="source-class-RedBeanPHP.Driver.RPDO.html#617-629" title="Go to source code">getIntegerBindingMax</a>( )</code>
+
+		<div class="description short">
+			<p>Returns the maximum value treated as integer parameter
+binding.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns the maximum value treated as integer parameter
+binding.</p>
+
+<p>This method is mainly for testing purposes but it can help
+you solve some issues relating to integer bindings.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					integer
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="max" id="$max">
+		<td class="attributes"><code>
+			protected  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-RedBeanPHP.Driver.RPDO.html#30-33" title="Go to source code"><var>$max</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$max" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="dsn" id="$dsn">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-RedBeanPHP.Driver.RPDO.html#35-38" title="Go to source code"><var>$dsn</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$dsn" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="loggingEnabled" id="$loggingEnabled">
+		<td class="attributes"><code>
+			protected  
+			boolean
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-RedBeanPHP.Driver.RPDO.html#40-43" title="Go to source code"><var>$loggingEnabled</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$loggingEnabled" class="anchor">#</a>
+				<code><span class="php-keyword1">FALSE</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="logger" id="$logger">
+		<td class="attributes"><code>
+			protected  
+			<code><a href="class-RedBeanPHP.Logger.html">RedBeanPHP\Logger</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-RedBeanPHP.Driver.RPDO.html#45-48" title="Go to source code"><var>$logger</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$logger" class="anchor">#</a>
+				<code><span class="php-keyword1">NULL</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="pdo" id="$pdo">
+		<td class="attributes"><code>
+			protected  
+			PDO
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-RedBeanPHP.Driver.RPDO.html#50-53" title="Go to source code"><var>$pdo</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$pdo" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="affectedRows" id="$affectedRows">
+		<td class="attributes"><code>
+			protected  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-RedBeanPHP.Driver.RPDO.html#55-58" title="Go to source code"><var>$affectedRows</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$affectedRows" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="resultArray" id="$resultArray">
+		<td class="attributes"><code>
+			protected  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-RedBeanPHP.Driver.RPDO.html#60-63" title="Go to source code"><var>$resultArray</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$resultArray" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="connectInfo" id="$connectInfo">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-RedBeanPHP.Driver.RPDO.html#65-68" title="Go to source code"><var>$connectInfo</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$connectInfo" class="anchor">#</a>
+				<code><span class="php-keyword1">array</span>()</code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="isConnected" id="$isConnected">
+		<td class="attributes"><code>
+			protected  
+			boolean
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-RedBeanPHP.Driver.RPDO.html#70-73" title="Go to source code"><var>$isConnected</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$isConnected" class="anchor">#</a>
+				<code><span class="php-keyword1">FALSE</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="flagUseStringOnlyBinding" id="$flagUseStringOnlyBinding">
+		<td class="attributes"><code>
+			protected  
+			boolean
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-RedBeanPHP.Driver.RPDO.html#75-78" title="Go to source code"><var>$flagUseStringOnlyBinding</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$flagUseStringOnlyBinding" class="anchor">#</a>
+				<code><span class="php-keyword1">FALSE</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="queryCounter" id="$queryCounter">
+		<td class="attributes"><code>
+			protected  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-RedBeanPHP.Driver.RPDO.html#80-83" title="Go to source code"><var>$queryCounter</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$queryCounter" class="anchor">#</a>
+				<code><span class="php-num">0</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="mysqlEncoding" id="$mysqlEncoding">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-RedBeanPHP.Driver.RPDO.html#85-88" title="Go to source code"><var>$mysqlEncoding</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$mysqlEncoding" class="anchor">#</a>
+				<code><span class="php-quote">''</span></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		RedBeanPHP 4.2 API documentation generated by <a href="http://apigen.org/">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+
+<!-- Mirrored from www.redbeanphp.com/api/class-RedBeanPHP.Driver.RPDO.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Apr 2015 06:57:15 GMT -->
+</html>

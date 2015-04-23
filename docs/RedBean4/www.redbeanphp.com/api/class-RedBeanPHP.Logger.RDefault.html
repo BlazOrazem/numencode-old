@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from www.redbeanphp.com/api/class-RedBeanPHP.Logger.RDefault.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Apr 2015 06:57:15 GMT -->
+<head>
+	<meta charset="utf-8">
+
+	<title>Class RedBeanPHP\Logger\RDefault | RedBeanPHP 4.2</title>
+
+	<link rel="stylesheet" href="resources/style76b1.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+	<script>
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', "UA-2317956-4"]);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index-2.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li>
+					<a href="namespace-None.html">
+						None					</a>
+
+						</li>
+				<li class="active">
+					<a href="namespace-RedBeanPHP.html">
+						RedBeanPHP<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-RedBeanPHP.Adapter.html">
+						Adapter					</a>
+
+						</li>
+				<li>
+					<a href="namespace-RedBeanPHP.BeanHelper.html">
+						BeanHelper					</a>
+
+						</li>
+				<li>
+					<a href="namespace-RedBeanPHP.Cursor.html">
+						Cursor					</a>
+
+						</li>
+				<li>
+					<a href="namespace-RedBeanPHP.Driver.html">
+						Driver					</a>
+
+						</li>
+				<li class="active">
+					<a href="namespace-RedBeanPHP.Logger.html">
+						Logger<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-RedBeanPHP.Logger.RDefault.html">
+						RDefault					</a>
+
+						</li>
+							</ul></li>
+				<li>
+					<a href="namespace-RedBeanPHP.QueryWriter.html">
+						QueryWriter					</a>
+
+						</li>
+				<li>
+					<a href="namespace-RedBeanPHP.RedException.html">
+						RedException					</a>
+
+						</li>
+				<li>
+					<a href="namespace-RedBeanPHP.Repository.html">
+						Repository					</a>
+
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-RedBeanPHP.Logger.RDefault.html">RDefault</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index-2.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-RedBeanPHP.Logger.html" title="Summary of RedBeanPHP\Logger"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class RDefault</h1>
+
+
+	<div class="description">
+	<p>Logger. Provides a basic logging function for RedBeanPHP.</p>
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>RedBeanPHP\Logger\RDefault</span></b>			
+			 implements 
+				<a href="class-RedBeanPHP.Logger.html"><span>RedBeanPHP\Logger</span></a>
+			
+			
+		</dd>
+	</dl>
+
+
+	<div>
+		<h4>Direct known subclasses</h4>
+			<a href="class-RedBeanPHP.Logger.RDefault.Debug.html">RedBeanPHP\Logger\RDefault\Debug</a>
+	</div>
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-RedBeanPHP.html">RedBeanPHP</a>\<a href="namespace-RedBeanPHP.Logger.html">Logger</a><br>
+		
+
+				<b>Copyright:</b>
+				<p>copyright (c) G.J.G.T. (Gabor) de Mooij
+This source file is subject to the BSD/GPLv2 License that is bundled
+with this source code in the file license.txt.</p><br>
+				<b>License:</b>
+				<a href="BSD/GPLv2.html">BSD/GPLv2</a><br>
+				<b>Author:</b>
+				Gabor de Mooij and the RedBeanPHP Community<br>
+				<b>File:</b>
+				RedBeanPHP/Logger.php<br>
+			<b>Located at</b> <a href="source-class-RedBeanPHP.Logger.RDefault.html#9-134" title="Go to source code">Logger/RDefault.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="log" id="_log">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_log">#</a>
+		<code><a href="source-class-RedBeanPHP.Logger.RDefault.html#39-71" title="Go to source code">log</a>( <span> <var>$message</var>,…</span> )</code>
+
+		<div class="description short">
+			<p>Default logger method logging to STDOUT.
+This is the default/reference implementation of a logger.
+This method will write the message value to STDOUT (screen) unless
+you have changed the mode of operation to C_LOGGER_ARRAY.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Default logger method logging to STDOUT.
+This is the default/reference implementation of a logger.
+This method will write the message value to STDOUT (screen) unless
+you have changed the mode of operation to C_LOGGER_ARRAY.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$message</var>,…</dt>
+					<dd>message to log (might also be data or output)</dd>
+				</dl></div>
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-RedBeanPHP.Logger.html#_log">RedBeanPHP\Logger::log()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getLogs" id="_getLogs">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getLogs">#</a>
+		<code><a href="source-class-RedBeanPHP.Logger.RDefault.html#73-82" title="Go to source code">getLogs</a>( )</code>
+
+		<div class="description short">
+			<p>Returns the internal log array.
+The internal log array is where all log messages are stored.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns the internal log array.
+The internal log array is where all log messages are stored.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="clear" id="_clear">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-RedBeanPHP.Logger.RDefault.html">RedBeanPHP\Logger\RDefault</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_clear">#</a>
+		<code><a href="source-class-RedBeanPHP.Logger.RDefault.html#84-94" title="Go to source code">clear</a>( )</code>
+
+		<div class="description short">
+			<p>Clears the internal log array, removing all
+previously stored entries.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Clears the internal log array, removing all
+previously stored entries.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-RedBeanPHP.Logger.RDefault.html">RedBeanPHP\Logger\RDefault</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setMode" id="_setMode">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-RedBeanPHP.Logger.RDefault.html">RedBeanPHP\Logger\RDefault</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setMode">#</a>
+		<code><a href="source-class-RedBeanPHP.Logger.RDefault.html#96-114" title="Go to source code">setMode</a>( <span>integer <var>$mode</var></span> )</code>
+
+		<div class="description short">
+			<p>Selects a logging mode.
+There are several options available.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Selects a logging mode.
+There are several options available.</p>
+
+<p>C_LOGGER_ARRAY - log silently, stores entries in internal log array only
+C_LOGGER_ECHO  - also forward log messages directly to STDOUT</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$mode</var></dt>
+					<dd>mode of operation for logging object</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-RedBeanPHP.Logger.RDefault.html">RedBeanPHP\Logger\RDefault</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="grep" id="_grep">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_grep">#</a>
+		<code><a href="source-class-RedBeanPHP.Logger.RDefault.html#116-133" title="Go to source code">grep</a>( <span>string <var>$needle</var></span> )</code>
+
+		<div class="description short">
+			<p>Searches for all log entries in internal log array
+for $needle and returns those entries.
+This method will return an array containing all matches for your
+search query.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Searches for all log entries in internal log array
+for $needle and returns those entries.
+This method will return an array containing all matches for your
+search query.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$needle</var></dt>
+					<dd>phrase to look for in internal log array</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+	<table class="summary constants" id="constants">
+	<caption>Constants summary</caption>
+	<tr data-order="C_LOGGER_ECHO" id="C_LOGGER_ECHO">
+
+		<td class="attributes"><code>integer</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-RedBeanPHP.Logger.RDefault.html#23-26" title="Go to source code"><b>C_LOGGER_ECHO</b></a>
+			</code>
+
+			<div class="description short">
+				<p>Logger modes</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Logger modes</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#C_LOGGER_ECHO" class="anchor">#</a>
+				<code><span class="php-num">0</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="C_LOGGER_ARRAY" id="C_LOGGER_ARRAY">
+
+		<td class="attributes"><code>integer</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-RedBeanPHP.Logger.RDefault.html#27" title="Go to source code"><b>C_LOGGER_ARRAY</b></a>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#C_LOGGER_ARRAY" class="anchor">#</a>
+				<code><span class="php-num">1</span></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="mode" id="$mode">
+		<td class="attributes"><code>
+			protected  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-RedBeanPHP.Logger.RDefault.html#29-32" title="Go to source code"><var>$mode</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$mode" class="anchor">#</a>
+				<code><span class="php-num">0</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="logs" id="$logs">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-RedBeanPHP.Logger.RDefault.html#34-37" title="Go to source code"><var>$logs</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$logs" class="anchor">#</a>
+				<code><span class="php-keyword1">array</span>()</code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		RedBeanPHP 4.2 API documentation generated by <a href="http://apigen.org/">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+
+<!-- Mirrored from www.redbeanphp.com/api/class-RedBeanPHP.Logger.RDefault.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Apr 2015 06:57:15 GMT -->
+</html>

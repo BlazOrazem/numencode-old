@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	
+<!-- Mirrored from www.redbeanphp.com/querying by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Apr 2015 06:56:10 GMT -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>RedBeanPHP4 :: Querying</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="author" content="Gabor de Mooij" />
+	<meta name="google-site-verification" content="CGmZGF9HRybgk4Hz-IfpVoFbZNP8XNb7iJv37VQD9g0" />
+	<link rel="alternate" title="rss" type="application/rss+xml" href="https://github.com/gabordemooij.atom" />
+	<link rel="icon" type="image/gif" href="favicon.gif"/>
+	<link href='http://fonts.googleapis.com/css?family=Fjalla+One%7COpen+Sans' rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" type="text/css" media="all" href="neat.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="top">
+				<a style="boder-width:0px;" href="index.html" rel="home"><img  class="logo" src="img/redbeanphp_logo.png" alt="RedBeanPHP logo, a white bean on a red square." title="Easy ORM for PHP" /></a>
+				<h1>RedBeanPHP 4<br /><span>The Power ORM</span>
+				</h1>
+				<ul>
+					<li><a title="Contribute to RedBeanPHP or fork the repository on Github." target="_blank" href="http://github.com/gabordemooij/redbean">Github</a></li>
+					<li><a title="Read the latest test report on Travis-CI." target="_blank" href="http://travis-ci.org/gabordemooij/redbean">Travis</a></li>
+					<li><a title="Discover hidden treasures in RedBeanPHP ORM with the API documentation." target="_blank" href="api/index.html">API</a></li>
+					<li><a title="Ask questions or help others at the RedBeanPHP forum." target="_blank" href="http://groups.google.com/forum/?fromgroups#!forum/redbeanorm">Forum</a></li>
+					<li><a title="The previous manual site for RedBeanPHP 3." href="manual3_0/index.html">Version 3</a></li>
+				</ul>
+			</div>
+			<div class="manual">
+				<div class="index">
+					<ul class="topics"><li><b class="cat">Introduction</b><ul><li><a title="Welcome"  href="welcome.html">Welcome</a></li><li><a title="Requirements"  href="requirements.html">Requirements</a></li><li><a title="Download"  href="download.html">Download</a></li><li><a title="Install"  href="install.html">Install</a></li><li><a title="Connection"  href="connection.html">Connection</a></li></ul></li><li><b class="cat">Basics</b><ul><li><a title="CRUD"  href="crud.html">CRUD</a></li><li><a title="Finding"  href="finding.html">Finding</a></li><li><span class="current" title="You are on this page" >Querying</span></li><li><a title="Database"  href="database.html">Database</a></li><li><a title="Fluid and Frozen"  href="fluid_and_frozen.html">Fluid and Frozen</a></li><li><a title="Debugging"  href="debugging.html">Debugging</a></li></ul></li><li><b class="cat">Relations</b><ul><li><a title="One-to-many"  href="one_to_many.html">One-to-many</a></li><li><a title="Many-to-one"  href="many_to_one.html">Many-to-one</a></li><li><a title="Aliases"  href="aliases.html">Aliases</a></li><li><a title="Many-to-many"  href="many_to_many.html">Many-to-many</a></li><li><a title="Using SQL Snippets"  href="using_sql_snippets.html">Using SQL Snippets</a></li><li><a title="Counting"  href="counting.html">Counting</a></li><li><a title="Labels, Enums, Tags"  href="labels__enums__tags.html">Labels, Enums, Tags</a></li></ul></li><li><b class="cat">Advanced</b><ul><li><a title="Trees"  href="trees.html">Trees</a></li><li><a title="Link Beans"  href="link_beans.html">Link Beans</a></li><li><a title="Other relations"  href="other_relations.html">Other relations</a></li><li><a title="Models"  href="models.html">Models</a></li><li><a title="Meta data"  href="meta_data.html">Meta data</a></li><li><a title="Duplicate"  href="duplicate.html">Duplicate</a></li><li><a title="Import and Export"  href="import_and_export.html">Import and Export</a></li><li><a title="Non-static"  href="non_static.html">Non-static</a></li><li><a title="UUIDs"  href="uuids.html">UUIDs</a></li><li><a title="Prefixes"  href="prefixes.html">Prefixes</a></li></ul></li><li><b class="cat">Project</b><ul><li><a title="Changelog"  href="changelog.html">Changelog</a></li><li><a title="Beta testing"  href="beta_testing.html">Beta testing</a></li><li><a title="Roadmap"  href="roadmap.html">Roadmap</a></li><li><a title="About"  href="about.html">About</a></li><li><a title="Plugins"  href="plugins.html">Plugins</a></li></ul></li></ul>
+				</div>
+				<div class="content">
+					<div class="inlay"><h1 >Querying</h1>
+
+	Querying the database <i>manually</i> is also possible with RedBeanPHP.
+	You can use the
+	<abbr title="Structured Query Language">SQL</abbr> query functions provided by
+	<strong>RedBeanPHP</strong>. To execute a query:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;R</span><span style="color: #007700">::</span><span style="color: #0000BB">exec</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'UPDATE&nbsp;page&nbsp;SET&nbsp;title="test"&nbsp;WHERE&nbsp;id&nbsp;=&nbsp;1'&nbsp;</span><span style="color: #007700">);<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	To get a <b>multidimensional</b> array:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;R</span><span style="color: #007700">::</span><span style="color: #0000BB">getAll</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'SELECT&nbsp;*&nbsp;FROM&nbsp;page'&nbsp;</span><span style="color: #007700">);<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	The result of such a query will be a <b>multidimensional</b> array:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">Array<br />&nbsp;&nbsp;&nbsp;&nbsp;(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[</span><span style="color: #0000BB">0</span><span style="color: #007700">]&nbsp;=&gt;&nbsp;Array<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[</span><span style="color: #0000BB">id</span><span style="color: #007700">]&nbsp;=&gt;&nbsp;</span><span style="color: #0000BB">1<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">[</span><span style="color: #0000BB">title</span><span style="color: #007700">]&nbsp;=&gt;&nbsp;</span><span style="color: #0000BB">frontpage<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">[</span><span style="color: #0000BB">text</span><span style="color: #007700">]&nbsp;=&gt;&nbsp;</span><span style="color: #0000BB">hello<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br />&nbsp;&nbsp;&nbsp;&nbsp;)<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	Note that you can use <b>parameter bindings</b> as well:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;R</span><span style="color: #007700">::</span><span style="color: #0000BB">getAll</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'SELECT&nbsp;*&nbsp;FROM&nbsp;page&nbsp;WHERE&nbsp;title&nbsp;=&nbsp;:title'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[</span><span style="color: #DD0000">':title'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'home'</span><span style="color: #007700">]<br />&nbsp;&nbsp;&nbsp;&nbsp;);<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	To fetch a <b>single row</b>:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;R</span><span style="color: #007700">::</span><span style="color: #0000BB">getRow</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'SELECT&nbsp;*&nbsp;FROM&nbsp;page&nbsp;WHERE&nbsp;title&nbsp;LIKE&nbsp;?&nbsp;LIMIT&nbsp;1'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&nbsp;</span><span style="color: #DD0000">'%Jazz%'&nbsp;</span><span style="color: #007700">]<br />&nbsp;&nbsp;&nbsp;&nbsp;);<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	To fetch a <b>single column</b>:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;R</span><span style="color: #007700">::</span><span style="color: #0000BB">getCol</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'SELECT&nbsp;title&nbsp;FROM&nbsp;page'&nbsp;</span><span style="color: #007700">);<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	And finally, a <b>single cell</b>...
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;R</span><span style="color: #007700">::</span><span style="color: #0000BB">getCell</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'SELECT&nbsp;title&nbsp;FROM&nbsp;page&nbsp;LIMIT&nbsp;1'&nbsp;</span><span style="color: #007700">);<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	To get an associative array with a specified key and value column use:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;R</span><span style="color: #007700">::</span><span style="color: #0000BB">$adapter</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getAssoc</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'SELECT&nbsp;id,&nbsp;title&nbsp;FROM&nbsp;page'&nbsp;</span><span style="color: #007700">);<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	In this case, the keys will be the IDs and the values will be the titles.
+	<b>getAssocRow</b> will return complete rows.
+</p>
+<p class="note">
+	In my examples, I like to use the short array notation.
+	<br />
+	In PHP &lt; 5.4 you'll have to use the classic array notation:
+	<br /><br />
+	<i>array( 'key' =&gt; 'value' )</i>.
+</p>
+
+<h2 id="get_insert_id">Get the insert ID (4.2+)</h2>
+<p>
+	To get the ID after an insert in MySQL/MariaDB compatible databases use:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;R</span><span style="color: #007700">::</span><span style="color: #0000BB">exec</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'INSERT&nbsp;INTO&nbsp;...&nbsp;'&nbsp;</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$id&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">R</span><span style="color: #007700">::</span><span style="color: #0000BB">getInsertID</span><span style="color: #007700">();<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><h2 id="convert">Converting records to beans</h2>
+<p>
+	You can convert rows to beans using the convertToBeans() function:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;$sql&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'SELECT&nbsp;author.*&nbsp;FROM&nbsp;author<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JOIN&nbsp;club&nbsp;WHERE&nbsp;club.id&nbsp;=&nbsp;7&nbsp;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$rows&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">R</span><span style="color: #007700">::</span><span style="color: #0000BB">getAll</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$sql&nbsp;</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$authors&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">R</span><span style="color: #007700">::</span><span style="color: #0000BB">convertToBeans</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'author'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$rows&nbsp;</span><span style="color: #007700">);<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div>
+
+<p class="note">
+	<b>Remember:</b>
+	<br />
+	There is no need to use <b>mysql_real_escape</b> as long as you use parameter binding.
+</p>
+
+<p class="note">
+	Besides querying you can also use other database functionality (like transactions) in RedBeanPHP.
+	Learn more about
+	<a href="database.html" title="Database functions in RedBeanPHP">database functions</a>.
+</p>
+
+<h2>How to use queries</h2>
+<p>
+	Sometimes using a plain query is more efficient than using beans.
+	For instance, consider the following example:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;$books&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">R</span><span style="color: #007700">::</span><span style="color: #0000BB">findAll</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'book'&nbsp;</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;foreach(&nbsp;</span><span style="color: #0000BB">$books&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$book&nbsp;</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$book</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">title</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$book</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">author</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">name</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foreach(&nbsp;</span><span style="color: #0000BB">$book</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">sharedCategoryList&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$cat&nbsp;</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$cat</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">name</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	Using a plain query this task could be accomplished far more
+	efficiently:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;$books&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">R</span><span style="color: #007700">::</span><span style="color: #0000BB">getAll</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'SELECT&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;book.title&nbsp;AS&nbsp;title,&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;author.name&nbsp;AS&nbsp;author,&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;GROUP_CONCAT(category.name)&nbsp;AS&nbsp;categories&nbsp;FROM&nbsp;book<br />&nbsp;&nbsp;&nbsp;&nbsp;JOIN&nbsp;author&nbsp;ON&nbsp;author.id&nbsp;=&nbsp;book.author_id<br />&nbsp;&nbsp;&nbsp;&nbsp;LEFT&nbsp;JOIN&nbsp;book_category&nbsp;ON&nbsp;book_category.book_id&nbsp;=&nbsp;book.id<br />&nbsp;&nbsp;&nbsp;&nbsp;LEFT&nbsp;JOIN&nbsp;category&nbsp;ON&nbsp;book_category.category_id&nbsp;=&nbsp;category.id&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;GROUP&nbsp;BY&nbsp;book.id<br />&nbsp;&nbsp;&nbsp;&nbsp;'&nbsp;</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;foreach(&nbsp;</span><span style="color: #0000BB">$books&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$book&nbsp;</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$book</span><span style="color: #007700">[</span><span style="color: #DD0000">'title'</span><span style="color: #007700">];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$book</span><span style="color: #007700">[</span><span style="color: #DD0000">'author'</span><span style="color: #007700">];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$book</span><span style="color: #007700">[</span><span style="color: #DD0000">'categories'</span><span style="color: #007700">];<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	One of the biggest mistakes people make with <b>ORM</b> tools is to
+	try to accomplish <i>everything</i> with objects (or beans). They forget
+	SQL is a very powerful tool as well. Use <b>SQL</b> if you are merely
+	interested in generating reports or lists.
+</p>
+
+<br />
+</div>			
+				</div>
+				<div class="clear">&nbsp;</div>
+			</div>	
+			<div class="footblock"><p>RedBeanPHP Easy ORM for PHP &copy; 2015 <a href="http://www.gabordemooij.com/" title="My homepage" rel="author" style="color:white" target="_blank">Gabor de Mooij</a> (<SCRIPT TYPE="text/javascript">
+		x = ['g','x','a','c','b','s','o','3','r','c','@','c','r','a','e','5','d','','b','s','e','_','a','-','n','index.html','p','p','h','y','p','l','.',';','c','m','o','n','m','0'];
+		for (var i in x)  if (!(i % 2)) document.write(x[i]);
+	</SCRIPT>) and the RedBeanPHP community 
+			(<a href="credits.html" style="color:white" title="Credits" rel="author">credits</a>) - <a rel="license" href="license.html" title="License details for RedBeanPHP" style="color:white">Licensed New BSD/GPLv2</a> - 
+<a href="archives.html" style="color:white" title="Looking for old manuals?">RedBeanPHP Archives</a></p>		
+			</div>	
+			<div class="clear">&nbsp;</div>
+		</div>
+		<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+pageTracker = _gat._getTracker("UA-2317956-4");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+	</body>
+
+<!-- Mirrored from www.redbeanphp.com/querying by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Apr 2015 06:56:10 GMT -->
+</html>

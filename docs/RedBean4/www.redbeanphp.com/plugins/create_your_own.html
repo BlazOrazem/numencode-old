@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+	
+<!-- Mirrored from www.redbeanphp.com/plugins/create_your_own by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Apr 2015 06:56:42 GMT -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>RedBeanPHP4 :: Plugins:Create Your Own</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="author" content="Gabor de Mooij" />
+	<meta name="google-site-verification" content="CGmZGF9HRybgk4Hz-IfpVoFbZNP8XNb7iJv37VQD9g0" />
+	<link rel="alternate" title="rss" type="application/rss+xml" href="https://github.com/gabordemooij.atom" />
+	<link rel="icon" type="image/gif" href="../favicon.gif"/>
+	<link href='http://fonts.googleapis.com/css?family=Fjalla+One%7COpen+Sans' rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" type="text/css" media="all" href="../neat.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="top">
+				<a style="boder-width:0px;" href="../index.html" rel="home"><img  class="logo" src="../img/redbeanphp_logo.png" alt="RedBeanPHP logo, a white bean on a red square." title="Easy ORM for PHP" /></a>
+				<h1>RedBeanPHP 4<br /><span>The Power ORM</span>
+				</h1>
+				<ul>
+					<li><a title="Contribute to RedBeanPHP or fork the repository on Github." target="_blank" href="http://github.com/gabordemooij/redbean">Github</a></li>
+					<li><a title="Read the latest test report on Travis-CI." target="_blank" href="http://travis-ci.org/gabordemooij/redbean">Travis</a></li>
+					<li><a title="Discover hidden treasures in RedBeanPHP ORM with the API documentation." target="_blank" href="../api/index.html">API</a></li>
+					<li><a title="Ask questions or help others at the RedBeanPHP forum." target="_blank" href="http://groups.google.com/forum/?fromgroups#!forum/redbeanorm">Forum</a></li>
+					<li><a title="The previous manual site for RedBeanPHP 3." href="../manual3_0/index.html">Version 3</a></li>
+				</ul>
+			</div>
+			<div class="manual">
+				<div class="index">
+					<ul class="topics"><li><b class="cat">Introduction</b><ul><li><a title="Welcome"  href="../welcome.html">Welcome</a></li><li><a title="Requirements"  href="../requirements.html">Requirements</a></li><li><a title="Download"  href="../download.html">Download</a></li><li><a title="Install"  href="../install.html">Install</a></li><li><a title="Connection"  href="../connection.html">Connection</a></li></ul></li><li><b class="cat">Basics</b><ul><li><a title="CRUD"  href="../crud.html">CRUD</a></li><li><a title="Finding"  href="../finding.html">Finding</a></li><li><a title="Querying"  href="../querying.html">Querying</a></li><li><a title="Database"  href="../database.html">Database</a></li><li><a title="Fluid and Frozen"  href="../fluid_and_frozen.html">Fluid and Frozen</a></li><li><a title="Debugging"  href="../debugging.html">Debugging</a></li></ul></li><li><b class="cat">Relations</b><ul><li><a title="One-to-many"  href="../one_to_many.html">One-to-many</a></li><li><a title="Many-to-one"  href="../many_to_one.html">Many-to-one</a></li><li><a title="Aliases"  href="../aliases.html">Aliases</a></li><li><a title="Many-to-many"  href="../many_to_many.html">Many-to-many</a></li><li><a title="Using SQL Snippets"  href="../using_sql_snippets.html">Using SQL Snippets</a></li><li><a title="Counting"  href="../counting.html">Counting</a></li><li><a title="Labels, Enums, Tags"  href="../labels__enums__tags.html">Labels, Enums, Tags</a></li></ul></li><li><b class="cat">Advanced</b><ul><li><a title="Trees"  href="../trees.html">Trees</a></li><li><a title="Link Beans"  href="../link_beans.html">Link Beans</a></li><li><a title="Other relations"  href="../other_relations.html">Other relations</a></li><li><a title="Models"  href="../models.html">Models</a></li><li><a title="Meta data"  href="../meta_data.html">Meta data</a></li><li><a title="Duplicate"  href="../duplicate.html">Duplicate</a></li><li><a title="Import and Export"  href="../import_and_export.html">Import and Export</a></li><li><a title="Non-static"  href="../non_static.html">Non-static</a></li><li><a title="UUIDs"  href="../uuids.html">UUIDs</a></li><li><a title="Prefixes"  href="../prefixes.html">Prefixes</a></li></ul></li><li><b class="cat">Project</b><ul><li><a title="Changelog"  href="../changelog.html">Changelog</a></li><li><a title="Beta testing"  href="../beta_testing.html">Beta testing</a></li><li><a title="Roadmap"  href="../roadmap.html">Roadmap</a></li><li><a title="About"  href="../about.html">About</a></li><li><a title="Plugins"  href="../plugins.html">Plugins</a></li></ul></li></ul>
+				</div>
+				<div class="content">
+					<div class="inlay"><h1 >Plugins:Create Your Own</h1>
+
+
+<p class="breadcrumbs">
+	<a href="../index.html" title="Back to homepage.">RedBeanPHP</a> /
+	<a href="../plugins.html" title="Back to RedBeanPHP Download Page">Plugins</a> /
+	<b title="You are here now...">Create Your Own</b>
+</p>
+
+
+<p>
+	Plugins are an elegant way to add new functionality to RedBeanPHP. To create a plugin,
+	create a class or function and use:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;R</span><span style="color: #007700">::</span><span style="color: #0000BB">ext</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'doSomething'</span><span style="color: #007700">,&nbsp;function()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">MyClass</span><span style="color: #007700">::</span><span style="color: #0000BB">myMethod</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;);<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	to add your new feature to the R-class (required PHP 5.3+ and RedBeanPHP 3.5+).
+	For older versions of PHP use:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;R</span><span style="color: #007700">::</span><span style="color: #0000BB">ext</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'doSomething'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array(&nbsp;</span><span style="color: #DD0000">'MyClass'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'MyStaticMethod'&nbsp;</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;);<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	Now you can use your plugin like this:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;R</span><span style="color: #007700">::</span><span style="color: #0000BB">doSomething</span><span style="color: #007700">();<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	it's that easy! Here is a list of some interesting 3rd party plugins for RedBeanPHP !
+</p>
+
+<h2 id="install">Installing a Plugin</h2>
+<p>
+	Installing plugins is really easy. Most plugins, the legacy plugins for instance,
+	automatically register their plugin functions with the R-facade for your convenience.
+	So to install the Cooker plugin (one of the legacy plugins) use:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">require&nbsp;</span><span style="color: #DD0000">'plugins/Cooker/Cooker.php'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	Yes, that's all. Just include the file and you're done. Sometimes the plugin author
+	has additional instructions and might require manual registration with the R-facade, this
+	is mainly because the author is an object 'purist'. To install these plugins correctly
+	consult the corresponding readme files or manuals.
+</p>
+
+
+<h2 id="testing">Testing your plugin</h2>
+<p>
+	You can use the RedBeanPHP unit test facilities to test your plugin.
+	Simply write a test class extending RedUNIT\Base like this:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">TestMe&nbsp;</span><span style="color: #007700">extends&nbsp;\</span><span style="color: #0000BB">RedUNIT</span><span style="color: #007700">\</span><span style="color: #0000BB">Base&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">testMethod</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	The RedUNIT test facility will simply run all methods starting with 'test'.
+	The tests will run for every driver. If you want your test to run for a specific
+	driver only extend RedUNIT\MySQL or RedUNIT\Postgres etc instead.
+	To perform a test use the asrt($a, $b) command. If $a === $b the test will pass
+	and the number of the test will be printed on the screen, otherwise the program will
+	exit immediately printing an error message. A list of test commands:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;asrt</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//pass&nbsp;if&nbsp;a&nbsp;===&nbsp;b&nbsp;otherwise&nbsp;fail<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">pass</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//count&nbsp;as&nbsp;passed<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">fail</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//fail&nbsp;(i.e.&nbsp;die&nbsp;with&nbsp;error&nbsp;message)<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">testpack</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$message&nbsp;</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//print&nbsp;message<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	To run your tests:
+</p>
+<kbd>
+	php runtests.php &quot;testing/Mytest.php&quot; &quot;RedUNIT\Base\Mytest&quot;
+</kbd>
+<p>
+	First argument is the file to run, second argument is the name of the testing class
+	contained in the file. You can not test more than one test file per plugin.
+	Test coverage of your plugin will be calculated and printed. A report containing all
+	missed lines will be saved to the cli folder.
+	You can specify a third parameter to only count code lines of specific files, only
+	lines in matching filenames will be counted in the code coverage statistics.
+</p>
+
+<h2 id="writers">Writing a new Query Writer</h2>
+<p>
+	To add a new, custom Query Writer for your favourite <abbr title="relational database management system">RDBMS</abbr>
+	simply wrap the writer in a plugin. To activate your writer people should issue the following command:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//for&nbsp;instance&nbsp;to&nbsp;install&nbsp;DB2&nbsp;database&nbsp;support<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">require&nbsp;</span><span style="color: #DD0000">'db2.php'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">R</span><span style="color: #007700">::</span><span style="color: #0000BB">setupDB2</span><span style="color: #007700">(</span><span style="color: #0000BB">$dsn</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$user</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$pass</span><span style="color: #007700">);<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	The reason for this is that it is too hard for me to maintain all writers in the core, especially
+	writers for commercial database platform I can't even obtain. Therefore they are separated from the core
+	and hosted in their own repositories by the contributors.
+	Query Writer authors can make the plugins available using the setup-approach described above.
+	Note that this is also more flexible as it allows a database writer plugin to select a different driver (OCI instead of
+	PDO for instance) or maybe even a different toolbox.
+	Query writers should implement all methods defined in the Query Writer interface (see API). Many methods are already
+	implemented in the Abstract Query Writer, these can be reused if they are appropriate for the new Query Writer as well.
+</p>
+
+<h2 id="legacy">Legacy Plugins</h2>
+<p>
+	RedBeanPHP 4 KS goes back to the roots of RedBeanPHP, on-the-fly ORM.
+	As such many additional functionalities and modules have been removed from this core.
+	However they have been moved to a special
+	<a href="https://github.com/gabordemooij/RB4Plugins" title="Legacy plugins">plugin repository on github</a>.
+</p>
+
+
+<br />
+</div>			
+				</div>
+				<div class="clear">&nbsp;</div>
+			</div>	
+			<div class="footblock"><p>RedBeanPHP Easy ORM for PHP &copy; 2015 <a href="http://www.gabordemooij.com/" title="My homepage" rel="author" style="color:white" target="_blank">Gabor de Mooij</a> (<SCRIPT TYPE="text/javascript">
+		x = ['g','x','a','c','b','s','o','3','r','c','@','c','r','a','e','5','d','','b','s','e','_','a','-','n','../index.html','p','p','h','y','p','l','.',';','c','m','o','n','m','0'];
+		for (var i in x)  if (!(i % 2)) document.write(x[i]);
+	</SCRIPT>) and the RedBeanPHP community 
+			(<a href="../credits.html" style="color:white" title="Credits" rel="author">credits</a>) - <a rel="license" href="../license.html" title="License details for RedBeanPHP" style="color:white">Licensed New BSD/GPLv2</a> - 
+<a href="../archives.html" style="color:white" title="Looking for old manuals?">RedBeanPHP Archives</a></p>		
+			</div>	
+			<div class="clear">&nbsp;</div>
+		</div>
+		<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+pageTracker = _gat._getTracker("UA-2317956-4");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+	</body>
+
+<!-- Mirrored from www.redbeanphp.com/plugins/create_your_own by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Apr 2015 06:56:42 GMT -->
+</html>

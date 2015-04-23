@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	
+<!-- Mirrored from www.redbeanphp.com/trees by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Apr 2015 06:56:10 GMT -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>RedBeanPHP4 :: Trees</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="author" content="Gabor de Mooij" />
+	<meta name="google-site-verification" content="CGmZGF9HRybgk4Hz-IfpVoFbZNP8XNb7iJv37VQD9g0" />
+	<link rel="alternate" title="rss" type="application/rss+xml" href="https://github.com/gabordemooij.atom" />
+	<link rel="icon" type="image/gif" href="favicon.gif"/>
+	<link href='http://fonts.googleapis.com/css?family=Fjalla+One%7COpen+Sans' rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" type="text/css" media="all" href="neat.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="top">
+				<a style="boder-width:0px;" href="index.html" rel="home"><img  class="logo" src="img/redbeanphp_logo.png" alt="RedBeanPHP logo, a white bean on a red square." title="Easy ORM for PHP" /></a>
+				<h1>RedBeanPHP 4<br /><span>The Power ORM</span>
+				</h1>
+				<ul>
+					<li><a title="Contribute to RedBeanPHP or fork the repository on Github." target="_blank" href="http://github.com/gabordemooij/redbean">Github</a></li>
+					<li><a title="Read the latest test report on Travis-CI." target="_blank" href="http://travis-ci.org/gabordemooij/redbean">Travis</a></li>
+					<li><a title="Discover hidden treasures in RedBeanPHP ORM with the API documentation." target="_blank" href="api/index.html">API</a></li>
+					<li><a title="Ask questions or help others at the RedBeanPHP forum." target="_blank" href="http://groups.google.com/forum/?fromgroups#!forum/redbeanorm">Forum</a></li>
+					<li><a title="The previous manual site for RedBeanPHP 3." href="manual3_0/index.html">Version 3</a></li>
+				</ul>
+			</div>
+			<div class="manual">
+				<div class="index">
+					<ul class="topics"><li><b class="cat">Introduction</b><ul><li><a title="Welcome"  href="welcome.html">Welcome</a></li><li><a title="Requirements"  href="requirements.html">Requirements</a></li><li><a title="Download"  href="download.html">Download</a></li><li><a title="Install"  href="install.html">Install</a></li><li><a title="Connection"  href="connection.html">Connection</a></li></ul></li><li><b class="cat">Basics</b><ul><li><a title="CRUD"  href="crud.html">CRUD</a></li><li><a title="Finding"  href="finding.html">Finding</a></li><li><a title="Querying"  href="querying.html">Querying</a></li><li><a title="Database"  href="database.html">Database</a></li><li><a title="Fluid and Frozen"  href="fluid_and_frozen.html">Fluid and Frozen</a></li><li><a title="Debugging"  href="debugging.html">Debugging</a></li></ul></li><li><b class="cat">Relations</b><ul><li><a title="One-to-many"  href="one_to_many.html">One-to-many</a></li><li><a title="Many-to-one"  href="many_to_one.html">Many-to-one</a></li><li><a title="Aliases"  href="aliases.html">Aliases</a></li><li><a title="Many-to-many"  href="many_to_many.html">Many-to-many</a></li><li><a title="Using SQL Snippets"  href="using_sql_snippets.html">Using SQL Snippets</a></li><li><a title="Counting"  href="counting.html">Counting</a></li><li><a title="Labels, Enums, Tags"  href="labels__enums__tags.html">Labels, Enums, Tags</a></li></ul></li><li><b class="cat">Advanced</b><ul><li><span class="current" title="You are on this page" >Trees</span></li><li><a title="Link Beans"  href="link_beans.html">Link Beans</a></li><li><a title="Other relations"  href="other_relations.html">Other relations</a></li><li><a title="Models"  href="models.html">Models</a></li><li><a title="Meta data"  href="meta_data.html">Meta data</a></li><li><a title="Duplicate"  href="duplicate.html">Duplicate</a></li><li><a title="Import and Export"  href="import_and_export.html">Import and Export</a></li><li><a title="Non-static"  href="non_static.html">Non-static</a></li><li><a title="UUIDs"  href="uuids.html">UUIDs</a></li><li><a title="Prefixes"  href="prefixes.html">Prefixes</a></li></ul></li><li><b class="cat">Project</b><ul><li><a title="Changelog"  href="changelog.html">Changelog</a></li><li><a title="Beta testing"  href="beta_testing.html">Beta testing</a></li><li><a title="Roadmap"  href="roadmap.html">Roadmap</a></li><li><a title="About"  href="about.html">About</a></li><li><a title="Plugins"  href="plugins.html">Plugins</a></li></ul></li></ul>
+				</div>
+				<div class="content">
+					<div class="inlay"><h1 >Trees</h1>
+
+<p>
+	RedBeanPHP supports <b>self-referential</b> relationships.
+	In RedBeanPHP terminology, these are called trees. Here is an example, let's decorate a christmas tree with some
+	candy canes:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;$cane&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">R</span><span style="color: #007700">::</span><span style="color: #0000BB">dispense</span><span style="color: #007700">(</span><span style="color: #DD0000">'cane'</span><span style="color: #007700">,</span><span style="color: #0000BB">10</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$cane</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]-&gt;</span><span style="color: #0000BB">ownCane&nbsp;</span><span style="color: #007700">=&nbsp;[&nbsp;</span><span style="color: #0000BB">$cane</span><span style="color: #007700">[</span><span style="color: #0000BB">2</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">$cane</span><span style="color: #007700">[</span><span style="color: #0000BB">9</span><span style="color: #007700">]&nbsp;];<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$cane</span><span style="color: #007700">[</span><span style="color: #0000BB">2</span><span style="color: #007700">]-&gt;</span><span style="color: #0000BB">ownCane&nbsp;</span><span style="color: #007700">=&nbsp;[&nbsp;</span><span style="color: #0000BB">$cane</span><span style="color: #007700">[</span><span style="color: #0000BB">3</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">$cane</span><span style="color: #007700">[</span><span style="color: #0000BB">4</span><span style="color: #007700">]&nbsp;];<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$cane</span><span style="color: #007700">[</span><span style="color: #0000BB">4</span><span style="color: #007700">]-&gt;</span><span style="color: #0000BB">ownCane&nbsp;</span><span style="color: #007700">=&nbsp;[(&nbsp;</span><span style="color: #0000BB">$cane</span><span style="color: #007700">[</span><span style="color: #0000BB">5</span><span style="color: #007700">],<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$cane</span><span style="color: #007700">[</span><span style="color: #0000BB">7</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">$cane</span><span style="color: #007700">[</span><span style="color: #0000BB">8</span><span style="color: #007700">]&nbsp;];<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$cane</span><span style="color: #007700">[</span><span style="color: #0000BB">5</span><span style="color: #007700">]-&gt;</span><span style="color: #0000BB">ownCane&nbsp;</span><span style="color: #007700">=&nbsp;[&nbsp;</span><span style="color: #0000BB">$cane</span><span style="color: #007700">[</span><span style="color: #0000BB">6</span><span style="color: #007700">]&nbsp;];<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$id&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">R</span><span style="color: #007700">::</span><span style="color: #0000BB">store</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$cane</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]&nbsp;);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$root&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">R</span><span style="color: #007700">::</span><span style="color: #0000BB">load</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'cane'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$id&nbsp;</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$root</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">ownCane</span><span style="color: #007700">[</span><span style="color: #0000BB">2</span><span style="color: #007700">]-&gt;</span><span style="color: #0000BB">ownCane</span><span style="color: #007700">[</span><span style="color: #0000BB">4</span><span style="color: #007700">]<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">ownCane</span><span style="color: #007700">[</span><span style="color: #0000BB">5</span><span style="color: #007700">]-&gt;</span><span style="color: #0000BB">ownCane</span><span style="color: #007700">[</span><span style="color: #0000BB">6</span><span style="color: #007700">]-&gt;</span><span style="color: #0000BB">id</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//outputs:&nbsp;6<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	Trees are just a special case of lists,
+	you use a list with the same name as the parent type.
+	In the example script above, a <b>cane</b> has an <b>ownCaneList</b>.
+	Another example: <i>page-&gt;ownPageList</i>. As you can see in the example
+	above you can navigate the lists using the IDs.
+</p>
+
+<h2 id="traversal">Traversal</h2>
+<p>
+	Instead of manually looping through each own-list of a bean you
+	can use the traverse() method:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;$page</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">traverse</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'ownPage'</span><span style="color: #007700">,&nbsp;function(&nbsp;</span><span style="color: #0000BB">$page&nbsp;</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;....<br />&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;);<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	This allows you to recursively apply a function to a list.
+	To limit the results when accessing a list you can use the with/withCondition()
+	method:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;$page</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">with</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'&nbsp;LIMIT&nbsp;10&nbsp;'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">traverse</span><span style="color: #007700">(&nbsp;...&nbsp;);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$page</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">withCondition</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'&nbsp;&nbsp;rating&nbsp;&gt;&nbsp;?&nbsp;'</span><span style="color: #007700">,&nbsp;[&nbsp;</span><span style="color: #0000BB">5&nbsp;</span><span style="color: #007700">]&nbsp;)-&gt;</span><span style="color: #0000BB">traverse</span><span style="color: #007700">(&nbsp;...&nbsp;);<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	You can also use <b>withCondition</b> and <b>alias</b> together with the traverse
+	function.
+	<br /><br />
+	Use the third parameter to specify the maximum depth:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;$page</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">traverse</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'ownPage'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$func</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3&nbsp;</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//max&nbsp;3&nbsp;levels<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	Use the PHP <b>use</b> statement to import variables into the function scope:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;$task</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">traverse</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'ownTask'</span><span style="color: #007700">,&nbsp;function(&nbsp;</span><span style="color: #0000BB">$task&nbsp;</span><span style="color: #007700">)&nbsp;use&nbsp;(&nbsp;&amp;</span><span style="color: #0000BB">$todos&nbsp;</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$todos</span><span style="color: #007700">[]&nbsp;=&nbsp;</span><span style="color: #0000BB">$task</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">name</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;);<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div>
+<p class="note">
+	The traverse() function does not check for <i>recursion</i> in trees.
+</p>
+
+<h2>Importing Trees</h2>
+<p>
+	Do you want to import a hierarchical data structure ?
+	This can be accomplished using the <a href="import_and_export.html" title="Import trees with dispense().">R::dispense()</a> feature.
+</p>
+
+
+<br />
+</div>			
+				</div>
+				<div class="clear">&nbsp;</div>
+			</div>	
+			<div class="footblock"><p>RedBeanPHP Easy ORM for PHP &copy; 2015 <a href="http://www.gabordemooij.com/" title="My homepage" rel="author" style="color:white" target="_blank">Gabor de Mooij</a> (<SCRIPT TYPE="text/javascript">
+		x = ['g','x','a','c','b','s','o','3','r','c','@','c','r','a','e','5','d','','b','s','e','_','a','-','n','index.html','p','p','h','y','p','l','.',';','c','m','o','n','m','0'];
+		for (var i in x)  if (!(i % 2)) document.write(x[i]);
+	</SCRIPT>) and the RedBeanPHP community 
+			(<a href="credits.html" style="color:white" title="Credits" rel="author">credits</a>) - <a rel="license" href="license.html" title="License details for RedBeanPHP" style="color:white">Licensed New BSD/GPLv2</a> - 
+<a href="archives.html" style="color:white" title="Looking for old manuals?">RedBeanPHP Archives</a></p>		
+			</div>	
+			<div class="clear">&nbsp;</div>
+		</div>
+		<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+pageTracker = _gat._getTracker("UA-2317956-4");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+	</body>
+
+<!-- Mirrored from www.redbeanphp.com/trees by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Apr 2015 06:56:10 GMT -->
+</html>

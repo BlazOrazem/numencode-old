@@ -167,12 +167,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "de892651c20259bcf036539e2837c9164667876b"
+                "reference": "c7ba22dc98f0807e88adff9928e5d0c8d9890d0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/de892651c20259bcf036539e2837c9164667876b",
-                "reference": "de892651c20259bcf036539e2837c9164667876b",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/c7ba22dc98f0807e88adff9928e5d0c8d9890d0c",
+                "reference": "c7ba22dc98f0807e88adff9928e5d0c8d9890d0c",
                 "shasum": ""
             },
             "require": {
@@ -214,7 +214,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-04-20 20:59:45"
+            "time": "2015-04-23 00:34:28"
         }
     ],
     "packages-dev": [],

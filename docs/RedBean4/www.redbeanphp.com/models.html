@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+	
+<!-- Mirrored from www.redbeanphp.com/models by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Apr 2015 06:56:11 GMT -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>RedBeanPHP4 :: Models</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="author" content="Gabor de Mooij" />
+	<meta name="google-site-verification" content="CGmZGF9HRybgk4Hz-IfpVoFbZNP8XNb7iJv37VQD9g0" />
+	<link rel="alternate" title="rss" type="application/rss+xml" href="https://github.com/gabordemooij.atom" />
+	<link rel="icon" type="image/gif" href="favicon.gif"/>
+	<link href='http://fonts.googleapis.com/css?family=Fjalla+One%7COpen+Sans' rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" type="text/css" media="all" href="neat.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="top">
+				<a style="boder-width:0px;" href="index.html" rel="home"><img  class="logo" src="img/redbeanphp_logo.png" alt="RedBeanPHP logo, a white bean on a red square." title="Easy ORM for PHP" /></a>
+				<h1>RedBeanPHP 4<br /><span>The Power ORM</span>
+				</h1>
+				<ul>
+					<li><a title="Contribute to RedBeanPHP or fork the repository on Github." target="_blank" href="http://github.com/gabordemooij/redbean">Github</a></li>
+					<li><a title="Read the latest test report on Travis-CI." target="_blank" href="http://travis-ci.org/gabordemooij/redbean">Travis</a></li>
+					<li><a title="Discover hidden treasures in RedBeanPHP ORM with the API documentation." target="_blank" href="api/index.html">API</a></li>
+					<li><a title="Ask questions or help others at the RedBeanPHP forum." target="_blank" href="http://groups.google.com/forum/?fromgroups#!forum/redbeanorm">Forum</a></li>
+					<li><a title="The previous manual site for RedBeanPHP 3." href="manual3_0/index.html">Version 3</a></li>
+				</ul>
+			</div>
+			<div class="manual">
+				<div class="index">
+					<ul class="topics"><li><b class="cat">Introduction</b><ul><li><a title="Welcome"  href="welcome.html">Welcome</a></li><li><a title="Requirements"  href="requirements.html">Requirements</a></li><li><a title="Download"  href="download.html">Download</a></li><li><a title="Install"  href="install.html">Install</a></li><li><a title="Connection"  href="connection.html">Connection</a></li></ul></li><li><b class="cat">Basics</b><ul><li><a title="CRUD"  href="crud.html">CRUD</a></li><li><a title="Finding"  href="finding.html">Finding</a></li><li><a title="Querying"  href="querying.html">Querying</a></li><li><a title="Database"  href="database.html">Database</a></li><li><a title="Fluid and Frozen"  href="fluid_and_frozen.html">Fluid and Frozen</a></li><li><a title="Debugging"  href="debugging.html">Debugging</a></li></ul></li><li><b class="cat">Relations</b><ul><li><a title="One-to-many"  href="one_to_many.html">One-to-many</a></li><li><a title="Many-to-one"  href="many_to_one.html">Many-to-one</a></li><li><a title="Aliases"  href="aliases.html">Aliases</a></li><li><a title="Many-to-many"  href="many_to_many.html">Many-to-many</a></li><li><a title="Using SQL Snippets"  href="using_sql_snippets.html">Using SQL Snippets</a></li><li><a title="Counting"  href="counting.html">Counting</a></li><li><a title="Labels, Enums, Tags"  href="labels__enums__tags.html">Labels, Enums, Tags</a></li></ul></li><li><b class="cat">Advanced</b><ul><li><a title="Trees"  href="trees.html">Trees</a></li><li><a title="Link Beans"  href="link_beans.html">Link Beans</a></li><li><a title="Other relations"  href="other_relations.html">Other relations</a></li><li><span class="current" title="You are on this page" >Models</span></li><li><a title="Meta data"  href="meta_data.html">Meta data</a></li><li><a title="Duplicate"  href="duplicate.html">Duplicate</a></li><li><a title="Import and Export"  href="import_and_export.html">Import and Export</a></li><li><a title="Non-static"  href="non_static.html">Non-static</a></li><li><a title="UUIDs"  href="uuids.html">UUIDs</a></li><li><a title="Prefixes"  href="prefixes.html">Prefixes</a></li></ul></li><li><b class="cat">Project</b><ul><li><a title="Changelog"  href="changelog.html">Changelog</a></li><li><a title="Beta testing"  href="beta_testing.html">Beta testing</a></li><li><a title="Roadmap"  href="roadmap.html">Roadmap</a></li><li><a title="About"  href="about.html">About</a></li><li><a title="Plugins"  href="plugins.html">Plugins</a></li></ul></li></ul>
+				</div>
+				<div class="content">
+					<div class="inlay"><h1 >Models</h1>
+
+<p>
+	A <b>model</b> is a place to put validation and business logic.
+	Imagine a Jazz band that can only have up to 4 members.
+	We could implement this rule like this:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">if&nbsp;(&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$members&nbsp;</span><span style="color: #007700">)&nbsp;&gt;&nbsp;</span><span style="color: #0000BB">4&nbsp;</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;new&nbsp;</span><span style="color: #0000BB">Exception</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'Too&nbsp;many!'&nbsp;</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$band</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">ownMember&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$members</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">R</span><span style="color: #007700">::</span><span style="color: #0000BB">store</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$band&nbsp;</span><span style="color: #007700">);<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	However, now we need to add this check <i>everytime</i> we call R::store().
+	It would be much more convenient if R::store() was smart enough to perform this
+	check by itself. We can accomplish this by putting the <b>validation rule</b> in our model.
+	RedBeanPHP automatically discovers the models that belong to beans, so we can
+	implement this validation like this:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB"><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">Model_Band&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">RedBean_SimpleModel&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">update</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bean</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">ownMember&nbsp;</span><span style="color: #007700">)&nbsp;&gt;</span><span style="color: #0000BB">4&nbsp;</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;new&nbsp;</span><span style="color: #0000BB">Exception</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'Too&nbsp;many&nbsp;members!'&nbsp;</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;list(&nbsp;</span><span style="color: #0000BB">$band</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$members&nbsp;</span><span style="color: #007700">)&nbsp;=&nbsp;</span><span style="color: #0000BB">R</span><span style="color: #007700">::</span><span style="color: #0000BB">dispenseAll</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'band,member*5'&nbsp;</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$band</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">ownMember&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$members</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">R</span><span style="color: #007700">::</span><span style="color: #0000BB">store</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$band&nbsp;</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//will&nbsp;trigger&nbsp;exception<br /><br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	RedBeanPHP automatically connects beans with models using a naming convention
+	(i.e. Model_{TYPE OF BEAN}).
+	<br />
+	Now, every time we call store and something is wrong with the number of
+	members, an exception will be triggered automatically.
+	The mechanism that connects beans to models is called <b>FUSE</b>, because
+	beans are <i>fused</i> with their models. Within a model, <b>$this-&gt;bean</b>
+	refers to the bean.
+	<br />
+	To create a model for your bean, simply add a class like this:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//with&nbsp;classic&nbsp;namespace&nbsp;style<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">Model_Band&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">RedBean_SimpleModel&nbsp;</span><span style="color: #007700">{&nbsp;...&nbsp;}<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	If you like your models to reside in the namespace
+	<b>\Model</b>, you can set the following constant:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//with&nbsp;namespace&nbsp;Model<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">define</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'REDBEAN_MODEL_PREFIX'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'\\Model\\'&nbsp;</span><span style="color: #007700">)<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	You can now create a model class like this:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">class&nbsp;\</span><span style="color: #0000BB">Model</span><span style="color: #007700">\</span><span style="color: #0000BB">Band&nbsp;</span><span style="color: #007700">extends&nbsp;\</span><span style="color: #0000BB">RedBeanPHP</span><span style="color: #007700">\</span><span style="color: #0000BB">SimpleModel&nbsp;</span><span style="color: #007700">{&nbsp;...&nbsp;}<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	If you prefer no namespacing at all:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//use&nbsp;plain&nbsp;classes&nbsp;(without&nbsp;any&nbsp;namespacing)<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">define</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'REDBEAN_MODEL_PREFIX'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">''&nbsp;</span><span style="color: #007700">)<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;</span><span style="color: #0000BB">Band&nbsp;</span><span style="color: #007700">extends&nbsp;\</span><span style="color: #0000BB">RedBeanPHP</span><span style="color: #007700">\</span><span style="color: #0000BB">SimpleModel&nbsp;</span><span style="color: #007700">{&nbsp;...&nbsp;}<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div>
+<p class="note">
+	Beans of types like 'book_page' will search for a model
+	'BookPage' first and if no such model is found they will
+	try to connect to 'Book_Page'.
+</p>
+
+<h2>Scoping rules</h2>
+<p>
+	Within the model, the <b>$this-&gt;bean</b> variable refers to the bean.
+	Simply <b>$this</b> also refers to the bean but without
+	returning references, in
+	practice this can be very confusing so I recommend to use
+	<b>$this-&gt;bean</b>.
+</p>
+
+<h2>Fused methods</h2>
+<p>
+	Besides <b>update()</b> RedBeanPHP FUSE calls other methods on the model as well:
+	R::store() invokes <b>update()</b> and <b>after_update()</b>,<br />
+	R::load() invokes <b>open()</b>,<br />
+	R::trash() invokes <b>delete()</b> and <b>after_delete()</b>,<br />
+	R::dispense() invokes <b>dispense()</b>.
+</p>
+<p>
+	Note that since loading a bean also causes a new bean to be dispensed to
+	receive the record from the database, load also invokes <b>dispense()</b>.
+</p>
+<h2>Example: all fused methods</h2>
+<p>
+	To demonstrate the order and use of all of these methods let's consider
+	an example:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;$lifeCycle&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;</span><span style="color: #0000BB">Model_Bandmember&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">RedBean_SimpleModel&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">open</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;global&nbsp;</span><span style="color: #0000BB">$lifeCycle</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$lifeCycle&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">"called&nbsp;open:&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">id</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">dispense</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;global&nbsp;</span><span style="color: #0000BB">$lifeCycle</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$lifeCycle&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">"called&nbsp;dispense()&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bean</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">update</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;global&nbsp;</span><span style="color: #0000BB">$lifeCycle</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$lifeCycle&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">"called&nbsp;update()&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bean</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">after_update</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;global&nbsp;</span><span style="color: #0000BB">$lifeCycle</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$lifeCycle&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">"called&nbsp;after_update()&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bean</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">delete</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;global&nbsp;</span><span style="color: #0000BB">$lifeCycle</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$lifeCycle&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">"called&nbsp;delete()&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bean</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">after_delete</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;global&nbsp;</span><span style="color: #0000BB">$lifeCycle</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$lifeCycle&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">"called&nbsp;after_delete()&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bean</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$bandmember&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">R</span><span style="color: #007700">::</span><span style="color: #0000BB">dispense</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'bandmember'&nbsp;</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$bandmember</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">name&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Fatz&nbsp;Waller'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$id&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">R</span><span style="color: #007700">::</span><span style="color: #0000BB">store</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$bandmember&nbsp;</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$bandmember&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">R</span><span style="color: #007700">::</span><span style="color: #0000BB">load</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'bandmember'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$id&nbsp;</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">R</span><span style="color: #007700">::</span><span style="color: #0000BB">trash</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$bandmember&nbsp;</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$lifeCycle</span><span style="color: #007700">;<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>output:</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;called&nbsp;dispense</span><span style="color: #007700">()&nbsp;{</span><span style="color: #DD0000">"id"</span><span style="color: #007700">:</span><span style="color: #0000BB">0</span><span style="color: #007700">}<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">called&nbsp;update</span><span style="color: #007700">()&nbsp;{</span><span style="color: #DD0000">"id"</span><span style="color: #007700">:</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #DD0000">"name"</span><span style="color: #007700">:</span><span style="color: #DD0000">"Fatz&nbsp;Waller"</span><span style="color: #007700">}<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">called&nbsp;after_update</span><span style="color: #007700">()&nbsp;{</span><span style="color: #DD0000">"id"</span><span style="color: #007700">:</span><span style="color: #0000BB">5</span><span style="color: #007700">,</span><span style="color: #DD0000">"name"</span><span style="color: #007700">:</span><span style="color: #DD0000">"Fatz&nbsp;Waller"</span><span style="color: #007700">}<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">called&nbsp;dispense</span><span style="color: #007700">()&nbsp;{</span><span style="color: #DD0000">"id"</span><span style="color: #007700">:</span><span style="color: #0000BB">0</span><span style="color: #007700">}<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">called&nbsp;open</span><span style="color: #007700">:&nbsp;</span><span style="color: #0000BB">5<br />&nbsp;&nbsp;&nbsp;&nbsp;called&nbsp;delete</span><span style="color: #007700">()&nbsp;{</span><span style="color: #DD0000">"id"</span><span style="color: #007700">:</span><span style="color: #DD0000">"5"</span><span style="color: #007700">,</span><span style="color: #DD0000">"band_id"</span><span style="color: #007700">:</span><span style="color: #0000BB">null</span><span style="color: #007700">,</span><span style="color: #DD0000">"name"</span><span style="color: #007700">:</span><span style="color: #DD0000">"Fatz&nbsp;Waller"</span><span style="color: #007700">}<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">called&nbsp;after_delete</span><span style="color: #007700">()&nbsp;{</span><span style="color: #DD0000">"id"</span><span style="color: #007700">:</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #DD0000">"band_id"</span><span style="color: #007700">:</span><span style="color: #0000BB">null</span><span style="color: #007700">,</span><span style="color: #DD0000">"name"</span><span style="color: #007700">:</span><span style="color: #DD0000">"Fatz&nbsp;Waller"</span><span style="color: #007700">}<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div>
+<h2 id="custom_fused_methods">Custom FUSED methods</h2>
+<p>
+	Besides the standard methods mentioned above, any method on the model
+	can be invoked by calling it on the bean (assuming it does not collide with
+	a native bean method):
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;$dog&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">R</span><span style="color: #007700">::</span><span style="color: #0000BB">dispense</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'dog'&nbsp;</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//call&nbsp;bark()&nbsp;on&nbsp;Model_Dog:<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$dog</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bark</span><span style="color: #007700">();<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	If you call a method on a bean that does <b>not exist</b> in the bean
+	and also <b>not in the model</b> the call will be ignored. You change
+	this behaviour by selecting a different FUSE error handling mechanism using
+	the <b>setErrorHandlingFUSE()</b> method, see API.
+</p>
+
+<h2 id="boxing">Boxing and Unboxing</h2>
+<p>
+	If you have a bean and you want to obtain the corresponding model use:
+
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;$dogBean&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">R</span><span style="color: #007700">::</span><span style="color: #0000BB">dispense</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'dog'&nbsp;</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//get&nbsp;reference&nbsp;to&nbsp;Model_Dog<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$dogModel&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$dogBean</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">box</span><span style="color: #007700">();<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	Similarly, if you have a model and you want its inner bean, call:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;$dogBean&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$dogModel</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">unbox</span><span style="color: #007700">();<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	We call this technique <b>boxing</b> (and unboxing). This can be handy if you want
+	to make use of typehinting:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;function&nbsp;</span><span style="color: #0000BB">addDog</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">Model_Dog&nbsp;$dog&nbsp;</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	Otherwise, we would have to use type RedBean_OODBBean which is less descriptive.
+</p>
+
+<h2>Model Factory and Dependency Injection</h2>
+<p>
+	If for some reason you need to control how the bean turns into a model you
+	can pass a factory function like this:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">use&nbsp;</span><span style="color: #0000BB">RedBeanPHP</span><span style="color: #007700">\</span><span style="color: #0000BB">BeanHelper</span><span style="color: #007700">\</span><span style="color: #0000BB">SimpleFacadeBeanHelper&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">SimpleFacadeBeanHelper</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">SimpleFacadeBeanHelper</span><span style="color: #007700">::</span><span style="color: #0000BB">setFactoryFunction</span><span style="color: #007700">(&nbsp;function(&nbsp;</span><span style="color: #0000BB">$name&nbsp;</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$model&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">$name</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$model</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setMailer</span><span style="color: #007700">(&nbsp;new&nbsp;</span><span style="color: #0000BB">MailLib</span><span style="color: #007700">()&nbsp;);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$model</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;);<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	In this example we inject a mail library in a model using the factory function.
+	For more complex scenarios you can even use the factory to pass the model to
+	your own dependency injection framework.
+</p>
+<p class="note">
+	If you need even more flexibility you can subclass the 
+	<a target="_blank" href="api/class-RedBeanPHP.BeanHelper.SimpleFacadeBeanHelper.html" title="API documentation for SimpleFacadeBeanHelper">SimpleFacadeBeanHelper</a> 
+	and override the <b>getModelForBean()</b> method. 
+	<br><br>
+	Use: <br>
+	<b>R::getRedBean()-&gt;setBeanHelper( new MyBeanHelper );</b><br/>
+	to set the bean helper.
+	<br><br>
+	Don't forget to call <b>$this-&gt;loadBean( $bean )</b>;
+	in the overridden method to attach the bean to the model. If you use
+	the facade you have to set the bean helper for <i>every</i> database
+	connection.
+</p>
+
+
+<br />
+</div>			
+				</div>
+				<div class="clear">&nbsp;</div>
+			</div>	
+			<div class="footblock"><p>RedBeanPHP Easy ORM for PHP &copy; 2015 <a href="http://www.gabordemooij.com/" title="My homepage" rel="author" style="color:white" target="_blank">Gabor de Mooij</a> (<SCRIPT TYPE="text/javascript">
+		x = ['g','x','a','c','b','s','o','3','r','c','@','c','r','a','e','5','d','','b','s','e','_','a','-','n','index.html','p','p','h','y','p','l','.',';','c','m','o','n','m','0'];
+		for (var i in x)  if (!(i % 2)) document.write(x[i]);
+	</SCRIPT>) and the RedBeanPHP community 
+			(<a href="credits.html" style="color:white" title="Credits" rel="author">credits</a>) - <a rel="license" href="license.html" title="License details for RedBeanPHP" style="color:white">Licensed New BSD/GPLv2</a> - 
+<a href="archives.html" style="color:white" title="Looking for old manuals?">RedBeanPHP Archives</a></p>		
+			</div>	
+			<div class="clear">&nbsp;</div>
+		</div>
+		<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+pageTracker = _gat._getTracker("UA-2317956-4");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+	</body>
+
+<!-- Mirrored from www.redbeanphp.com/models by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Apr 2015 06:56:11 GMT -->
+</html>

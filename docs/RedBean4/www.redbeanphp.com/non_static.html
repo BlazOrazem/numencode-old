@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	
+<!-- Mirrored from www.redbeanphp.com/non_static by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Apr 2015 06:56:11 GMT -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>RedBeanPHP4 :: Non-static</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="author" content="Gabor de Mooij" />
+	<meta name="google-site-verification" content="CGmZGF9HRybgk4Hz-IfpVoFbZNP8XNb7iJv37VQD9g0" />
+	<link rel="alternate" title="rss" type="application/rss+xml" href="https://github.com/gabordemooij.atom" />
+	<link rel="icon" type="image/gif" href="favicon.gif"/>
+	<link href='http://fonts.googleapis.com/css?family=Fjalla+One%7COpen+Sans' rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" type="text/css" media="all" href="neat.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="top">
+				<a style="boder-width:0px;" href="index.html" rel="home"><img  class="logo" src="img/redbeanphp_logo.png" alt="RedBeanPHP logo, a white bean on a red square." title="Easy ORM for PHP" /></a>
+				<h1>RedBeanPHP 4<br /><span>The Power ORM</span>
+				</h1>
+				<ul>
+					<li><a title="Contribute to RedBeanPHP or fork the repository on Github." target="_blank" href="http://github.com/gabordemooij/redbean">Github</a></li>
+					<li><a title="Read the latest test report on Travis-CI." target="_blank" href="http://travis-ci.org/gabordemooij/redbean">Travis</a></li>
+					<li><a title="Discover hidden treasures in RedBeanPHP ORM with the API documentation." target="_blank" href="api/index.html">API</a></li>
+					<li><a title="Ask questions or help others at the RedBeanPHP forum." target="_blank" href="http://groups.google.com/forum/?fromgroups#!forum/redbeanorm">Forum</a></li>
+					<li><a title="The previous manual site for RedBeanPHP 3." href="manual3_0/index.html">Version 3</a></li>
+				</ul>
+			</div>
+			<div class="manual">
+				<div class="index">
+					<ul class="topics"><li><b class="cat">Introduction</b><ul><li><a title="Welcome"  href="welcome.html">Welcome</a></li><li><a title="Requirements"  href="requirements.html">Requirements</a></li><li><a title="Download"  href="download.html">Download</a></li><li><a title="Install"  href="install.html">Install</a></li><li><a title="Connection"  href="connection.html">Connection</a></li></ul></li><li><b class="cat">Basics</b><ul><li><a title="CRUD"  href="crud.html">CRUD</a></li><li><a title="Finding"  href="finding.html">Finding</a></li><li><a title="Querying"  href="querying.html">Querying</a></li><li><a title="Database"  href="database.html">Database</a></li><li><a title="Fluid and Frozen"  href="fluid_and_frozen.html">Fluid and Frozen</a></li><li><a title="Debugging"  href="debugging.html">Debugging</a></li></ul></li><li><b class="cat">Relations</b><ul><li><a title="One-to-many"  href="one_to_many.html">One-to-many</a></li><li><a title="Many-to-one"  href="many_to_one.html">Many-to-one</a></li><li><a title="Aliases"  href="aliases.html">Aliases</a></li><li><a title="Many-to-many"  href="many_to_many.html">Many-to-many</a></li><li><a title="Using SQL Snippets"  href="using_sql_snippets.html">Using SQL Snippets</a></li><li><a title="Counting"  href="counting.html">Counting</a></li><li><a title="Labels, Enums, Tags"  href="labels__enums__tags.html">Labels, Enums, Tags</a></li></ul></li><li><b class="cat">Advanced</b><ul><li><a title="Trees"  href="trees.html">Trees</a></li><li><a title="Link Beans"  href="link_beans.html">Link Beans</a></li><li><a title="Other relations"  href="other_relations.html">Other relations</a></li><li><a title="Models"  href="models.html">Models</a></li><li><a title="Meta data"  href="meta_data.html">Meta data</a></li><li><a title="Duplicate"  href="duplicate.html">Duplicate</a></li><li><a title="Import and Export"  href="import_and_export.html">Import and Export</a></li><li><span class="current" title="You are on this page" >Non-static</span></li><li><a title="UUIDs"  href="uuids.html">UUIDs</a></li><li><a title="Prefixes"  href="prefixes.html">Prefixes</a></li></ul></li><li><b class="cat">Project</b><ul><li><a title="Changelog"  href="changelog.html">Changelog</a></li><li><a title="Beta testing"  href="beta_testing.html">Beta testing</a></li><li><a title="Roadmap"  href="roadmap.html">Roadmap</a></li><li><a title="About"  href="about.html">About</a></li><li><a title="Plugins"  href="plugins.html">Plugins</a></li></ul></li></ul>
+				</div>
+				<div class="content">
+					<div class="inlay"><h1 >Non-static</h1>
+
+<p>
+	If you don't like static methods, you can use
+	the objects behind the facade directly.
+	Almost every method of the R-class is available through
+	the original RedBeanPHP objects as well. The facade
+	is just that: a thin layer on top of these objects.
+	Here is an overview of the most important R-methods
+	and how to use them 'the non-static way'.
+</p>
+<p>
+	Note that there are three important objects in RedBeanPHP:
+	the adapter (DBAdapter), the query writer (QueryWriter)
+	and the RedBeanPHP object database (OODB).
+	We call these objects the core objects, because together they
+	represent the foundation of RedBeanPHP.
+	Other objects need these core objects, that's why they are bundled in
+	a toolbox (ToolBox). So, if you need let's say an instance
+	of the Tag Manager class (TagManager) you'll have to
+	pass an instance of the toolbox to the contructor.
+</p>
+
+<h2 id="toolbox">Toolbox</h2>
+<p>	You can manually assemble your toolbox
+	like this:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;$pdo&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">RPDO</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$dsn&nbsp;</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$adapter&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">DBAdapter</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$pdo&nbsp;</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$writer&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MySQL</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$adapter&nbsp;</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$oodb&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">OODB</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$writer&nbsp;</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$tb&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">ToolBox</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$oodb</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$adapter</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$writer&nbsp;</span><span style="color: #007700">);<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div>
+
+<h2 id="wiring">Wiring</h2>
+<p>
+	RedBeanPHP has a very decoupled architecture, which makes it very flexibile.
+	However this means you need to introduce some objects to eachother.
+	First we need to tell RedBeanPHP how beans can obtain the toolbox, this
+	means we need to define our own BeanHelper:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">BeanHelper&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">SimpleFacadeBeanHelper&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;</span><span style="color: #0000BB">$toolbox</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">getToolbox</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">toolbox</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">setToolbox</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$toolbox&nbsp;</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">toolbox&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$toolbox</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p class="note" id="using_interface">
+	Note that we extend the SimpleFacadeBeanHelper here, if you want to implement the
+	interface directly you'll have to add the methods getModelForBean() and
+	getExtractedToolbox() <a href="http://redbeanphp.com/api/interface_red_bean_p_h_p_1_1_bean_helper.html" target="_blank" 
+	title="Interface definition BeanHelper">as well</a>.
+</p>
+<p>
+	Now let's do the wiring:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;$r&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$tb</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getRedBean</span><span style="color: #007700">();<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//A&nbsp;helper&nbsp;for&nbsp;OODB&nbsp;to&nbsp;give&nbsp;to&nbsp;its&nbsp;beans<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">BeanHelper</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setToolbox</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$tb&nbsp;</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$r</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setBeanHelper</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//allow&nbsp;OODB&nbsp;to&nbsp;associate&nbsp;beans<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$r</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setAssociationManager</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">AssociationManager</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$tb&nbsp;</span><span style="color: #007700">));<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//enable&nbsp;FUSE<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$h&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">SimpleModelHelper</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$h</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">attachEventListeners</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$r&nbsp;</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div>
+<h2 id="hybrid">Hybrid</h2>
+<p>
+	Normally the facade does all this dull work for you.
+	You can also let the facade do this work and still work with instances;
+	simply steal the toolbox from the facade after it has been configured:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;R</span><span style="color: #007700">::</span><span style="color: #0000BB">setup</span><span style="color: #007700">(...);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$toolbox&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">R</span><span style="color: #007700">::</span><span style="color: #0000BB">getToolBox</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//give&nbsp;it&nbsp;to&nbsp;me!<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div>
+<h2 id="service-objects">Service objects</h2>
+<p>
+	Many methods in the R-facade are just <i>wrappers</i> around calls to
+	methods on one of these core objects: <b>OODB</b>, <b>Writer</b> and <b>Adapter</b>. However
+	many static methods in R also call so-called service objects. Service
+	objects offer secondary functionality. To instantiate a <i>service object</i>
+	you need to pass the toolbox to its constructor. The toolbox contains everything
+	service object needs to operate: the adapter to connect to the
+	database, the OODB object to call basic ORM methods and the writer
+	to write queries for the database.
+</p>
+<p>
+	For instance, R::find() uses the Finder class.
+	To create an instance of Finder yourself:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;$f&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Finder</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$tb&nbsp;</span><span style="color: #007700">);<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div><p>
+	That's it. Now we have an instance of the Finder service object.
+	Now to find a bean use:
+</p>
+<div class="codeblock"><code><span style="color: #000000">
+<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;$x&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'music'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'&nbsp;composer&nbsp;=&nbsp;?&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Bach'&nbsp;</span><span style="color: #007700">);<br /></span><span style="color: #0000BB"></span>
+</span>
+</code></div>
+<h2>API</h2>
+<p>
+	This manual focuses on the facade.
+	For details on individual objects, please consult the
+	<a href="api.html" title="Learn more about individual objects">API pages</a>.
+</p>
+<p class="note">
+	Read more about the <a href="internals.html" title="Internals">internals</a> of RedBeanPHP.
+</p>
+
+<br />
+</div>			
+				</div>
+				<div class="clear">&nbsp;</div>
+			</div>	
+			<div class="footblock"><p>RedBeanPHP Easy ORM for PHP &copy; 2015 <a href="http://www.gabordemooij.com/" title="My homepage" rel="author" style="color:white" target="_blank">Gabor de Mooij</a> (<SCRIPT TYPE="text/javascript">
+		x = ['g','x','a','c','b','s','o','3','r','c','@','c','r','a','e','5','d','','b','s','e','_','a','-','n','index.html','p','p','h','y','p','l','.',';','c','m','o','n','m','0'];
+		for (var i in x)  if (!(i % 2)) document.write(x[i]);
+	</SCRIPT>) and the RedBeanPHP community 
+			(<a href="credits.html" style="color:white" title="Credits" rel="author">credits</a>) - <a rel="license" href="license.html" title="License details for RedBeanPHP" style="color:white">Licensed New BSD/GPLv2</a> - 
+<a href="archives.html" style="color:white" title="Looking for old manuals?">RedBeanPHP Archives</a></p>		
+			</div>	
+			<div class="clear">&nbsp;</div>
+		</div>
+		<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+pageTracker = _gat._getTracker("UA-2317956-4");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+	</body>
+
+<!-- Mirrored from www.redbeanphp.com/non_static by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Apr 2015 06:56:12 GMT -->
+</html>

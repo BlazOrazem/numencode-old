@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from www.redbeanphp.com/api/class-RedBeanPHP.Repository.Fluid.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Apr 2015 06:56:28 GMT -->
+<head>
+	<meta charset="utf-8">
+
+	<title>Class RedBeanPHP\Repository\Fluid | RedBeanPHP 4.2</title>
+
+	<link rel="stylesheet" href="resources/style76b1.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+	<script>
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', "UA-2317956-4"]);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index-2.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li>
+					<a href="namespace-None.html">
+						None					</a>
+
+						</li>
+				<li class="active">
+					<a href="namespace-RedBeanPHP.html">
+						RedBeanPHP<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-RedBeanPHP.Adapter.html">
+						Adapter					</a>
+
+						</li>
+				<li>
+					<a href="namespace-RedBeanPHP.BeanHelper.html">
+						BeanHelper					</a>
+
+						</li>
+				<li>
+					<a href="namespace-RedBeanPHP.Cursor.html">
+						Cursor					</a>
+
+						</li>
+				<li>
+					<a href="namespace-RedBeanPHP.Driver.html">
+						Driver					</a>
+
+						</li>
+				<li>
+					<a href="namespace-RedBeanPHP.Logger.html">
+						Logger<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-RedBeanPHP.Logger.RDefault.html">
+						RDefault					</a>
+
+						</li>
+							</ul></li>
+				<li>
+					<a href="namespace-RedBeanPHP.QueryWriter.html">
+						QueryWriter					</a>
+
+						</li>
+				<li>
+					<a href="namespace-RedBeanPHP.RedException.html">
+						RedException					</a>
+
+						</li>
+				<li class="active">
+					<a href="namespace-RedBeanPHP.Repository.html">
+						Repository					</a>
+
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-RedBeanPHP.Repository.Fluid.html">Fluid</a></li>
+				<li><a href="class-RedBeanPHP.Repository.Frozen.html">Frozen</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index-2.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-RedBeanPHP.Repository.html" title="Summary of RedBeanPHP\Repository"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Fluid</h1>
+
+
+	<div class="description">
+	<p>Fluid Repository.
+OODB manages two repositories, a fluid one that
+adjust the database schema on-the-fly to accomodate for
+new bean types (tables) and new properties (columns) and
+a frozen one for use in a production environment. OODB
+allows you to swap the repository instances using the freeze()
+method.</p>
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+			<a href="class-RedBeanPHP.Repository.html"><span>RedBeanPHP\Repository</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>RedBeanPHP\Repository\Fluid</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-RedBeanPHP.html">RedBeanPHP</a>\<a href="namespace-RedBeanPHP.Repository.html">Repository</a><br>
+		
+
+				<b>Copyright:</b>
+				<p>copyright (c) G.J.G.T. (Gabor) de Mooij and the RedBeanPHP Community
+This source file is subject to the BSD/GPLv2 License that is bundled
+with this source code in the file license.txt.</p><br>
+				<b>License:</b>
+				<a href="BSD/GPLv2.html">BSD/GPLv2</a><br>
+				<b>Author:</b>
+				Gabor de Mooij and the RedBeanPHP community<br>
+				<b>File:</b>
+				RedBeanPHP/Repository/Fluid.php<br>
+			<b>Located at</b> <a href="source-class-RedBeanPHP.Repository.Fluid.html#18-325" title="Go to source code">Repository/Fluid.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="processAdditions" id="_processAdditions">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_processAdditions">#</a>
+		<code><a href="source-class-RedBeanPHP.Repository.Fluid.html#145-184" title="Go to source code">processAdditions</a>( <span><code><a href="class-RedBeanPHP.OODBBean.html">RedBeanPHP\OODBBean</a></code> <var>$bean</var></span>, <span>array <var>$ownAdditions</var></span> )</code>
+
+		<div class="description short">
+			<p>Part of the store() functionality.
+Handles all new additions after the bean has been saved.
+Stores addition bean in own-list, extracts the id and
+adds a foreign key. Also adds a constraint in case the type is
+in the dependent list.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Part of the store() functionality.
+Handles all new additions after the bean has been saved.
+Stores addition bean in own-list, extracts the id and
+adds a foreign key. Also adds a constraint in case the type is
+in the dependent list.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$bean</var></dt>
+					<dd>bean</dd>
+					<dt><var>$ownAdditions</var></dt>
+					<dd>list of addition beans in own-list</dd>
+				</dl></div>
+
+
+				<h4>Throws</h4>
+				<div class="list">
+					RedBeanPHP\RedException\Security
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="storeBean" id="_storeBean">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_storeBean">#</a>
+		<code><a href="source-class-RedBeanPHP.Repository.Fluid.html#186-217" title="Go to source code">storeBean</a>( <span><code><a href="class-RedBeanPHP.OODBBean.html">RedBeanPHP\OODBBean</a></code> <var>$bean</var></span> )</code>
+
+		<div class="description short">
+			<p>Stores a cleaned bean; i.e. only scalar values. This is the core of the store()
+method. When all lists and embedded beans (parent objects) have been processed and
+removed from the original bean the bean is passed to this method to be stored
+in the database.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Stores a cleaned bean; i.e. only scalar values. This is the core of the store()
+method. When all lists and embedded beans (parent objects) have been processed and
+removed from the original bean the bean is passed to this method to be stored
+in the database.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$bean</var></dt>
+					<dd>the clean bean</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="handleException" id="_handleException">
+
+		<td class="attributes"><code>
+			 protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_handleException">#</a>
+		<code><a href="source-class-RedBeanPHP.Repository.Fluid.html#219-237" title="Go to source code">handleException</a>( <span>Exception <var>$exception</var></span> )</code>
+
+		<div class="description short">
+			<p>Handles\Exceptions. Suppresses exceptions caused by missing structures.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Handles\Exceptions. Suppresses exceptions caused by missing structures.</p>
+
+
+
+
+
+				<h4>Param\exception</h4>
+				<div class="list">
+						$exception exception<br>
+				</div>
+				<h4>Throws\exception</h4>
+				<div class="list">
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="dispense" id="_dispense">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-RedBeanPHP.OODBBean.html">RedBeanPHP\OODBBean</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_dispense">#</a>
+		<code><a href="source-class-RedBeanPHP.Repository.Fluid.html#239-267" title="Go to source code">dispense</a>( <span>string <var>$type</var></span>, <span>string <var>$number</var> = <span class="php-num">1</span></span>, <span>boolean <var>$alwaysReturnArray</var> = <span class="php-keyword1">FALSE</span> </span> )</code>
+
+		<div class="description short">
+			<p>Dispenses a new bean (a OODBBean Bean Object)
+of the specified type. Always
+use this function to get an empty bean object. Never
+instantiate a OODBBean yourself because it needs
+to be configured before you can use it with RedBean. This
+function applies the appropriate initialization /
+configuration for you.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Dispenses a new bean (a OODBBean Bean Object)
+of the specified type. Always
+use this function to get an empty bean object. Never
+instantiate a OODBBean yourself because it needs
+to be configured before you can use it with RedBean. This
+function applies the appropriate initialization /
+configuration for you.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$type</var></dt>
+					<dd>type of bean you want to dispense</dd>
+					<dt><var>$number</var></dt>
+					<dd>number of beans you would like to get</dd>
+					<dt><var>$alwaysReturnArray</var></dt>
+					<dd>if TRUE always returns the result as an array</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-RedBeanPHP.OODBBean.html">RedBeanPHP\OODBBean</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="load" id="_load">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-RedBeanPHP.OODBBean.html">RedBeanPHP\OODBBean</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_load">#</a>
+		<code><a href="source-class-RedBeanPHP.Repository.Fluid.html#269-324" title="Go to source code">load</a>( <span>string <var>$type</var></span>, <span>integer <var>$id</var></span> )</code>
+
+		<div class="description short">
+			<p>Loads a bean from the object database.
+It searches for a OODBBean Bean Object in the
+database. It does not matter how this bean has been stored.
+RedBean uses the primary key ID $id and the string $type
+to find the bean. The $type specifies what kind of bean you
+are looking for; this is the same type as used with the
+dispense() function. If RedBean finds the bean it will return
+the OODB Bean object; if it cannot find the bean
+RedBean will return a new bean of type $type and with
+primary key ID 0. In the latter case it acts basically the
+same as dispense().</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Loads a bean from the object database.
+It searches for a OODBBean Bean Object in the
+database. It does not matter how this bean has been stored.
+RedBean uses the primary key ID $id and the string $type
+to find the bean. The $type specifies what kind of bean you
+are looking for; this is the same type as used with the
+dispense() function. If RedBean finds the bean it will return
+the OODB Bean object; if it cannot find the bean
+RedBean will return a new bean of type $type and with
+primary key ID 0. In the latter case it acts basically the
+same as dispense().</p>
+
+<p>Important note:
+If the bean cannot be found in the database a new bean of
+the specified type will be generated and returned.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$type</var></dt>
+					<dd>type of bean you want to load</dd>
+					<dt><var>$id</var></dt>
+					<dd>ID of the bean you want to load</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-RedBeanPHP.OODBBean.html">RedBeanPHP\OODBBean</a></code>
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					SQL
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-RedBeanPHP.Repository.html#methods">RedBeanPHP\Repository</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-RedBeanPHP.Repository.html#___construct">__construct()</a>, 
+			<a href="class-RedBeanPHP.Repository.html#_batch">batch()</a>, 
+			<a href="class-RedBeanPHP.Repository.html#_check">check()</a>, 
+			<a href="class-RedBeanPHP.Repository.html#_convertToBeans">convertToBeans()</a>, 
+			<a href="class-RedBeanPHP.Repository.html#_count">count()</a>, 
+			<a href="class-RedBeanPHP.Repository.html#_find">find()</a>, 
+			<a href="class-RedBeanPHP.Repository.html#_findCollection">findCollection()</a>, 
+			<a href="class-RedBeanPHP.Repository.html#_hasListsOrObjects">hasListsOrObjects()</a>, 
+			<a href="class-RedBeanPHP.Repository.html#_prepareEmbeddedBean">prepareEmbeddedBean()</a>, 
+			<a href="class-RedBeanPHP.Repository.html#_processEmbeddedBean">processEmbeddedBean()</a>, 
+			<a href="class-RedBeanPHP.Repository.html#_processGroups">processGroups()</a>, 
+			<a href="class-RedBeanPHP.Repository.html#_processResidue">processResidue()</a>, 
+			<a href="class-RedBeanPHP.Repository.html#_processSharedAdditions">processSharedAdditions()</a>, 
+			<a href="class-RedBeanPHP.Repository.html#_processSharedResidue">processSharedResidue()</a>, 
+			<a href="class-RedBeanPHP.Repository.html#_processSharedTrashcan">processSharedTrashcan()</a>, 
+			<a href="class-RedBeanPHP.Repository.html#_processTrashcan">processTrashcan()</a>, 
+			<a href="class-RedBeanPHP.Repository.html#_store">store()</a>, 
+			<a href="class-RedBeanPHP.Repository.html#_storeBeanWithLists">storeBeanWithLists()</a>, 
+			<a href="class-RedBeanPHP.Repository.html#_trash">trash()</a>, 
+			<a href="class-RedBeanPHP.Repository.html#_wipe">wipe()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary inherited">
+	<caption>Properties inherited from <a href="class-RedBeanPHP.Repository.html#properties">RedBeanPHP\Repository</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-RedBeanPHP.Repository.html#$nesting"><var>$nesting</var></a>, 
+			<a href="class-RedBeanPHP.Repository.html#$stash"><var>$stash</var></a>, 
+			<a href="class-RedBeanPHP.Repository.html#$writer"><var>$writer</var></a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		RedBeanPHP 4.2 API documentation generated by <a href="http://apigen.org/">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+
+<!-- Mirrored from www.redbeanphp.com/api/class-RedBeanPHP.Repository.Fluid.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Apr 2015 06:56:29 GMT -->
+</html>

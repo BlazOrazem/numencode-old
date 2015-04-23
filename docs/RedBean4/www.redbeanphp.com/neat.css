@@ -1,0 +1,151 @@
+body { font-family: 'Open Sans',Arial; }
+.footblock { background-color:#888;  }
+.content .codeblock { overflow:scroll; }
+img { max-width:100%;border:none; }
+img.logo { float:left; }
+.top ul { clear:both; }
+a img {border: 0px; }
+@media (max-width:639px) {
+	a {color:black;}
+}
+
+@media (min-width:640px) {
+
+*{ margin:0;padding:0;}
+a {text-decoration:none;}
+.index ul li, .top ul li { list-style:none;}
+.content li { margin-left:20px; }
+.clear { display:block; clear:both;}
+
+
+/* Styling */
+
+
+body {
+	background-color: #203758;
+	min-height:800px;
+	background-image: url(img/gradient.png);
+	background-repeat: repeat-x;
+}
+
+
+
+.wrapper {
+	width:960px;
+	min-height:300px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.top {
+	width:100%;
+	height:140px;
+	overflow:hidden;
+}
+.top .logo {
+	display:block;
+	float:left;
+}
+.top h1 {
+	font-family: 'Fjalla One', Arial;
+	color: #ffe;
+	display:block;
+	float:left;
+	font-size:40px;
+	text-shadow: 1px 1px 5px #000;
+	margin-top:60px;
+	line-height: 22px;
+	font-weight:lighter;
+}
+.top h1 span {
+	font-size: 20px;
+}
+.top ul {
+	display:block;
+	float:right;
+	margin-top:80px;
+	clear:none;
+}
+.top ul li {
+	display: inline;
+	margin-left:20px;
+}
+.manual {
+	width:100%;
+	min-height:800px;
+	background-image:url(img/bg.png);
+	background-repeat: repeat-y;
+	margin-bottom: 20px;
+}
+.manual .topics {	
+	margin-top:20px;
+}
+.manual .index a, .top a {
+	color:#fff;
+}
+.manual .current {
+   opacity: 0.6;
+}
+.manual .current:before {
+	content: "●";
+	margin-right:5px;
+}
+.manual .index ul {
+	margin-bottom:20px;
+	margin-left: 20px;
+}
+.manual .index b {
+	margin-bottom:10px;
+	display:block;
+	opacity: 0.6;
+}
+.index {
+	float:left;
+	height:100%;
+	width:25%;
+	color:#ffe;
+}
+.content {
+	float:right;
+	height:100%;
+	width:75%;
+	color:#000;
+}
+.content .inlay {
+	margin:40px;
+}
+
+.content p, .content kbd, .content ul, .content .codeblock {
+	margin-bottom:40px;
+}
+
+.content h1, .content h2, .content h3 {
+	margin-bottom:10px;
+}
+
+.content .codeblock, .content .note {
+	padding: 20px;
+	background-color:#DDD;
+	overflow:auto;
+}
+
+kbd {
+	padding:20px;
+	background-color:#000;
+	color:#2E2;
+	font-family: courier;
+	display: block;
+}
+
+.footblock {
+	text-align:center;
+	color:#FFE;
+	font-size:14px; 
+	opacity:0.4; 
+	background-color:transparent;
+}
+
+time { font-weight:bold;}
+abbr { cursor:help;}
+
+}
+
