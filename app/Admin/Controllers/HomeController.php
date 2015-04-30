@@ -1,6 +1,6 @@
-<?php namespace App\admin\controllers;
+<?php namespace App\Admin\Controllers;
 
-class Admin {
+class HomeController extends AdminController {
 	
 //	function __construct()
 //	{
@@ -8,12 +8,12 @@ class Admin {
 //	}
 	
 	/**
-	 * Authenticate manager, on success redirect to admin dashboard
+	 * Authenticate manager, on success redirect to Admin dashboard
 	 *
 	 */
 	public function index()
 	{
-        diebug('To je admin.');
+        diebug('To je Admin.');
 		// Authenticate manager
 //		\libs\Auth::authManager();
 		
@@ -25,10 +25,10 @@ class Admin {
 	 * Display login template
 	 *
 	 */
-	function login()
+	public function login()
 	{
 		// Echo Hash::create('sha256','q1w2', HASH_PASSWORD_KEY);
-		$this->view->tpl('login.tpl', 'admex');
+		$this->view->display('admin/login.tpl');
 	}
 	
 	/**
@@ -52,7 +52,7 @@ class Admin {
 		if ($this->model->auth()) {
 			redirect(ADMINURL);
 		} else {
-//			require APPROOT . 'controllers/error.php';
+//			require APPROOT . 'Controllers/error.php';
 			Error::index('Neveljavno uporabniško ime ali geslo.', ADMINURL, 5);
 			exit();
 		}

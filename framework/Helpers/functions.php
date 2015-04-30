@@ -1,20 +1,4 @@
 <?php
-
-	/**
-	 * Loads custom model
-	 *
-	 * @param string $name Name of the model
-	 * @param string $mod Name of the module
-	 * @return model class
-	 */
-	function getModel($name, $mod = null)
-	{
-		if($mod) $path = APPROOT . 'modules/' . strtolower($mod) . '/';
-		else $path = APPROOT;
-		require($path . 'models/' . strtolower($name) . '_model.php');
-		$model = ucfirst($name) . '_Model';
-		return new $model();
-	}
 	
 	/**
 	 * Display string or array in <pre> tags
@@ -41,7 +25,7 @@
 	/**
 	 * Display string or array (as string) in console
 	 *
-	 * @param string $var
+	 * @param string $data
 	 * @return string
 	 */
 	function debugc($data)
@@ -222,7 +206,7 @@
 	 */
 	function getCK($name='content', $value='', $toolbar = 'Basic', $width='100%', $height='400', $language = 'sl')
 	{
-		if(libs\Auth::roleManager() == 'admin') $toolbar = 'Admin';
+		if(libs\Auth::roleManager() == 'Admin') $toolbar = 'Admin';
 		$id='ck_'.$name;
 		return '	
 		<textarea style="width:'.$width.'; height:'.$height.'px;" id="'.$id.'" name="'.$name.'">'.$value.'</textarea>

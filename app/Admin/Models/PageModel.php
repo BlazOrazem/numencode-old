@@ -1,13 +1,8 @@
-<?php
-namespace models;
-use libs\Model,	libs\DB, libs\Hash, libs\Session;
+<?php namespace App\Admin\Models;
 
-class Admin_Model extends Model {
+use App\Core\Model;
 
-	public function __construct()
-	{
-		parent::__construct();
-	}
+class PageModel extends Model {
 	
 	/**
 	 * Authenticate and set login session for manager
@@ -31,5 +26,3 @@ class Admin_Model extends Model {
 	}
 	
 }
-
-?>

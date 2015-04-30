@@ -7273,7 +7273,7 @@ class RedBean_AssociationManager extends RedBean_Observable
 	 * Breaks the association between two beans. This method unassociates two beans. If the
 	 * method succeeds the beans will no longer form an association. In the database
 	 * this means that the association record will be removed. This method uses the
-	 * OODB trash() method to remove the association links, thus giving FUSE models the
+	 * OODB trash() method to remove the association links, thus giving FUSE Models the
 	 * opportunity to hook-in additional business logic. If the $fast parameter is
 	 * set to boolean TRUE this method will remove the beans without their consent,
 	 * bypassing FUSE. This can be used to improve performance.
@@ -7324,7 +7324,7 @@ class RedBean_AssociationManager extends RedBean_Observable
 	 * Removes all relations for a bean. This method breaks every connection between
 	 * a certain bean $bean and every other bean of type $type. Warning: this method
 	 * is really fast because it uses a direct SQL query however it does not inform the
-	 * models about this. If you want to notify FUSE models about deletion use a foreach-loop
+	 * Models about this. If you want to notify FUSE Models about deletion use a foreach-loop
 	 * with unassociate() instead. (that might be slower though)
 	 *
 	 * @param RedBean_OODBBean $bean reference bean

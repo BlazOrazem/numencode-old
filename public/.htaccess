@@ -10,4 +10,4 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-l
 
 #RewriteCond %{HTTP_HOST} !^(www\.|localhost$) [NC]
-RewriteRule ^(.+)$ index.php/$1 [L,QSA]
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
