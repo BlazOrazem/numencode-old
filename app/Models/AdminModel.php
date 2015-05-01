@@ -1,8 +1,8 @@
-<?php namespace App\Admin\Models;
+<?php namespace App\Models;
 
 use App\Core\Model;
 
-class PageModel extends Model {
+class AdminModel extends Model {
 	
 	/**
 	 * Authenticate and set login session for manager

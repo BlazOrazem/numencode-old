@@ -54,8 +54,7 @@ class Router {
         $this->method = $urlData['method'] ?: $this->method;
 
         // Initialize Controller.
-        $controllerPath = $urlData['type'] == 'adm' ? '\\App\Admin\Controllers\\' : '\\App\Controllers\\';
-        $this->controller = $controllerPath . $this->controller;
+        $this->controller = '\\App\Controllers\\' . $this->controller;
         $this->controller = new $this->controller();
 
         // Set parameters to either the array values or an empty array.
@@ -96,21 +95,15 @@ class Router {
     protected function parseUrl()
     {
         $url = explode('/', filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL));
-        $type = stristr($url[0], 'Admin') ? 'adm' : (stristr($url[0], 'module') ? 'mod' : 'std');
-        if ($type != 'std') {
-            unset($url[0]);
-            $url = array_values($url);
-        }
         $urlData = array(
             'url' => null,
             'controller' => isset($url[0]) ? $url[0] : $this->controller,
-            'method' => isset($url[1]) ? $url[1] : $this->method
+            'method' => isset($url[1]) ? $url[1] : $this->method,
         );
         unset($url[0]);
         unset($url[1]);
         return array_merge($urlData, array(
             'params' => serialize(array_values($url)),
-            'type' => $type
         ));
     }
 

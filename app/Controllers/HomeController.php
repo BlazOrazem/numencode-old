@@ -1,12 +1,12 @@
 <?php namespace App\Controllers;
 
-use App\Core\Controller;
+use App\Core\BaseController;
 
-class HomeController extends Controller {
+class HomeController extends BaseController {
 
     public function index()
     {
-        diebug('test345');
+        diebug('To je home stran frontend.');
     }
 
 }

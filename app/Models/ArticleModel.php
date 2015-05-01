@@ -2,6 +2,6 @@
 
 use App\Core\Model;
 
-class PageModel extends Model {
+class ArticleModel extends Model {
 
 }

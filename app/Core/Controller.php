@@ -3,6 +3,7 @@
 abstract class Controller {
 
     public $model;
+    public $view;
 
     public function __construct()
     {
@@ -21,6 +22,20 @@ abstract class Controller {
         }
 
         return $this;
+    }
+
+    public function getModel($tableName)
+    {
+        $modelName = ucfirst($tableName) . 'Model';
+
+        if (class_exists('\App\Models\\' . $modelName)) {
+            $model = '\App\Models\\' . $modelName;
+//            $this->$tableName = new $model();
+            return new $model();
+        }
+//        diebug($this);
+//        return $this;
+//        diebug($modelName);
     }
 
     protected function initView()
