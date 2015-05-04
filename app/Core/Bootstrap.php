@@ -32,6 +32,9 @@ class Bootstrap {
         // Initialize Error Handler.
         $this->initWhoopsErrorHandler();
 
+        // Start Session.
+        $this->startSession();
+
         // Initialize Environment variables.
         $this->initDotEnv();
 
@@ -40,7 +43,15 @@ class Bootstrap {
     }
 
     /**
-     * Load Environment Variables
+     * Start a PHP session.
+     */
+    public function startSession()
+    {
+        $session = new \App\Core\Session();
+    }
+
+    /**
+     * Load environment variables.
      */
     protected function initDotEnv()
     {
@@ -54,12 +65,11 @@ class Bootstrap {
     protected function initRouter()
     {
         $this->router = new Router(new Database());
-
         $this->router->handleRequest();
     }
 
     /**
-     * Send any Exceptions or PHP errors to the Whoops! Error Handler
+     * Send any Exceptions or PHP errors to the Whoops! Error Handler.
      *
      * @return $this
      */

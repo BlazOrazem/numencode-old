@@ -111,12 +111,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "ea17aad26693a12c457977522c4ad01e0a3b1768"
+                "reference": "22ea1404dff44d96d109ba748697dbef9cb3a1c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/ea17aad26693a12c457977522c4ad01e0a3b1768",
-                "reference": "ea17aad26693a12c457977522c4ad01e0a3b1768",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/22ea1404dff44d96d109ba748697dbef9cb3a1c9",
+                "reference": "22ea1404dff44d96d109ba748697dbef9cb3a1c9",
                 "shasum": ""
             },
             "require": {
@@ -158,7 +158,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-04-28 21:12:12"
+            "time": "2015-05-04 16:21:55"
         },
         {
             "name": "vlucas/phpdotenv",

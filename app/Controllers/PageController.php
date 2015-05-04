@@ -6,15 +6,10 @@ class PageController extends BaseController {
 
     public function index()
     {
-        $args = func_get_args();
-
-        if ($id = (int)$args[0]) {
-            unset($args[0]);
-        }
+        $id = isset(func_get_args()[0]) ? (int)func_get_args()[0] : false;
 
         $item  = $this->model->getItem($id);
         $this->view->assign('item', $item);
-//        $this->view->render(array($item));
 
 //        $articles  = $this->getModel('article')->getItems();
 //        diebug($articles);

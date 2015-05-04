@@ -31,6 +31,20 @@ class Router {
     protected $params = array();
 
     /**
+     * Set the default language.
+     *
+     * @var string
+     */
+    protected $defaultLang = 'en';
+
+    /**
+     * Set the locale.
+     *
+     * @var void
+     */
+    protected $locale;
+
+    /**
      * Create a new Router instance with Database constructor injection.
      *
      * @param Database $database
@@ -38,6 +52,36 @@ class Router {
     public function __construct(Database $database)
     {
         $this->db = $database;
+        $this->locale = $this->handleLocale();
+    }
+
+    /**
+     * Set the language.
+     *
+     * @return string
+     */
+    protected function handleLocale()
+    {
+        if (isset($_GET['lang'])) {
+            $lang = strtolower($_GET['lang']);
+            $languages = $this->db->getCol('SELECT id FROM lang');
+            if (in_array($lang, $languages)) {
+                $this->setSessionLang($lang);
+                return $lang;
+            }
+        }
+        return (Session::get('lang') !== null) ? Session::get('lang') : $this->setDefaultLang();
+    }
+
+    protected function setSessionLang($lang)
+    {
+        Session::set('lang', $lang);
+    }
+
+    protected function setDefaultLang()
+    {
+        $this->setSessionLang($this->defaultLang);
+        return $this->defaultLang;
     }
 
     /**
@@ -62,7 +106,7 @@ class Router {
 
         // Call the chosen method on the chosen controller, passing
         // in the parameters array (or empty array if above was false).
-        call_user_func_array([$this->controller, $this->method], $this->params);
+        call_user_func_array(array($this->controller, $this->method), $this->params);
     }
 
     /**
@@ -72,7 +116,7 @@ class Router {
      *
      * @return array
      */
-    public function getUrlData()
+    protected function getUrlData()
     {
         if (!isset($_GET['url'])) return false;
 
