@@ -2,86 +2,31 @@
 
 class Router {
 
-    /**
-     * Set the database connection.
-     *
-     * @var Database
-     */
+    /** @var Database Establish the Database connection.  */
     protected $db;
 
-    /**
-     * Set the controller.
-     *
-     * @var string
-     */
+    /** @var string Set the default Controller. */
     protected $controller = 'HomeController';
 
-    /**
-     * Set the method.
-     *
-     * @var string
-     */
+    /** @var string Set the default Method. */
     protected $method = 'index';
 
-    /**
-     * Set parameters.
-     *
-     * @var array
-     */
+    /** @var array Set the parameters array. */
     protected $params = array();
 
-    /**
-     * Set the default language.
-     *
-     * @var string
-     */
-    protected $defaultLang = 'en';
-
-    /**
-     * Set the locale.
-     *
-     * @var void
-     */
+    /** @var Locale. */
     protected $locale;
 
     /**
      * Create a new Router instance with Database constructor injection.
      *
      * @param Database $database
+     * @param Locale $locale
      */
-    public function __construct(Database $database)
+    public function __construct(Database $database, Locale $locale)
     {
         $this->db = $database;
-        $this->locale = $this->handleLocale();
-    }
-
-    /**
-     * Set the language.
-     *
-     * @return string
-     */
-    protected function handleLocale()
-    {
-        if (isset($_GET['lang'])) {
-            $lang = strtolower($_GET['lang']);
-            $languages = $this->db->getCol('SELECT id FROM lang');
-            if (in_array($lang, $languages)) {
-                $this->setSessionLang($lang);
-                return $lang;
-            }
-        }
-        return (Session::get('lang') !== null) ? Session::get('lang') : $this->setDefaultLang();
-    }
-
-    protected function setSessionLang($lang)
-    {
-        Session::set('lang', $lang);
-    }
-
-    protected function setDefaultLang()
-    {
-        $this->setSessionLang($this->defaultLang);
-        return $this->defaultLang;
+        $this->locale = $locale;
     }
 
     /**
