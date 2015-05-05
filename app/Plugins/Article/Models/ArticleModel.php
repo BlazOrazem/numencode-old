@@ -1,4 +1,4 @@
-<?php namespace App\Models;
+<?php namespace App\Plugins\Article\Models;
 
 use App\Core\Model;
 

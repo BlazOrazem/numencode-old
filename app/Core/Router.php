@@ -2,7 +2,7 @@
 
 class Router {
 
-    /** @var Database Establish the Database connection.  */
+    /** @var Database class Database constructor injection.  */
     protected $db;
 
     /** @var string Set the default Controller. */
@@ -17,8 +17,10 @@ class Router {
     /** @var string Set the Locale. */
     protected $locale;
 
+    protected $appPath = '\\App\Controllers\\';
+
     /**
-     * Create a new Router instance with Database constructor injection.
+     * Create a new Router instance.
      *
      * @param Database $database Database instance
      * @param Locale $locale Locale instance
@@ -43,7 +45,7 @@ class Router {
         $this->method = $urlData['method'] ?: $this->method;
 
         // Initialize Controller.
-        $this->controller = '\\App\Controllers\\' . $this->controller;
+        $this->controller = $this->appPath . $this->controller;
         $this->controller = new $this->controller();
 
         // Set parameters to either the array values or an empty array.
@@ -77,23 +79,65 @@ class Router {
     }
 
     /**
-     * Try to set URL data from requested URL params.
+     * Attempt to set URL data from URL request.
      * 
      * @return array
      */
     protected function parseUrl()
     {
+        // Split URL request
         $url = explode('/', filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL));
+
+        // If plugin controller is requested, change app path
+        if (isset($url[0]) && (strtolower($url[0]) == 'plugins')) {
+            $this->setAppPath($url);
+            $url = $this->cleanUrlData($url);
+        }
+
+        // Prepare and return URL data array
+        return $this->prepareUrlData($url);
+    }
+
+    /**
+     * Prepare URL data.
+     *
+     * @param array $url Split URL data
+     * @return array URL data
+     */
+    protected function prepareUrlData($url)
+    {
         $urlData = array(
             'url' => null,
             'controller' => isset($url[0]) ? $url[0] : $this->controller,
             'method' => isset($url[1]) ? $url[1] : $this->method,
         );
+        $url = $this->cleanUrlData($url);
+        return array_merge($urlData, array(
+            'params' => serialize($url),
+        ));
+    }
+
+    /**
+     * Clean URL
+     *
+     * @param $url
+     * @return array
+     */
+    protected function cleanUrlData($url)
+    {
         unset($url[0]);
         unset($url[1]);
-        return array_merge($urlData, array(
-            'params' => serialize(array_values($url)),
-        ));
+        return array_values($url);
+    }
+
+    /**
+     * Set app path.
+     *
+     * @param $url
+     */
+    protected function setAppPath($url)
+    {
+        $this->appPath = '\\App\Plugins\\'. ucfirst($url[1]) .'\\Controllers\\';
     }
 
 }

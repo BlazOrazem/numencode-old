@@ -8,11 +8,11 @@ class Locale {
     /** @var void Set the active Locale. */
     protected $activeLocale;
 
-    /** @var Database */
+    /** @var Database constructor injection. */
     protected $db;
 
     /**
-     * Create a new Locale instance with Database constructor injection.
+     * Create a new Locale instance.
      *
      * @param Database $database
      */
