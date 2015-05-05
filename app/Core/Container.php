@@ -4,13 +4,28 @@ class Container {
 
     /** @var array Bindings for Ioc Container */
     protected $bindings = array();
+    
+    /** @var Container Instance of the Container */
+    protected static $instance = null;
 
     /**
      * Create a new Container instance.
      */
-    public function __construct()
+    protected function __construct()
     {
         $this->bindings['db'] = new Database();
+    }
+    
+    /**
+     * Get a singleton Container instance 
+     */
+    public static function getInstance()
+    {
+        if(static::$instance) return static::$instance;
+        
+        static::$instance = new static;
+        
+        return static::$instance;
     }
 
     /**
@@ -21,7 +36,8 @@ class Container {
      */
     public static function get($binding)
     {
-        $container = new self;
+        $container = static::getInstance();
+        
         return $container->bindings[$binding];
     }
 
