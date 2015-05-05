@@ -14,14 +14,14 @@ class Router {
     /** @var array Set the parameters array. */
     protected $params = array();
 
-    /** @var Locale. */
+    /** @var string Set the Locale. */
     protected $locale;
 
     /**
      * Create a new Router instance with Database constructor injection.
      *
-     * @param Database $database
-     * @param Locale $locale
+     * @param Database $database Database instance
+     * @param Locale $locale Locale instance
      */
     public function __construct(Database $database, Locale $locale)
     {

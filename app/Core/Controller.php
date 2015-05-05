@@ -1,23 +1,11 @@
 <?php namespace App\Core;
 
-/**
- * Class Controller
- * @package App\Core
- */
 abstract class Controller {
 
-    /**
-     * Model
-     *
-     * @var
-     */
+    /** @var Model */
     public $model;
 
-    /**
-     * View
-     *
-     * @var
-     */
+    /** @var View */
     public $view;
 
     /**

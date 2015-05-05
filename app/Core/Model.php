@@ -13,18 +13,17 @@ class Model extends Database {
 
     public function getItem($id, $debugSql = false)
     {
-        $criteria = array(
+        $params = array(
             'where' => "{$this->tableName}.id = {$id}",
             'limit' => "1"
         );
         
-        $items = $this->getItems($criteria, $debugSql);
+        $items = $this->getItems($params, $debugSql);
         
         return reset($items);
-//        return $this->findOne($this->tableName, 'id = ?', [$id]);
     }
 
-    public function getItems($criteria = array(), $debugSql = false)
+    public function getItems($params = array(), $debugSql = false)
     {
         if ($this->isTranslatable) {
             $sql = "SELECT translation.*, $this->tableName.* FROM $this->tableName AS $this->tableName
@@ -34,9 +33,9 @@ class Model extends Database {
             $sql = "SELECT * FROM {$this->tableName} AS {$this->tableName}";
         }
 
-        $sql .= isset($criteria['where']) ? " WHERE {$criteria['where']} " : " WHERE 1=1 ";
-        $sql .= isset($criteria['order']) ? " ORDER BY {$criteria['order']} " : null;
-        $sql .= isset($criteria['limit']) ? " LIMIT {$criteria['limit']} " : null;
+        $sql .= isset($params['where']) ? " WHERE {$params['where']} " : " WHERE 1=1 ";
+        $sql .= isset($params['order']) ? " ORDER BY {$params['order']} " : null;
+        $sql .= isset($params['limit']) ? " LIMIT {$params['limit']} " : null;
 
         if ($debugSql) {
             diebug($sql);

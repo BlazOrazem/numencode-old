@@ -11,6 +11,11 @@ class Locale {
     /** @var Database */
     protected $db;
 
+    /**
+     * Create a new Locale instance with Database constructor injection.
+     *
+     * @param Database $database
+     */
     public function __construct(Database $database)
     {
         $this->db = $database;
