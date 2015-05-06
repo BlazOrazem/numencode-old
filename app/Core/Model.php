@@ -2,15 +2,28 @@
 
 class Model extends Database {
 
+    /** @var string Set the table name. */
     protected $tableName;
+
+    /** @var bool Is table translatable. */
     protected $isTranslatable;
 
+    /**
+     * Create a new Model instance.
+     */
     public function __construct()
     {
-        $this->tableName = $this->setTableName();
-        $this->isTranslatable = $this->isModelTranslatable();
+        $this->setTableName();
+        $this->setIsTranslatable();
     }
 
+    /**
+     * Return single item from requested table.
+     *
+     * @param $id Id of the item.
+     * @param bool $debugSql If set to true, var_dump the SQL clause.
+     * @return object
+     */
     public function getItem($id, $debugSql = false)
     {
         $params = array(
@@ -23,6 +36,13 @@ class Model extends Database {
         return reset($items);
     }
 
+    /**
+     * Return array ob items from requested table.
+     *
+     * @param array $params Parameters for SQL query.
+     * @param bool $debugSql If set to true, var_dump the SQL clause.
+     * @return array
+     */
     public function getItems($params = array(), $debugSql = false)
     {
         if ($this->isTranslatable) {
@@ -44,16 +64,20 @@ class Model extends Database {
         return $this->convertToBeans($this->tableName, $this->getAll($sql));
     }
 
+    /**
+     * Set requested table name.
+     */
     protected function setTableName()
     {
-        $tableName = str_replace('App\Models\\', null, get_called_class());
-        $tableName = str_replace('Model', null, $tableName);
-        return strtolower($tableName);
+        $this->tableName = strtolower(str_replace('Model', null, substr(get_called_class(), strrpos(get_called_class(), '\\') + 1)));
     }
 
-    protected function isModelTranslatable()
+    /**
+     * Set to true if requested table is translatable.
+     */
+    protected function setIsTranslatable()
     {
-        return (bool)$this->exec("SHOW TABLES LIKE '{$this->tableName}_i18n'");
+        $this->isTranslatable = (bool)$this->exec("SHOW TABLES LIKE '{$this->tableName}_i18n'");
     }
 
 }

@@ -1,16 +1,32 @@
 <?php
 
+if (!function_exists('app_get')) {
     /**
      * Return binding form IoC Container
      *
      * @param $binding
      * @return mixed Return binding
      */
-    function app($binding)
+    function app_get($binding)
     {
         return \App\Core\Container::get($binding);
     }
+}
 
+if (!function_exists('app_set')) {
+    /**
+     * Return binding form IoC Container
+     *
+     * @param $binding
+     * @return mixed Return binding
+     */
+    function app_set($binding, $value)
+    {
+        return \App\Core\Container::set($binding, $value);
+    }
+}
+
+if (!function_exists('debug')) {
     /**
      * Display string or array in <pre> tags
      *
@@ -21,7 +37,9 @@
     {
         print("<pre>" . print_r($var, true) . "</pre>");
     }
+}
 
+if (!function_exists('diebug')) {
     /**
      * Display string or array in <pre> tags and exit
      *
@@ -32,7 +50,9 @@
     {
         exit(debug($var));
     }
+}
 
+if (!function_exists('debugc')) {
     /**
      * Display string or array (as string) in console
      *
@@ -42,12 +62,13 @@
     function debugc($data)
     {
         if (is_array($data)) {
-            $output = "<script>console.log( '" . implode( '+', $data) . "' );</script>";
+            $output = "<script>console.log( '" . implode('+', $data) . "' );</script>";
         } else {
             $output = "<script>console.log( '" . $data . "' );</script>";
         }
         echo $output;
     }
+}
 
 
 
@@ -66,6 +87,7 @@
     //	return hash_final($context);
     //}
 
+if (!function_exists('password')) {
     /**
      * Two-way data encryption and decryption with password key
      *
@@ -84,6 +106,7 @@
         }
         return $password;
     }
+}
 
     /**
      * Language pack translation
@@ -134,6 +157,7 @@
         }
     }
 
+if (!function_exists('isEmail')) {
     /**
      * E-mail address format validation
      *
@@ -142,22 +166,26 @@
      */
     function isEmail($email)
     {
-        if(filter_var($email, FILTER_VALIDATE_EMAIL)) return true;
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) return true;
         else return false;
     }
+}
 
+if (!function_exists('prepareDate')) {
     /**
      * Convert date format from Slovenian to English format for database insertion
      *
      * @param date $date Date in Slovenian format, eg: 31.12.2012
      * @return date $date Date in English format, eg: 2012-12-31
      */
-    function prepareDateForDB($date)
+    function prepareDate($date)
     {
-        $a = explode('.',$date);
-        return $a[2].'-'.$a[1].'-'.$a[0];
+        $a = explode('.', $date);
+        return $a[2] . '-' . $a[1] . '-' . $a[0];
     }
+}
 
+if (!function_exists('toArray')) {
     /**
      * Convert string to array
      *
@@ -171,6 +199,7 @@
         $arr = explode($delimiter, $data);
         return $arr;
     }
+}
 
     /**
      * Set meta data

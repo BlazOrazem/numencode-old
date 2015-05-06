@@ -11,7 +11,7 @@ class BaseController extends Controller {
 
     public function includeMainMenu()
     {
-//        $articles  = $this->getModel('article')->getItems();
+//        $articles  = $this->getModel('article', 'Article')->getItems();
 //        diebug($articles);
 
         $menu = $this->view->fetch('menu.tpl');

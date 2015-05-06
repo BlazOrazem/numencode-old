@@ -2,10 +2,10 @@
 
 class Container {
 
-    /** @var array Bindings for Ioc Container */
+    /** @var array Bindings for IoC Container */
     protected $bindings = array();
     
-    /** @var Container Instance of the Container */
+    /** @var Container instance of the Container */
     protected static $instance = null;
 
     /**
@@ -17,7 +17,7 @@ class Container {
     }
     
     /**
-     * Get a singleton Container instance 
+     * Get a singleton Container instance.
      */
     public static function getInstance()
     {
@@ -39,6 +39,19 @@ class Container {
         $container = static::getInstance();
         
         return $container->bindings[$binding];
+    }
+
+    /**
+     * Set IoC binding.
+     *
+     * @param $binding
+     * @return mixed
+     */
+    public static function set($binding, $value)
+    {
+        $container = static::getInstance();
+
+        $container->bindings[$binding] = $value;
     }
 
 }

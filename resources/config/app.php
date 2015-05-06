@@ -11,7 +11,7 @@ setlocale(LC_NUMERIC, 'C');
 /**
  * Application root path
  */
-define('APP_ROOT', __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR);
+define('APP_ROOT', __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR);
 
 /**
  * Public root path

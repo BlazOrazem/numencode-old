@@ -24,11 +24,11 @@ abstract class Controller {
      */
     protected function initModel()
     {
-        $controllerName = $this->getControllerName();
-        $modelName = $controllerName . 'Model';
+        $pluginName = str_replace('Controller', null, substr(get_called_class(), strrpos(get_called_class(), '\\') + 1));
+        $modelName = $pluginName . 'Model';
 
-        if (class_exists('\App\Models\\' . $modelName)) {
-            $model = '\App\Models\\' . $modelName;
+        if (class_exists(app_get('model_path') . $modelName)) {
+            $model = app_get('model_path') . $modelName;
             $this->model = new $model();
         }
 
@@ -38,15 +38,16 @@ abstract class Controller {
     /**
      * Return Model instance.
      *
-     * @param $tableName
-     * @return bool
+     * @param string $table Requested table.
+     * @param string|null $plugin Requested plugin.
+     * @return object|bool
      */
-    public function getModel($tableName)
+    public function getModel($table, $plugin = null)
     {
-        $modelName = ucfirst($tableName) . 'Model';
+        $modelPath = empty($plugin) ? '\\App\Models\\' : '\\App\Plugins\\'. ucfirst($plugin) .'\\Models\\';
 
-        if (class_exists('\App\Models\\' . $modelName)) {
-            $model = '\App\Models\\' . $modelName;
+        if (class_exists($modelPath . ucfirst($table) . 'Model')) {
+            $model = $modelPath . ucfirst($table) . 'Model';
             return new $model();
         }
 
@@ -62,18 +63,6 @@ abstract class Controller {
     {
         $this->view = new \App\Core\View();
         return $this;
-    }
-
-    /**
-     * Return Controller name.
-     *
-     * @return mixed
-     */
-    protected function getControllerName()
-    {
-        $controllerName = str_replace('App\Controllers\\', null, get_called_class());
-        $controllerName = str_replace('Controller', null, $controllerName);
-        return $controllerName;
     }
 
 }

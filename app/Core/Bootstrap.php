@@ -64,7 +64,7 @@ class Bootstrap {
      */
     protected function initRouter()
     {
-        $database = app('db');
+        $database = app_get('db');
         $this->router = new Router($database, new Locale($database));
         $this->router->handleRequest();
     }
