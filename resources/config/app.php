@@ -19,9 +19,14 @@ define('APP_ROOT', __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.DIR
 define('PUBLIC_ROOT', APP_ROOT.'public'.DIRECTORY_SEPARATOR);
 
 /**
- * Public root path
+ * Resources path
  */
-define('VIEWS_ROOT', APP_ROOT.'resources/views'.DIRECTORY_SEPARATOR);
+define('RESOURCES_ROOT', APP_ROOT.'resources'.DIRECTORY_SEPARATOR);
+
+/**
+ * Views root path
+ */
+define('VIEWS_ROOT', RESOURCES_ROOT.'views'.DIRECTORY_SEPARATOR);
 
 /**
  * Cache directory
