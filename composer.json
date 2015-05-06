@@ -18,10 +18,10 @@
     },
     "autoload": {
         "files": [
-            "config/app.php",
-            "framework/Helpers/functions.php",
-            "framework/Helpers/arr.php",
-            "framework/Helpers/str.php"
+            "resources/config/app.php",
+            "resources/helpers.php",
+            "resources/arr.php",
+            "resources/str.php"
         ],
         "psr-4": {
             "App\\": "app/"

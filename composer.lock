@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "19005908acc2640507e1495533403883",
+    "hash": "a7c73cc94f4852c0bc0a7a968f554556",
     "packages": [
         {
             "name": "filp/whoops",
@@ -111,12 +111,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "22ea1404dff44d96d109ba748697dbef9cb3a1c9"
+                "reference": "d92714cc7e1567c103d4329df5bbc22080bf59c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/22ea1404dff44d96d109ba748697dbef9cb3a1c9",
-                "reference": "22ea1404dff44d96d109ba748697dbef9cb3a1c9",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/d92714cc7e1567c103d4329df5bbc22080bf59c8",
+                "reference": "d92714cc7e1567c103d4329df5bbc22080bf59c8",
                 "shasum": ""
             },
             "require": {
@@ -158,7 +158,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-05-04 16:21:55"
+            "time": "2015-05-05 22:03:26"
         },
         {
             "name": "vlucas/phpdotenv",
