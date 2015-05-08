@@ -29,26 +29,28 @@ if (!function_exists('app_set')) {
 if (!function_exists('debug')) {
     /**
      * Display string or array in <pre> tags
-     *
-     * @param string $var
-     * @return string|array
      */
-    function debug($var)
+    function debug()
     {
-        print("<pre>" . print_r($var, true) . "</pre>");
+        $vars = func_get_args();
+        echo '<pre>';
+        foreach($vars as $var) {
+            echo '<strong>(' . gettype($var) . ')</strong> ';
+            print_r($var);
+        }
+        echo '</pre>';
+        return;
     }
 }
 
 if (!function_exists('diebug')) {
     /**
      * Display string or array in <pre> tags and exit
-     *
-     * @param string $var
-     * @return string|array
      */
-    function diebug($var)
+    function diebug()
     {
-        exit(debug($var));
+        call_user_func_array('debug', func_get_args());
+        return;
     }
 }
 
@@ -56,21 +58,44 @@ if (!function_exists('debugc')) {
     /**
      * Display string or array (as string) in console
      *
-     * @param string $data
-     * @return string
+     * @param $var
+     * @param null $name
      */
-    function debugc($data)
+    function debugc($var, $name = null)
     {
-        if (is_array($data)) {
-            $output = "<script>console.log( '" . implode('+', $data) . "' );</script>";
-        } else {
-            $output = "<script>console.log( '" . $data . "' );</script>";
-        }
-        echo $output;
+        echo '
+			<script type="text/javascript">//<![CDATA[
+				console.log(' . json_encode($name ? array($name => $var) : $var) . ');
+			//]]></script>
+		';
     }
 }
 
+//if (!function_exists('debug')) {
+//    /**
+//     * Display string or array in <pre> tags
+//     *
+//     * @param string $var
+//     * @return string|array
+//     */
+//    function debug($var)
+//    {
+//        print("<pre>" . print_r($var, true) . "</pre>");
+//    }
+//}
 
+//if (!function_exists('diebug')) {
+//    /**
+//     * Display string or array in <pre> tags and exit
+//     *
+//     * @param string $var
+//     * @return string|array
+//     */
+//    function diebug($var)
+//    {
+//        exit(debug($var));
+//    }
+//}
 
     /**
      * Create hashcode
