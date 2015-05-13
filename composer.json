@@ -11,10 +11,13 @@
         "filp/whoops": "~1.1",
         "vlucas/phpdotenv": "2.*@dev",
         "smarty/smarty": "3.1.*@dev",
-        "gabordemooij/redbean": "4.2.0"
+        "gabordemooij/redbean": "4.2.0",
+        "blazorazem/sanitizer": "dev-master"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.0"
+        "phpunit/phpunit": "~4.0",
+        "robmorgan/phinx": "*",
+        "fzaninotto/faker": "1.5.*@dev"
     },
     "autoload": {
         "files": [

@@ -1,0 +1,25 @@
+paths:
+    migrations: path/to/migrations/folder
+
+environments:
+    default_migration_table: migrations
+    default_database: development
+    production:
+        adapter: mysql
+        host: localhost
+        name: database
+        user: username
+        pass: password
+        port: 3306
+        charset: utf8
+        collation: utf8_general_ci
+
+    development:
+        adapter: mysql
+        host: localhost
+        name: database
+        user: username
+        pass: password
+        port: 3306
+        charset: utf8
+        collation: utf8_general_ci

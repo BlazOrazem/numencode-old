@@ -33,13 +33,12 @@ if (!function_exists('debug')) {
     function debug()
     {
         $vars = func_get_args();
-        echo '<pre>';
         foreach($vars as $var) {
+            echo '<pre>';
             echo '<strong>(' . gettype($var) . ')</strong> ';
             print_r($var);
+            echo '</pre>';
         }
-        echo '</pre>';
-        return;
     }
 }
 
@@ -50,7 +49,7 @@ if (!function_exists('diebug')) {
     function diebug()
     {
         call_user_func_array('debug', func_get_args());
-        return;
+        exit;
     }
 }
 
@@ -70,32 +69,6 @@ if (!function_exists('debugc')) {
 		';
     }
 }
-
-//if (!function_exists('debug')) {
-//    /**
-//     * Display string or array in <pre> tags
-//     *
-//     * @param string $var
-//     * @return string|array
-//     */
-//    function debug($var)
-//    {
-//        print("<pre>" . print_r($var, true) . "</pre>");
-//    }
-//}
-
-//if (!function_exists('diebug')) {
-//    /**
-//     * Display string or array in <pre> tags and exit
-//     *
-//     * @param string $var
-//     * @return string|array
-//     */
-//    function diebug($var)
-//    {
-//        exit(debug($var));
-//    }
-//}
 
     /**
      * Create hashcode

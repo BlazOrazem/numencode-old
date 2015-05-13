@@ -93,7 +93,7 @@ class Router {
         if (!isset($_GET['url'])) return false;
 
         // Check if URL exists in Database.
-        $urlData = $this->db->getRow('SELECT * FROM url WHERE url = ? LIMIT 1', array($_GET['url']));
+        $urlData = $this->db->getRow('SELECT * FROM url WHERE slug = ? LIMIT 1', array($_GET['url']));
 
         // Else try to parse URL request.
         if (empty($urlData)) {
@@ -121,7 +121,7 @@ class Router {
 
         // Prepare and return URL data
         $urlData = array(
-            'url' => null,
+            'slug' => null,
             'plugin' => !empty($this->plugin) ? $this->plugin : null,
             'controller' => isset($url[0]) ? $url[0] : $this->controller,
             'method' => isset($url[1]) ? $url[1] : $this->method,
