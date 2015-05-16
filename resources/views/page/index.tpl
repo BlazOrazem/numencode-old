@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <h1>{$item->title}</h1>
         <section>
-            {$item->content}
+            {$item->body}
         </section>
     </div>
 {/block}

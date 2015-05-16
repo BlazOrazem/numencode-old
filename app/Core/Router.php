@@ -14,6 +14,9 @@ class Router {
     /** @var string Set the default Method. */
     protected $method = 'index';
 
+    /** @var integer Set the Id. */
+    protected $id;
+
     /** @var array Set the parameters array. */
     protected $params = array();
 
@@ -54,12 +57,15 @@ class Router {
     public function handleRequest()
     {
         $urlData = $this->getUrlData();
-//        diebug($urlData);
+        diebug($urlData);
         // Set the Controller.
         $this->controller = $urlData['controller'] ? ucfirst($urlData['controller'] . 'Controller') : $this->controller;
 
         // Set the Method.
         $this->method = $urlData['method'] ?: $this->method;
+
+        // Set the ID.
+        $this->id = $urlData['id'] ?: $this->id;
 
         // Set the Plugin if requested.
         $this->plugin = $urlData['plugin'] ? ucfirst($urlData['plugin']) : null;
@@ -125,8 +131,9 @@ class Router {
             'plugin' => !empty($this->plugin) ? $this->plugin : null,
             'controller' => isset($url[0]) ? $url[0] : $this->controller,
             'method' => isset($url[1]) ? $url[1] : $this->method,
+            'id' => (isset($url[2]) && $url[2] != 'null') ? (int)$url[2] : $this->id,
         );
-        $url = array_slice($url, 2);
+        $url = array_slice($url, 3);
         return array_merge($urlData, array(
             'params' => serialize($url),
         ));

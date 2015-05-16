@@ -14,6 +14,9 @@ class BaseController extends Controller {
 //        $articles  = $this->getModel('article', 'Article')->getItems();
 //        diebug($articles);
 
+        $navigation  = $this->getModel('page')->getPages(array('where' => 'page.page_id = 1', 'order' => 'page.ord'));
+        $this->view->assign('navigation', $navigation);
+
         $menu = $this->view->fetch('menu.tpl');
         $this->view->assign('_menu', $menu);
     }

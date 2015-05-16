@@ -8,6 +8,8 @@ class Model extends Database {
     /** @var bool Is table translatable. */
     protected $isTranslatable;
 
+    public $url;
+
     /**
      * Create a new Model instance.
      */
@@ -15,6 +17,7 @@ class Model extends Database {
     {
         $this->setTableName();
         $this->setIsTranslatable();
+        $this->url = new Url();
     }
 
     /**
