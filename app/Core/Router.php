@@ -57,7 +57,7 @@ class Router {
     public function handleRequest()
     {
         $urlData = $this->getUrlData();
-        diebug($urlData);
+//        diebug($urlData);
         // Set the Controller.
         $this->controller = $urlData['controller'] ? ucfirst($urlData['controller'] . 'Controller') : $this->controller;
 
@@ -84,7 +84,7 @@ class Router {
 
         // Call the chosen method on the chosen controller, passing
         // in the parameters array (or empty array if above was false).
-        call_user_func_array(array($this->controller, $this->method), $this->params);
+        call_user_func_array(array($this->controller, $this->method), array($this->id, $this->params));
     }
 
     /**

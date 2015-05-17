@@ -13,26 +13,26 @@ abstract class Controller {
      */
     public function __construct()
     {
-        $this->initModel();
-        $this->initView();
+        $this->model = $this->initModel();
+        $this->view = new \App\Core\View();
     }
 
     /**
-     * Create a new Model instance.
+     *  Create a new Model instance.
      *
-     * @return $this
+     * @return object|bool
      */
     protected function initModel()
     {
         $pluginName = str_replace('Controller', null, substr(get_called_class(), strrpos(get_called_class(), '\\') + 1));
         $modelName = $pluginName . 'Model';
 
-        if (class_exists(app_get('model_path') . $modelName)) {
-            $model = app_get('model_path') . $modelName;
-            $this->model = new $model();
+        if (!class_exists(app_get('model_path') . $modelName)) {
+            return false;
         }
 
-        return $this;
+        $model = app_get('model_path') . $modelName;
+        return new $model();
     }
 
     /**
@@ -46,23 +46,12 @@ abstract class Controller {
     {
         $modelPath = empty($plugin) ? '\\App\Models\\' : '\\App\Plugins\\'. ucfirst($plugin) .'\\Models\\';
 
-        if (class_exists($modelPath . ucfirst($table) . 'Model')) {
-            $model = $modelPath . ucfirst($table) . 'Model';
-            return new $model();
+        if (!class_exists($modelPath . ucfirst($table) . 'Model')) {
+            return false;
         }
 
-        return false;
-    }
-
-    /**
-     * Create a new View instance.
-     *
-     * @return $this
-     */
-    protected function initView()
-    {
-        $this->view = new \App\Core\View();
-        return $this;
+        $model = $modelPath . ucfirst($table) . 'Model';
+        return new $model();
     }
 
 }

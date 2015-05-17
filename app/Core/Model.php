@@ -15,8 +15,8 @@ class Model extends Database {
      */
     public function __construct()
     {
-        $this->setTableName();
-        $this->setIsTranslatable();
+        $this->tableName = strtolower(str_replace('Model', null, substr(get_called_class(), strrpos(get_called_class(), '\\') + 1)));
+        $this->isTranslatable = (bool)$this->exec("SHOW TABLES LIKE '{$this->tableName}_i18n'");
         $this->url = new Url();
     }
 
@@ -65,22 +65,6 @@ class Model extends Database {
         }
 
         return $this->convertToBeans($this->tableName, $this->getAll($sql));
-    }
-
-    /**
-     * Set requested table name.
-     */
-    protected function setTableName()
-    {
-        $this->tableName = strtolower(str_replace('Model', null, substr(get_called_class(), strrpos(get_called_class(), '\\') + 1)));
-    }
-
-    /**
-     * Set to true if requested table is translatable.
-     */
-    protected function setIsTranslatable()
-    {
-        $this->isTranslatable = (bool)$this->exec("SHOW TABLES LIKE '{$this->tableName}_i18n'");
     }
 
 }

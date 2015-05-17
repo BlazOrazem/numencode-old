@@ -1,10 +1,15 @@
 <?php namespace App\Models;
 
 use App\Core\Model;
-use App\Core\Url;
 
 class PageModel extends Model {
 
+    /**
+     * Return pages.
+     *
+     * @param array $params
+     * @return array
+     */
     public function getPages($params = array())
     {
         $pages = $this->getItems($params);
@@ -13,8 +18,7 @@ class PageModel extends Model {
             $page['slug'] = $this->url->returnSlug('page', 'index', $page->id);
         }
 
-//        diebug($pages);
+        return $pages;
     }
-
 
 }

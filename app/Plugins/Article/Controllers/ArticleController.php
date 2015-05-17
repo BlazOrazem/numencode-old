@@ -1,6 +1,6 @@
 <?php namespace App\Plugins\Article\Controllers;
 
-use App\Core\BaseController;
+use App\Controllers\BaseController;
 
 class ArticleController extends BaseController {
 

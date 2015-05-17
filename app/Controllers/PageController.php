@@ -1,14 +1,10 @@
 <?php namespace App\Controllers;
 
-use App\Core\BaseController;
-
 class PageController extends BaseController {
 
     public function index()
     {
-        diebug(func_get_args());
         $id = isset(func_get_args()[0]) ? (int)func_get_args()[0] : false;
-
         $item  = $this->model->getItem($id);
 
         $item['contents'] = $this->model->getAll("SELECT * FROM content WHERE page_id = {$id} ORDER BY ord");

@@ -10,8 +10,8 @@
     "require": {
         "filp/whoops": "~1.1",
         "vlucas/phpdotenv": "2.*@dev",
-        "smarty/smarty": "3.1.*@dev",
-        "gabordemooij/redbean": "4.2.0",
+        "smarty/smarty": "3.*@dev",
+        "gabordemooij/redbean": "4.*@dev",
         "blazorazem/sanitizer": "dev-master"
     },
     "require-dev": {

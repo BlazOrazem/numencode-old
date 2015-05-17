@@ -1,7 +1,5 @@
 <?php namespace App\Controllers;
 
-use App\Core\BaseController;
-
 class NewsController extends BaseController {
 
     public function index()
