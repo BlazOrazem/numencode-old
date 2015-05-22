@@ -7,7 +7,7 @@ class PageController extends BaseController {
         $id = isset(func_get_args()[0]) ? (int)func_get_args()[0] : false;
         $item  = $this->model->getItem($id);
 
-        $item['contents'] = $this->model->getAll("SELECT * FROM content WHERE page_id = {$id} ORDER BY ord");
+//        $item['contents'] = $this->model->getAll("SELECT * FROM content WHERE page_id = {$id} ORDER BY ord");
 
 //        diebug($item);
 
