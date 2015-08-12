@@ -1,7 +1,14 @@
 <?php namespace App\Core;
 
+use Illuminate\Database\Eloquent\Model as Model;
 
+//class Url extends Illuminate\Database\Eloquent\Model {
+//    public $timestamps = false;
+//}
 class Url extends Model {
+
+    protected $table = 'url';
+    public $timestamps = false;
 
     /**
      * Create a new Url instance.

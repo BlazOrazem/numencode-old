@@ -30,6 +30,7 @@ class Locale {
      */
     public function setDefaultLocale()
     {
+        return 'en';
         return $this->db->getCell('SELECT id FROM lang WHERE is_default = 1') ?: 'en';
     }
 

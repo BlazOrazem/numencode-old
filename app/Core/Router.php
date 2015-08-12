@@ -99,7 +99,10 @@ class Router {
         if (!isset($_GET['url'])) return false;
 
         // Check if URL exists in Database.
-        $urlData = $this->db->getRow('SELECT * FROM url WHERE slug = ? LIMIT 1', array($_GET['url']));
+//        $urlData = $this->db->getRow('SELECT * FROM url WHERE slug = ? LIMIT 1', array($_GET['url']));
+//        $urlData = Url::find(1);
+        $urlData = Url::where('slug', $_GET['url'])->first();
+//        diebug($urlData);
 
         // Else try to parse URL request.
         if (empty($urlData)) {

@@ -13,11 +13,11 @@ class BaseController extends Controller {
 
     public function includeMainMenu()
     {
-        $pageMenu  = $this->getModel('page')->getPages(array('where' => 'page.page_id = 1', 'order' => 'page.ord'));
-        $this->view->assign('pageMenu', $pageMenu);
-
-        $navigation = $this->view->fetch('navigation.tpl');
-        $this->view->assign('navigation', $navigation);
+//        $pageMenu  = $this->getModel('page')->getPages(array('where' => 'page.page_id = 1', 'order' => 'page.ord'));
+//        $this->view->assign('pageMenu', $pageMenu);
+//
+//        $navigation = $this->view->fetch('navigation.tpl');
+//        $this->view->assign('navigation', $navigation);
     }
 
     public function includeFooter()

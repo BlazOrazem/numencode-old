@@ -1,13 +1,25 @@
 <?php namespace App\Core;
 
-use RedBeanPHP\Facade as R;
+use Illuminate\Database\Capsule\Manager as Capsule;
 
-class Database extends R {
+class Database extends Capsule {
 
     public function __construct()
     {
-        parent::setup('mysql:host=' . getenv('DB_HOST') . ';dbname=' . getenv('DB_DATABASE'), getenv('DB_USERNAME'), getenv('DB_PASSWORD'));
-        parent::freeze(false);
+        $capsule = new Capsule;
+
+        $capsule->addConnection(array(
+            'driver'    => 'mysql',
+            'host'      => getenv('DB_HOST'),
+            'database'  => getenv('DB_DATABASE'),
+            'username'  => getenv('DB_USERNAME'),
+            'password'  => getenv('DB_PASSWORD'),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => ''
+        ));
+
+        $capsule->bootEloquent();
     }
 
 }
